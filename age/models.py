@@ -4,8 +4,8 @@ from django.utils import timezone
 class User(models.Model):
     userName = models.CharField(max_length=20)
     mailAddless = models.EmailField(max_length=50)
-    #passWord = models.CharField(max_length=11, validators=[MinLengthValidator(11)])
-    #TEL = models.PositiveIntegerField(max_length=11)
+    passWord = models.CharField(max_length=11)
+    Tel = models.PositiveIntegerField(max_length=11)
     birthday = models.DateField(max_length=8)
     REVIEW_STAR_CHOICES = (
 	    (1,'1'),
@@ -31,4 +31,4 @@ class User(models.Model):
     reviewComment = models.TextField()
     createDate =  models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(auto_now = True)
-#次回までに他のフィールドのクラスも作っておく！
+#TODO:次回までに他のフィールドのクラスも作っておく！
