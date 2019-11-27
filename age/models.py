@@ -2,33 +2,38 @@ from django.db import models
 from django.utils import timezone
 
 class User(models.Model):
-    userName = models.CharField(max_length=20)
-    mailAddless = models.EmailField(max_length=50)
-    passWord = models.CharField(max_length=11)
-    Tel = models.PositiveIntegerField(max_length=11)
-    birthday = models.DateField(max_length=8)
-    REVIEW_STAR_CHOICES = (
-	    (1,'1'),
-	    (2,'2'),
-	    (3,'3'),
-	    (4,'4'),
-	    (5,'5'),
-    )
+	userID = models.CharField(max_length=200)
+	userName = models.CharField(max_length=200)
+	mailAddress = models.EmailField(max_length=200)
+	passWord = models.CharField(max_length=128)
+	birthday = models.DateField(blank=True,null=True)
 
-    review_star = models.IntegerField(
-        verbose_name="レビュー星",
-        choices=REVIEW_STAR_CHOICES)
+	GENDER_CHOICES =(
+		(0,'男性'),
+		(1,'女性'),
+		(2,'不明'),
+	)
 
-    GENDER_CHOICES = (
-	    (1,'男性'),
-	    (2,'女性'),
-	    (3,'その他'),
-    )
-    gender = models.IntegerField(
-        verbose_name="性別",
-        choices=GENDER_CHOICES)
+	gender = models.IntegerField(
+		default= 2,
+		verbose_name = "性別",
+		choices = GENDER_CHOICES
+	)
 
-    reviewComment = models.TextField()
-    createDate =  models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(auto_now = True)
-#TODO:次回までに他のフィールドのクラスも作っておく！
+	REVIEW_STAR_CHOICES = (
+		(1,'1'),
+		(2,'2'),
+		(3,'3'),
+		(4,'4'),
+		(5,'5'),
+	)
+
+	rebviewStar = models.IntegerField(
+		verbose_name = "レビュー星",
+		choices = REVIEW_STAR_CHOICES
+	)
+
+	rebviewComment = models.TextField()
+
+	createDate = models.DateTimeField('ユーザー登録日時', auto_now_add = True)
+	updateDate = models.DateTimeField('ユーザー情報更新日時', auto_now = True, blank=True, null=True)
