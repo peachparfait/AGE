@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>食品内容の変更</h1>
+{% endblock %}
+{% block content %}
+<form action='' method='post'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='食品内容を変更する'>
+</form>
+{% endblock %}
+

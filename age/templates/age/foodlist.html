@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h1>食品　記録一覧<h1>
+{% endblock header %}
+{% block content %}
+
+    {% for food in object_list %}
+        <p>{{food.foodname}}</p>
+        <ul>
+            <li><a href="">詳細画面へ</a></li>
+            <li><a href="" >編集画面へ</a></li>
+            <li><a href="" >削除画面へ</a></li>
+        </ul>
+    {% endfor %}
+    <p><a href="{% url 'foodcreate' %}" >新規作成画面へ</a></li>
+{%endblock content %}
