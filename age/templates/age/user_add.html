@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block header %}
+    <img src="" alt="">
+    <h1>AGE ものの年齢記録アプリ</h1>
+{% endblock header %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">登録</button>
+    </form>
+{% endblock content %}

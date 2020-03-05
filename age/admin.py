@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import User,Food,FoodCategory,HomeElecApp,HomeElecAppCategory,Aniversary
+from .models import CustomUser,Food,FoodCategory,HomeElecApp,HomeElecAppCategory,Aniversary
 
 # Register your models here.
-admin.site.register(User)
+admin.site.register(CustomUser)
 admin.site.register(Food)
 admin.site.register(FoodCategory)
 admin.site.register(HomeElecApp)

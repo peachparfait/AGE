@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h1>家電　記録一覧</h1>
+{% endblock header %}
+{% block content %}
+    {% for elec in object_list %}
+        <p>{{elec.homeelecapp}}</p>
+        <ul>
+            <li><a href="{% url 'age:homeelecdetail' homeelecapp.pk%}">詳細画面へ</a></li>
+            <li><a href="{% url 'age:homeelecupdate' homeelecapp.pk%}" >編集画面へ</a></li>
+            <li><a href="{% url 'age:homeelecdelete' homeelecapp.pk%}" >削除画面へ</a></li>
+        </ul>
+    {% endfor %}
+    <p><a href="{% url 'age:homeeleccreate' %}" >新規作成画面へ</a></p>
+{%endblock content %}
