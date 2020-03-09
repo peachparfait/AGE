@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
-from .models import Food,HomeElecApp,Aniversary
+from .models import Food,HomeElecApp,Aniversary,Other
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomUserCreationForm
@@ -95,6 +95,7 @@ class AnnivUpdateView(UpdateView):
     template_name = "age/anniv_update.html"
     fields = ['annivapp','story']
     success_url = reverse_lazy('age:foodlist')
+
 
 #新規登録
 class SignUpView(CreateView):

@@ -80,3 +80,22 @@ class Aniversary(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
+
+
+class OtherCategory(models.Model):
+    OtherCategory = models.CharField('その他カテゴリ',max_length=30)
+
+    createDate = models.DateTimeField('その他カテゴリ 登録日時', auto_now_add = True)
+    updateDate = models.DateTimeField('その他カテゴリ 更新日時', auto_now = True, blank=True, null=True)
+
+    def __str__(self):
+            return self.OtherCategory
+class Other(models.Model):
+	otherapp = models.CharField('家具、文房具、食器、雑貨、その他',max_length=200)
+	OtherCategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT)
+	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
+	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
+	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
+	def __str__(self):
+     	    return self.otherapp
+#TODO:HTMLとかviewsとかurlsにもその他追加＆年齢を追加できるように！
