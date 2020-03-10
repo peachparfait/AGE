@@ -52,7 +52,6 @@ class Food(models.Model):
     
     createDate = models.DateTimeField('食品 登録日時', auto_now_add = True)
     updateDate = models.DateTimeField('食品 更新日時', auto_now = True, blank=True, null=True)
-    favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
     def __str__(self):
      	    return self.foodname
 
@@ -73,7 +72,7 @@ class HomeElecApp(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
-	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	def __str__(self):
      	    return self.HomeElecApp
 
@@ -82,7 +81,7 @@ class Aniversary(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
-	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 
 
 class OtherCategory(models.Model):
@@ -99,7 +98,7 @@ class Other(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
-	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	def __str__(self):
      	    return self.otherapp
 #TODO:HTMLとかviewsとかurlsにもその他追加＆年齢を追加できるように！
