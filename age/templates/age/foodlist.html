@@ -30,5 +30,14 @@
             <li><a href="{% url 'age:annivdelete' ani.pk%}" >削除画面へ</a></li>
         </ul>
     {% endfor %}
+    <h2>その他</h2>
+    {% for otr in object_list4 %}
+        <p>{{otr.otherapp}}</p>
+        <ul>
+            <li><a href="{% url 'age:otherdetail' ani.pk%}">詳細画面へ</a></li>
+            <li><a href="{% url 'age:otherupdate' ani.pk%}" >編集画面へ</a></li>
+            <li><a href="{% url 'age:otherdelete' ani.pk%}" >削除画面へ</a></li>
+        </ul>
+    {% endfor %}
     <p><a href="{% url 'age:foodcreate' %}" >新規作成画面へ</a></p>
 {%endblock content %}

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
   {% block header %}
-    <h1>家電の追加</h1>
+    <h1>その他の追加</h1>
   {% endblock %}
   {% block content %}
   <p>種類</p>
-  <p><a href="{% url 'age:homeeleccreate' %}" >家電</a></p>
+  <p><a href="{% url 'age:othercreate' %}" >その他</a></p>
   <ul class="kind">
+  <li><a href="{% url 'age:homeeleccreate' %}" >家電</a></li>
   <li><a href="{% url 'age:annivcreate' %}" >記念日</a></li>
   <li><a href="{% url 'age:foodcreate' %}" >食品</a></li>
-  <li><a href="{% url 'age:othercreate' %}" >その他</a></li>
   </ul>
     <form action = "" method ="post">{% csrf_token %}
       {{ form.as_p }}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
@@ -51,7 +52,7 @@ class Food(models.Model):
     
     createDate = models.DateTimeField('食品 登録日時', auto_now_add = True)
     updateDate = models.DateTimeField('食品 更新日時', auto_now = True, blank=True, null=True)
-    
+    favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
     def __str__(self):
      	    return self.foodname
 
@@ -72,6 +73,7 @@ class HomeElecApp(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
 	def __str__(self):
      	    return self.HomeElecApp
 
@@ -80,22 +82,24 @@ class Aniversary(models.Model):
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
 
 
 class OtherCategory(models.Model):
-    OtherCategory = models.CharField('その他カテゴリ',max_length=30)
+    othercategory = models.CharField('その他カテゴリ',max_length=30)
 
     createDate = models.DateTimeField('その他カテゴリ 登録日時', auto_now_add = True)
     updateDate = models.DateTimeField('その他カテゴリ 更新日時', auto_now = True, blank=True, null=True)
 
     def __str__(self):
-            return self.OtherCategory
+            return self.othercategory
 class Other(models.Model):
 	otherapp = models.CharField('家具、文房具、食器、雑貨、その他',max_length=200)
-	OtherCategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT)
+	othercategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT)
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
+	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)])
 	def __str__(self):
      	    return self.otherapp
 #TODO:HTMLとかviewsとかurlsにもその他追加＆年齢を追加できるように！

@@ -25,5 +25,11 @@ urlpatterns = [
     path('annivcreate/', views.AnnivCreateView.as_view(),name="annivcreate"),
     path('annivdelete/<int:pk>/', views.AnnivDeleteView.as_view(),name="annivdelete"),
     path('annivupdate/<int:pk>/', views.AnnivUpdateView.as_view(),name="annivupdate"),
+    #その他
+    path('otherdetail/<int:pk>/', views.OtherDetailView.as_view(),name="otherdetail"),
+    path('othercreate/', views.OtherCreateView.as_view(),name="othercreate"),
+    path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),
+    path('otherupdate/<int:pk>/', views.OtherUpdateView.as_view(),name="otherupdate"),
+
 ]
 

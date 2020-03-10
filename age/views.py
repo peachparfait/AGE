@@ -16,6 +16,7 @@ class FoodListView(ListView):
         context.update({
             'object_list2': HomeElecApp.objects.all(),
             'object_list3': Aniversary.objects.all(),
+            'object_list4': Other.objects.all(),
         })
         return context
 
@@ -56,7 +57,7 @@ class HomeelecDetailView(DetailView):
 class HomeelecCreateView(CreateView):
     model = HomeElecApp
     template_name = "age/homeelec_create.html"
-    fields = ['HomeElecApp','ElecCategory']
+    fields = ['HomeElecApp','ElecCategory','story']
     success_url = reverse_lazy('age:foodlist')
 
 class HomeelecDeleteView(DeleteView):
@@ -67,7 +68,7 @@ class HomeelecDeleteView(DeleteView):
 class HomeelecUpdateView(UpdateView):
     model = HomeElecApp
     template_name = "age/homeelec_update.html"
-    fields = ['HomeElecApp','ElecCategory']
+    fields = ['HomeElecApp','ElecCategory','story']
     success_url = reverse_lazy('age:foodlist')
 
     #記念日
@@ -95,8 +96,29 @@ class AnnivUpdateView(UpdateView):
     template_name = "age/anniv_update.html"
     fields = ['annivapp','story']
     success_url = reverse_lazy('age:foodlist')
+#他
+class OtherDetailView(DetailView):
+    model = Other
+    template_name = "age/other_detail.html"
+    success_url = reverse_lazy('age:foodlist')
 
 
+class OtherCreateView(CreateView):
+    model = Other
+    template_name = "age/other_create.html"
+    fields = ['otherapp','story','othercategory']
+    success_url = reverse_lazy('age:foodlist')
+
+class OtherDeleteView(DeleteView):
+    model = Other
+    template_name = "age/other_delete.html"
+    success_url = reverse_lazy('age:foodlist')
+
+class OtherUpdateView(UpdateView):
+    model = Other
+    template_name = "age/other_update.html"
+    fields = ['otherapp','story','othercategory']
+    success_url = reverse_lazy('age:foodlist')
 #新規登録
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
