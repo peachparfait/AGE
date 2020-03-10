@@ -3,15 +3,6 @@
     <h1>一覧</h1>
 {% endblock header %}
 {% block content %}
-<h2>食品</h2>
-    {% for food in object_list %}
-        <p>{{food.foodname}}</p>
-        <ul>
-            <li><a href="{% url 'age:fooddetail' food.pk%}">詳細画面へ</a></li>
-            <li><a href="{% url 'age:foodupdate' food.pk%}" >編集画面へ</a></li>
-            <li><a href="{% url 'age:fooddelete' food.pk%}" >削除画面へ</a></li>
-        </ul>
-    {% endfor %}
     <h2>家電</h2>
     {% for elec in object_list2 %}
         <p>{{elec.HomeElecApp}}</p>
@@ -21,6 +12,15 @@
             <li><a href="{% url 'age:homeelecdelete' elec.pk%}" >削除画面へ</a></li>
         </ul>
 {% endfor %}
+<h2>家具</h2>
+    {% for furn in object_list %}
+        <p>{{furn.furnname}}</p>
+        <ul>
+            <li><a href="{% url 'age:furndetail' furn.pk%}">詳細画面へ</a></li>
+            <li><a href="{% url 'age:furnupdate' furn.pk%}" >編集画面へ</a></li>
+            <li><a href="{% url 'age:furndelete' furn.pk%}" >削除画面へ</a></li>
+        </ul>
+    {% endfor %}
     <h2>記念日</h2>
     {% for ani in object_list3 %}
         <p>{{ani.annivapp}}</p>

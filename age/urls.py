@@ -10,11 +10,11 @@ urlpatterns = [
     path('signup',views.SignUpView.as_view(),name='signup'),
     path('complete',views.SignupComplete,name='complete'),
     #食べ物
-    path('list/', views.FoodListView.as_view(),name="foodlist"),
-    path('fooddetail/<int:pk>/', views.FoodDetailView.as_view(),name="fooddetail"),
-    path('foodcreate/', views.FoodCreateView.as_view(),name="foodcreate"),
-    path('fooddelete/<int:pk>/', views.FoodDeleteView.as_view(),name="fooddelete"),
-    path('foodupdate/<int:pk>/', views.FoodUpdateView.as_view(),name="foodupdate"),
+    path('list/', views.FurnListView.as_view(),name="list"),
+    path('furndetail/<int:pk>/', views.FurnDetailView.as_view(),name="furndetail"),
+    path('furncreate/', views.FurnCreateView.as_view(),name="furncreate"),
+    path('furndelete/<int:pk>/', views.FurnDeleteView.as_view(),name="furndelete"),
+    path('furnupdate/<int:pk>/', views.FurnUpdateView.as_view(),name="furnupdate"),
     #家電
     path('homeelecdetail/<int:pk>/', views.HomeelecDetailView.as_view(),name="homeelecdetail"),
     path('homeeleccreate/', views.HomeelecCreateView.as_view(),name="homeeleccreate"),

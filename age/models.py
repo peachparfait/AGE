@@ -33,27 +33,14 @@ class CustomUser(AbstractUser):
 
 	rebviewComment = models.TextField(null=True)
 
-# FoodCategoryモデルを作成
-class FoodCategory(models.Model):
-    foodcategory = models.CharField('食品カテゴリ',max_length=30)
-
-    createDate = models.DateTimeField('食品カテゴリ 登録日時', auto_now_add = True)
-    updateDate = models.DateTimeField('食品カテゴリ 更新日時', auto_now = True, blank=True, null=True)
-
-    def __str__(self):
-            return self.foodcategory
 
 
-# Foodモデルを作成
-class Food(models.Model):
-    foodname = models.CharField('食品名',max_length=200)
-    # FoodCategoryテーブルと一対多（ForeignKey）のリレーション
-    foodcategory = models.ForeignKey(FoodCategory,on_delete=models.PROTECT)
-    
-    createDate = models.DateTimeField('食品 登録日時', auto_now_add = True)
-    updateDate = models.DateTimeField('食品 更新日時', auto_now = True, blank=True, null=True)
-    def __str__(self):
-     	    return self.foodname
+
+#Furnモデルを作成
+class Furn(models.Model):
+    furnname = models.CharField('家具名',max_length=200)
+    createDate = models.DateTimeField('家具 登録日時', auto_now_add = True)
+    updateDate = models.DateTimeField('家具 更新日時', auto_now = True, blank=True, null=True)
 
 # HomeElecAppCategoryモデルを作成
 class HomeElecAppCategory(models.Model):
