@@ -67,7 +67,7 @@ class HomeElecAppCategory(models.Model):
 
 # HomeElecAppモデルを作成
 class HomeElecApp(models.Model):
-	HomeElecApp = models.CharField('家電',max_length=200)
+	HomeElecApp = models.CharField('家電名',max_length=200)
 	ElecCategory = models.ForeignKey(HomeElecAppCategory,on_delete=models.PROTECT)
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
@@ -77,7 +77,7 @@ class HomeElecApp(models.Model):
      	    return self.HomeElecApp
 
 class Aniversary(models.Model):
-	annivapp = models.CharField('記念日',max_length=200)
+	annivapp = models.CharField('記念日名',max_length=200)
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
@@ -93,7 +93,7 @@ class OtherCategory(models.Model):
     def __str__(self):
             return self.othercategory
 class Other(models.Model):
-	otherapp = models.CharField('家具、文房具、食器、雑貨、その他',max_length=200)
+	otherapp = models.CharField('名前',max_length=200)
 	othercategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT)
 	story = models.TextField('ストーリー',max_length=1000,default='そのものに対する思い出やエピソードなどを入力してください')
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)

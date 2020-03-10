@@ -57,7 +57,7 @@ class HomeelecDetailView(DetailView):
 class HomeelecCreateView(CreateView):
     model = HomeElecApp
     template_name = "age/homeelec_create.html"
-    fields = ['HomeElecApp','ElecCategory','story']
+    fields = ['HomeElecApp','ElecCategory','story','favorite']
     success_url = reverse_lazy('age:foodlist')
 
 class HomeelecDeleteView(DeleteView):
@@ -68,7 +68,7 @@ class HomeelecDeleteView(DeleteView):
 class HomeelecUpdateView(UpdateView):
     model = HomeElecApp
     template_name = "age/homeelec_update.html"
-    fields = ['HomeElecApp','ElecCategory','story']
+    fields = ['HomeElecApp','ElecCategory','story','favorite']
     success_url = reverse_lazy('age:foodlist')
 
     #記念日
@@ -83,7 +83,7 @@ class AnnivDetailView(DetailView):
 class AnnivCreateView(CreateView):
     model = Aniversary
     template_name = "age/anniv_create.html"
-    fields = ['annivapp','story']
+    fields = ['annivapp','story','favorite']
     success_url = reverse_lazy('age:foodlist')
 
 class AnnivDeleteView(DeleteView):
@@ -94,7 +94,7 @@ class AnnivDeleteView(DeleteView):
 class AnnivUpdateView(UpdateView):
     model = Aniversary
     template_name = "age/anniv_update.html"
-    fields = ['annivapp','story']
+    fields = ['annivapp','story','favorite']
     success_url = reverse_lazy('age:foodlist')
 #他
 class OtherDetailView(DetailView):
@@ -106,7 +106,7 @@ class OtherDetailView(DetailView):
 class OtherCreateView(CreateView):
     model = Other
     template_name = "age/other_create.html"
-    fields = ['otherapp','story','othercategory']
+    fields = ['otherapp','story','othercategory','favorite']
     success_url = reverse_lazy('age:foodlist')
 
 class OtherDeleteView(DeleteView):
@@ -117,7 +117,7 @@ class OtherDeleteView(DeleteView):
 class OtherUpdateView(UpdateView):
     model = Other
     template_name = "age/other_update.html"
-    fields = ['otherapp','story','othercategory']
+    fields = ['otherapp','story','othercategory','favorite']
     success_url = reverse_lazy('age:foodlist')
 #新規登録
 class SignUpView(CreateView):
