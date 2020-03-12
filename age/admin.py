@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import CustomUser,Furn,HomeElecApp,HomeElecAppCategory,Aniversary,Other,OtherCategory,Clothes,ClothCategory
+from .models import Image
 
+admin.site.register(Image)
 # Register your models here.
 admin.site.register(CustomUser)
 admin.site.register(Furn)

@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -122,3 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #Userモデルのカスタマイズ化を宣言
 AUTH_USER_MODEL = 'age.CustomUser'
+#画像パスの設定
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URLをわかりやすくmediaへ変更
+MEDIA_URL = '/media/'
+

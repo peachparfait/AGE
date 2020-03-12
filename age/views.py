@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
-from .models import Furn,HomeElecApp,Aniversary,Other
+from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,Image
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm,ImageForm
 from django.http import HttpResponse
 class index(TemplateView):
     template_name = "age/index.html"
@@ -17,6 +17,8 @@ class FurnListView(ListView):
             'object_list2': HomeElecApp.objects.all(),
             'object_list3': Aniversary.objects.all(),
             'object_list4': Other.objects.all(),
+            'object_list5': Clothes.objects.all(),
+
         })
         return context
 
@@ -96,6 +98,29 @@ class AnnivUpdateView(UpdateView):
     template_name = "age/anniv_update.html"
     fields = ['annivapp','story','favorite']
     success_url = reverse_lazy('age:list')
+#ファッション
+class ClothesDetailView(DetailView):
+    model = Clothes
+    template_name = "age/clothes_detail.html"
+    success_url = reverse_lazy('age:list')
+
+
+class ClothesCreateView(CreateView):
+    model = Clothes
+    template_name = "age/clothes_create.html"
+    fields = ['fashionapp','story','fashioncategory','favorite']
+    success_url = reverse_lazy('age:list')
+
+class ClothesDeleteView(DeleteView):
+    model = Clothes
+    template_name = "age/clothes_delete.html"
+    success_url = reverse_lazy('age:list')
+
+class ClothesUpdateView(UpdateView):
+    model = Clothes
+    template_name = "age/clothes_update.html"
+    fields = ['fashionapp','story','fashioncategory','favorite']
+    success_url = reverse_lazy('age:list')
 #他
 class OtherDetailView(DetailView):
     model = Other
@@ -127,3 +152,19 @@ class SignUpView(CreateView):
 
 def SignupComplete(request):
     return HttpResponse('<p>あなた宛てに認証用のメールを送信しました</p>')
+
+def gallery(request):
+    images = Image.objects.all()
+    context = {'images':images}
+    return render(request, 'age/gallery.html', context)
+def upload(request):
+    if request.method == "POST":
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('age:gallery')
+    else:
+        form = ImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/upload.html', context)

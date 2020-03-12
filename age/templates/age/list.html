@@ -30,6 +30,15 @@
             <li><a href="{% url 'age:annivdelete' ani.pk%}" >削除画面へ</a></li>
         </ul>
     {% endfor %}
+    <h2>ファッション</h2>
+    {% for fas in object_list5 %}
+        <p>{{fas.fashionapp}}</p>
+        <ul>
+            <li><a href="{% url 'age:clothesdetail' fas.pk%}">詳細画面へ</a></li>
+            <li><a href="{% url 'age:clothesupdate' fas.pk%}" >編集画面へ</a></li>
+            <li><a href="{% url 'age:clothesdelete' fas.pk%}" >削除画面へ</a></li>
+        </ul>
+    {% endfor %}
     <h2>その他</h2>
     {% for otr in object_list4 %}
         <p>{{otr.otherapp}}</p>

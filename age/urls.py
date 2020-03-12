@@ -25,11 +25,18 @@ urlpatterns = [
     path('annivcreate/', views.AnnivCreateView.as_view(),name="annivcreate"),
     path('annivdelete/<int:pk>/', views.AnnivDeleteView.as_view(),name="annivdelete"),
     path('annivupdate/<int:pk>/', views.AnnivUpdateView.as_view(),name="annivupdate"),
+    #ファッション
+    path('fashiondetail/<int:pk>/', views.ClothesDetailView.as_view(),name="clothesdetail"),
+    path('fashioncreate/', views.ClothesCreateView.as_view(),name="clothescreate"),
+    path('fashiondelete/<int:pk>/', views.ClothesDeleteView.as_view(),name="clothesdelete"),
+    path('fashionupdate/<int:pk>/', views.ClothesUpdateView.as_view(),name="clothesupdate"),
     #その他
     path('otherdetail/<int:pk>/', views.OtherDetailView.as_view(),name="otherdetail"),
     path('othercreate/', views.OtherCreateView.as_view(),name="othercreate"),
     path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),
     path('otherupdate/<int:pk>/', views.OtherUpdateView.as_view(),name="otherupdate"),
-
+    #ギャラリー
+    path('gallery/', views.gallery, name='gallery'),
+    path('upload/', views.upload, name='upload'),
 ]
 
