@@ -13,17 +13,3 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = ['picture1', 'title']
 
-class FurnForm(forms.ModelForm):
-
-    class Meta:
-        model = Furn
-        fields = ('birthday')
-        widgets = {
-            'birthday': datetimepicker.DatePickerInput(
-                format='%Y-%m-%d',
-                options={
-                    'locale': 'ja',
-                    'dayViewHeaderFormat': 'YYYY年 MMMM',
-                }
-            ),
-        }

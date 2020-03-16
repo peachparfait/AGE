@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load age %}
 {% block header %}
     <h1>一覧</h1>
 {% endblock header %}
@@ -6,6 +7,7 @@
     <h2>家電</h2>
     {% for elec in object_list2 %}
         <p>{{elec.HomeElecApp}}</p>
+        <p>{{ 0 | showage:elec.birthday}}歳</p>
         <ul>
             <li><a href="{% url 'age:homeelecdetail' elec.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:homeelecupdate' elec.pk%}" >編集画面へ</a></li>
@@ -15,6 +17,7 @@
 <h2>家具</h2>
     {% for furn in object_list %}
         <p>{{furn.furnname}}</p>
+        <p>{{ 0 | showage:furn.birthday}}歳</p>
         <ul>
             <li><a href="{% url 'age:furndetail' furn.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:furnupdate' furn.pk%}" >編集画面へ</a></li>
@@ -24,6 +27,7 @@
     <h2>記念日</h2>
     {% for ani in object_list3 %}
         <p>{{ani.annivapp}}</p>
+        <p>{{ 0 | showage:ani.didday}}歳</p>
         <ul>
             <li><a href="{% url 'age:annivdetail' ani.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:annivupdate' ani.pk%}" >編集画面へ</a></li>
@@ -33,6 +37,7 @@
     <h2>ファッション</h2>
     {% for fas in object_list5 %}
         <p>{{fas.fashionapp}}</p>
+        <p>{{ 0 | showage:fas.birthday}}歳</p>
         <ul>
             <li><a href="{% url 'age:clothesdetail' fas.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:clothesupdate' fas.pk%}" >編集画面へ</a></li>
@@ -42,6 +47,7 @@
     <h2>その他</h2>
     {% for otr in object_list4 %}
         <p>{{otr.otherapp}}</p>
+        <p>{{ 0 | showage:otr.birthday}}歳</p>
         <ul>
             <li><a href="{% url 'age:otherdetail' ani.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:otherupdate' ani.pk%}" >編集画面へ</a></li>
