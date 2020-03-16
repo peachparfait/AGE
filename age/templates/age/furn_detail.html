@@ -4,5 +4,7 @@
 {% endblock %}
 {% block content %}
 <p>タイトル：{{ object.furnname }}</p>
-<p>年齢：{{ object.createDate }}</p>
+<p>{{ 0 | showage:object.birthday}}歳</p>
+<p>大事度：{{object.favorite}}</p>
+<p>ストーリー：{{ object.story }}</p>
 {% endblock%}

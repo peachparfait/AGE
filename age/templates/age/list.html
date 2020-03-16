@@ -27,7 +27,7 @@
     <h2>記念日</h2>
     {% for ani in object_list3 %}
         <p>{{ani.annivapp}}</p>
-        <p>{{ 0 | showage:ani.didday}}歳</p>
+        <p>{{ 0 | showage:ani.didday}}年</p>
         <ul>
             <li><a href="{% url 'age:annivdetail' ani.pk%}">詳細画面へ</a></li>
             <li><a href="{% url 'age:annivupdate' ani.pk%}" >編集画面へ</a></li>

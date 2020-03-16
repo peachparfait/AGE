@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
+{% load age %}
 {% block header %}
 <h1>記念日　詳細画面</h1>
 {% endblock %}
 {% block content %}
 <p>タイトル：{{ object.annivapp}}</p>
+<p>{{ 0 | showage:object.didday}}年</p>
+<p>大事度：{{object.favorite}}</p>
 <p>ストーリー：{{ object.story }}</p>
 {% endblock%}
