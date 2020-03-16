@@ -34,7 +34,7 @@ class FurnDetailView(DetailView):
 class FurnCreateView(CreateView):
     model = Furn
     template_name = "age/furn_create.html"
-    fields = ['furnname']
+    fields = ['furnname','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
 class FurnDeleteView(DeleteView):
@@ -45,7 +45,7 @@ class FurnDeleteView(DeleteView):
 class FurnUpdateView(UpdateView):
     model = Furn
     template_name = "age/furn_update.html"
-    fields = ['furnname']
+    fields = ['furnname','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
 #家電
@@ -59,7 +59,7 @@ class HomeelecDetailView(DetailView):
 class HomeelecCreateView(CreateView):
     model = HomeElecApp
     template_name = "age/homeelec_create.html"
-    fields = ['HomeElecApp','ElecCategory','story','favorite']
+    fields = ['HomeElecApp','ElecCategory','story','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
 class HomeelecDeleteView(DeleteView):
@@ -70,7 +70,7 @@ class HomeelecDeleteView(DeleteView):
 class HomeelecUpdateView(UpdateView):
     model = HomeElecApp
     template_name = "age/homeelec_update.html"
-    fields = ['HomeElecApp','ElecCategory','story','favorite']
+    fields = ['HomeElecApp','ElecCategory','story','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
     #記念日
@@ -85,7 +85,7 @@ class AnnivDetailView(DetailView):
 class AnnivCreateView(CreateView):
     model = Aniversary
     template_name = "age/anniv_create.html"
-    fields = ['annivapp','story','favorite']
+    fields = ['annivapp','story','favorite','didday']
     success_url = reverse_lazy('age:list')
 
 class AnnivDeleteView(DeleteView):
@@ -96,7 +96,7 @@ class AnnivDeleteView(DeleteView):
 class AnnivUpdateView(UpdateView):
     model = Aniversary
     template_name = "age/anniv_update.html"
-    fields = ['annivapp','story','favorite']
+    fields = ['annivapp','story','favorite','didday']
     success_url = reverse_lazy('age:list')
 #ファッション
 class ClothesDetailView(DetailView):
@@ -108,7 +108,7 @@ class ClothesDetailView(DetailView):
 class ClothesCreateView(CreateView):
     model = Clothes
     template_name = "age/clothes_create.html"
-    fields = ['fashionapp','story','fashioncategory','favorite']
+    fields = ['fashionapp','story','fashioncategory','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
 class ClothesDeleteView(DeleteView):
@@ -119,7 +119,7 @@ class ClothesDeleteView(DeleteView):
 class ClothesUpdateView(UpdateView):
     model = Clothes
     template_name = "age/clothes_update.html"
-    fields = ['fashionapp','story','fashioncategory','favorite']
+    fields = ['fashionapp','story','fashioncategory','favorite','birthday']
     success_url = reverse_lazy('age:list')
 #他
 class OtherDetailView(DetailView):
@@ -131,7 +131,7 @@ class OtherDetailView(DetailView):
 class OtherCreateView(CreateView):
     model = Other
     template_name = "age/other_create.html"
-    fields = ['otherapp','story','othercategory','favorite']
+    fields = ['otherapp','story','othercategory','favorite','birthday']
     success_url = reverse_lazy('age:list')
 
 class OtherDeleteView(DeleteView):
@@ -142,7 +142,7 @@ class OtherDeleteView(DeleteView):
 class OtherUpdateView(UpdateView):
     model = Other
     template_name = "age/other_update.html"
-    fields = ['otherapp','story','othercategory','favorite']
+    fields = ['otherapp','story','othercategory','favorite','birthday']
     success_url = reverse_lazy('age:list')
 #新規登録
 class SignUpView(CreateView):

@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
 class CustomUser(AbstractUser):
 	birthday = models.DateField(blank=True,null=True)
@@ -54,6 +55,7 @@ class Furn(models.Model):
 	furnname = models.CharField('家具名',max_length=200)
 	img = models.ForeignKey(Image,on_delete=models.PROTECT,null=True)
 	story = models.TextField('ストーリー',max_length=1000,default='')
+	birthday = models.DateTimeField('誕生日（購入日など）',default=timezone.now)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	createDate = models.DateTimeField('家具 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家具 更新日時', auto_now = True, blank=True, null=True)
@@ -78,6 +80,7 @@ class HomeElecApp(models.Model):
 	ElecCategory = models.ForeignKey(HomeElecAppCategory,on_delete=models.PROTECT)
 	img = models.ForeignKey(Image,on_delete=models.PROTECT,null=True)
 	story = models.TextField('ストーリー',max_length=1000,default='')
+	birthday = models.DateTimeField('誕生日（購入日など）',default=timezone.now)
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
@@ -88,6 +91,7 @@ class Aniversary(models.Model):
 	annivapp = models.CharField('記念日名',max_length=200)
 	img = models.ForeignKey(Image,on_delete=models.PROTECT,null=True)
 	story = models.TextField('ストーリー',max_length=1000,default='')
+	didday = models.DateTimeField('記念日が起こった日付',default=timezone.now)
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
@@ -107,6 +111,7 @@ class Other(models.Model):
 	othercategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT)
 	img = models.ForeignKey(Image,on_delete=models.PROTECT,null=True)
 	story = models.TextField('ストーリー',max_length=1000,default='')
+	birthday = models.DateTimeField('誕生日（購入日など）',default=timezone.now)
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
@@ -125,6 +130,7 @@ class Clothes(models.Model):
 	fashioncategory = models.ForeignKey(ClothCategory,on_delete=models.PROTECT)
 	img = models.ForeignKey(Image,on_delete=models.PROTECT,null=True)
 	story = models.TextField('ストーリー',max_length=1000,default='')
+	birthday = models.DateTimeField('誕生日（購入日など）',default=timezone.now)
 	createDate = models.DateTimeField('ファッション 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('ファッション 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
