@@ -8,9 +8,7 @@ register = template.Library()
 
 @register.filter(name="showage")
 def showage(value, args):
-    now = datetime.datetime.now()
-    timezone = pytz.timezone('Asia/Tokyo')
-    now = timezone.localize(now)
+    now = datetime.date.today()
     if now.month > args.month: #その一年で誕生日の月が過ぎている
         return now.year - args.year
     elif now.month == args.month: #誕生月

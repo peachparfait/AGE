@@ -5,6 +5,7 @@
 {% block content %}
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
+    {{ imageform.as_p }}
     <input type="submit" value="その他内容を変更する">
 </form>
 {% endblock %}

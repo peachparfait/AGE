@@ -129,3 +129,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_URLをわかりやすくmediaへ変更
 MEDIA_URL = '/media/'
 
+

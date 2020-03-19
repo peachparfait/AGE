@@ -40,5 +40,6 @@ urlpatterns = [
     #ギャラリー
     path('gallery/', views.gallery, name='gallery'),
     path('upload/', views.upload, name='upload'),
+    path('webhook/', views.webhook, name='webhook'),
 ]
 
