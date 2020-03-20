@@ -49,9 +49,6 @@ class ElecImage(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	title = models.CharField(max_length=200,null=True)
-	def __str__(self):
-		return self.title
 
 class FurnImage(models.Model):
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
@@ -109,9 +106,6 @@ class OtherImage(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	title = models.CharField(max_length=200,null=True)
-	def __str__(self):
-		return self.title
 #Furnモデルを作成
 class Furn(models.Model):
 	furnname = models.CharField('家具名',max_length=200)

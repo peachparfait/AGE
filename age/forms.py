@@ -1,7 +1,7 @@
 import bootstrap_datepicker_plus as datetimepicker
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
-from .models import CustomUser,ElecImage,Furn, HomeElecApp,Aniversary,Clothes,Other,FurnImage
+from .models import CustomUser,ElecImage,Furn, HomeElecApp,Aniversary,Clothes,Other
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -16,11 +16,3 @@ class ElecForm(forms.ModelForm):
     class Meta:
         model = HomeElecApp
         fields = ['HomeElecApp','ElecCategory','story','favorite','birthday']
-class FurnImageForm(forms.ModelForm):
-    class Meta:
-        model = FurnImage
-        fields = ['picture1']
-class ElecForm(forms.ModelForm):
-    class Meta:
-        model = Furn
-        fields = ['furnapp','ElecCategory','story','favorite','birthday']

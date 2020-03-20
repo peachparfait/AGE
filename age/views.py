@@ -99,16 +99,17 @@ class HomeelecCreateView(CreateView,generic.edit.ModelFormMixin):
         })
         return context
     def post(self, request, *args, **kwargs):
-        form1 = ElecImageForm(**self.get_form_kwargs())
+        form1 = ElecImageForm(request.POST, request.FILES)
         form2 = ElecForm(**self.get_form_kwargs())
         if form1.is_valid() and form2.is_valid():
-            form1_query = form1.save(commit=False)
             form2_query = form2.save(commit=False)
             #form1_query=ElecImage.objects.get(pk=self.kwargs['pk'])
-            form1_query.save()
+            form1.save()
             form2_query.save()
-            return self.form_valid(form1)
+            return redirect('age:list')
             return self.form_valid(form2)
+            context = {'imageform':form1}
+            return render(request, 'age/homeelec_create.html', context)
         else:
             self.object = self.get_object()
             return self.form_invalid(form1)
