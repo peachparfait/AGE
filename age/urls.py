@@ -38,8 +38,7 @@ urlpatterns = [
     path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),
     path('otherupdate/<int:pk>/', views.OtherUpdateView.as_view(),name="otherupdate"),
     #ギャラリー
-    path('gallery/', views.gallery, name='gallery'),
-    path('upload/', views.upload, name='upload'),
+    #path('gallery/', views.gallery, name='gallery'),
     path('webhook/', views.webhook, name='webhook'),
 ]
 
