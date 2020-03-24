@@ -19,7 +19,8 @@ urlpatterns = [
     path('furnupdate/<int:pk>/', views.FurnUpdateView.as_view(),name="furnupdate"),
     #家電
     path('homeelecdetail/<int:pk>/', views.HomeelecDetailView.as_view(),name="homeelecdetail"),
-    path('homeeleccreate/', views.HomeelecCreateView.as_view(),name="homeeleccreate"),
+    #path('homeeleccreate/', views.HomeelecCreateView.as_view(),name="homeeleccreate"),
+    path('homeeleccreate/', views.eleccreate,name="homeeleccreate"),
     path('homeelecdelete/<int:pk>/', views.HomeelecDeleteView.as_view(),name="homeelecdelete"),
     path('homeelecupdate/<int:pk>/', views.HomeelecUpdateView.as_view(),name="homeelecupdate"),
     #記念日
@@ -38,7 +39,7 @@ urlpatterns = [
     path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),
     path('otherupdate/<int:pk>/', views.OtherUpdateView.as_view(),name="otherupdate"),
     #ギャラリー
-    #path('gallery/', views.gallery, name='gallery'),
+    path('gallery/', views.GalleryView.as_view(),name="gallery"),
     path('webhook/', views.webhook, name='webhook'),
 ]
 

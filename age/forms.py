@@ -8,4 +8,8 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ('username','email','birthday','gender',)
+class ElecForm(forms.ModelForm):
+    class Meta:
+        model = HomeElecApp
+        fields = ['HomeElecApp','ElecCategory','story','birthday','favorite','picture1']
 

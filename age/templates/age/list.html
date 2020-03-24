@@ -13,8 +13,8 @@
             <li><a href="{% url 'age:homeelecupdate' elec.pk%}" >編集画面へ</a></li>
             <li><a href="{% url 'age:homeelecdelete' elec.pk%}" >削除画面へ</a></li>
         </ul>
-{% endfor %}
-<h2>家具</h2>
+    {% endfor %}
+    <h2>家具</h2>
     {% for furn in object_list %}
         <p>{{furn.furnname}}</p>
         <p>{{ 0 | showage:furn.birthday}}歳</p>

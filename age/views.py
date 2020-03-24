@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, ListView,DetailView,CreateView,De
 from .models import Furn,HomeElecApp,Aniversary,Other,Clothes
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm,ElecForm
 from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
@@ -17,7 +17,22 @@ from . import models
 
 class index(TemplateView):
     template_name = "age/index.html"
+class GalleryView(ListView):
+    model = Furn
+    template_name = "age/gallery.html"
+    def get_context_data(self, **kwargs):
+        context = super(GalleryView, self).get_context_data(**kwargs)
+        context.update({
+            'object_list2': HomeElecApp.objects.all(),
+            'object_list3': Aniversary.objects.all(),
+            'object_list4': Other.objects.all(),
+            'object_list5': Clothes.objects.all(),
 
+        })
+        return context
+
+    def get_queryset(self):
+        return Furn.objects.all()
 class FurnListView(ListView):
     model = Furn
     template_name = "age/list.html"
@@ -44,7 +59,7 @@ class FurnDetailView(DetailView):
 class FurnCreateView(CreateView,generic.edit.ModelFormMixin):
     model = Furn
     template_name = "age/furn_create.html"
-    fields = ['furnname','favorite','birthday','story']
+    fields = ['furnname','favorite','birthday','story','picture1']
     success_url = reverse_lazy('age:list')
 
 class FurnDeleteView(DeleteView):
@@ -55,7 +70,7 @@ class FurnDeleteView(DeleteView):
 class FurnUpdateView(UpdateView):
     model = Furn
     template_name = "age/furn_update.html"
-    fields = ['furnname','favorite','story']
+    fields = ['furnname','favorite','story','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
     success_url = reverse_lazy('age:list')
 
 #家電
@@ -63,15 +78,26 @@ class FurnUpdateView(UpdateView):
 class HomeelecDetailView(DetailView):
     model = HomeElecApp
     template_name = "age/homeelec_detail.html"
-    fields = ['HomeElecApp','ElecCategory','story','favorite']
     success_url = reverse_lazy('age:list')
 
 
-class HomeelecCreateView(CreateView,generic.edit.ModelFormMixin):
-    model = HomeElecApp
-    template_name = "age/homeelec_create.html"
-    fields = ['HomeElecApp','ElecCategory','story','favorite']
-    success_url = reverse_lazy('age:list')
+#class HomeelecCreateView(CreateView,generic.edit.ModelFormMixin):
+#    model = HomeElecApp
+#    template_name = "age/homeelec_create.html"
+#    fields = ['HomeElecApp','ElecCategory','story','birthday','favorite','picture1']
+#    success_url = reverse_lazy('age:list')
+
+def eleccreate(request):
+    if request.method == "POST":
+        form = ElecForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('age:gallery')
+    else:
+        form = ElecForm()
+
+    context = {'form':form}
+    return render(request, 'age/homeelec_create.html', context)
 
 class HomeelecDeleteView(DeleteView):
     model = HomeElecApp
@@ -81,7 +107,7 @@ class HomeelecDeleteView(DeleteView):
 class HomeelecUpdateView(UpdateView):
     model = HomeElecApp
     template_name = "age/homeelec_update.html"
-    fields = ['HomeElecApp','ElecCategory','story','favorite']
+    fields = ['HomeElecApp','ElecCategory','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
     success_url = reverse_lazy('age:list')
 
     #記念日
@@ -96,7 +122,7 @@ class AnnivDetailView(DetailView):
 class AnnivCreateView(CreateView):
     model = Aniversary
     template_name = "age/anniv_create.html"
-    fields = ['annivapp','story','favorite','didday']
+    fields = ['annivapp','story','favorite','didday','picture1']
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({
@@ -113,7 +139,7 @@ class AnnivDeleteView(DeleteView):
 class AnnivUpdateView(UpdateView):
     model = Aniversary
     template_name = "age/anniv_update.html"
-    fields = ['annivapp','story','favorite']
+    fields = ['annivapp','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
     success_url = reverse_lazy('age:list')
 #ファッション
 class ClothesDetailView(DetailView):
@@ -125,7 +151,7 @@ class ClothesDetailView(DetailView):
 class ClothesCreateView(CreateView):
     model = Clothes
     template_name = "age/clothes_create.html"
-    fields = ['fashionapp','story','fashioncategory','favorite','birthday']
+    fields = ['fashionapp','story','fashioncategory','favorite','birthday','picture1']
     success_url = reverse_lazy('age:list')
 
 class ClothesDeleteView(DeleteView):
@@ -136,7 +162,7 @@ class ClothesDeleteView(DeleteView):
 class ClothesUpdateView(UpdateView):
     model = Clothes
     template_name = "age/clothes_update.html"
-    fields = ['fashionapp','story','fashioncategory','favorite']
+    fields = ['fashionapp','story','fashioncategory','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
     success_url = reverse_lazy('age:list')
 #他
 class OtherDetailView(DetailView):
@@ -148,7 +174,7 @@ class OtherDetailView(DetailView):
 class OtherCreateView(CreateView):
     model = Other
     template_name = "age/other_create.html"
-    fields = ['otherapp','story','othercategory','favorite','birthday']
+    fields = ['otherapp','story','othercategory','favorite','birthday','picture1']
     success_url = reverse_lazy('age:list')
 
 class OtherDeleteView(DeleteView):
@@ -159,7 +185,7 @@ class OtherDeleteView(DeleteView):
 class OtherUpdateView(UpdateView):
     model = Other
     template_name = "age/other_update.html"
-    fields = ['otherapp','story','othercategory','favorite']
+    fields = ['otherapp','story','othercategory','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
     success_url = reverse_lazy('age:list')
 #新規登録
 class SignUpView(CreateView):

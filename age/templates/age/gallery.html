@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
+{% load imagesize %}
   {% block header %}
     <h1>ギャラリー</h1>
   {% endblock %}
   {% block content %}
-{% for image in images %}
-   <img src='{{ MEDIA_URL }}{{image.picture1}}' width=200>
+{% for image in object_list%}
+   <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture2}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture3}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture4}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture5}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture6}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture7}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture8}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture9}}' width={{ 0 | size:image.favorite}}>
+   <img src='{{ MEDIA_URL }}{{image.picture10}}' width={{ 0 | size:image.favorite}}>
 {% endfor %}
-<h2><a href="{% url 'age:upload' %}">もっと見る</a></h2>
+<p><a href="{% url 'age:homeeleccreate' %}" >新規作成画面へ</a></p>
 {%endblock content %}
