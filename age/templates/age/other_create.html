@@ -11,7 +11,7 @@
   <li><a href="{% url 'age:furncreate' %}" >家具</a></li>
   <li><a href="{% url 'age:clothescreate' %}" >ファッション</a></li>
   </ul>
-    <form action = "" method ="post">{% csrf_token %}
+    <form enctype="multipart/form-data" action="{% url 'age:othercreate' %}"  method ="post">{% csrf_token %}
       {{ form.as_p }}
       {{ imageform.as_p }}
       <input type="submit" value="追加する">

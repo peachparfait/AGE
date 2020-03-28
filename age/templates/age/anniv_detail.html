@@ -4,8 +4,76 @@
 <h1>記念日　詳細画面</h1>
 {% endblock %}
 {% block content %}
+<p><a href="{% url 'age:anivupdate' object.pk%}" >編集</a></p>
+<p><a href="{% url 'age:anivdelete' object.pk%}" >削除</a></p>
 <p>タイトル：{{ object.annivapp}}</p>
-<p>{{ 0 | showage:object.didday}}年</p>
+<p>記念日が起こってから{{ 0 | showage:object.didday}}年</p>
 <p>大事度：{{object.favorite}}</p>
 <p>ストーリー：{{ object.story }}</p>
+{% if object.picture1 %}
+   <img src='{{ MEDIA_URL }}{{object.picture1}}' width=200>
+{% endif %}
+{% if object.picture2 %}
+   <img src='{{ MEDIA_URL }}{{object.picture2}}' width=200>
+{% endif %}
+{% if object.picture3 %}
+   <img src='{{ MEDIA_URL }}{{object.picture3}}' width=200>
+{% endif %}
+{% if object.picture4 %}
+   <img src='{{ MEDIA_URL }}{{object.picture4}}' width=200>
+{% endif %}
+{% if object.picture5 %}
+   <img src='{{ MEDIA_URL }}{{object.picture5}}' width=200>
+{% endif %}
+{% if object.picture6 %}
+   <img src='{{ MEDIA_URL }}{{object.picture6}}' width=200>
+{% endif %}
+{% if object.picture7 %}
+   <img src='{{ MEDIA_URL }}{{object.picture7}}' width=200>
+{% endif %}
+{% if object.picture8 %}
+   <img src='{{ MEDIA_URL }}{{object.picture8}}' width=200>
+{% endif %}
+{% if object.picture9 %}
+   <img src='{{ MEDIA_URL }}{{object.picture9}}' width=200>
+{% endif %}
+{% if object.picture10 %}
+   <img src='{{ MEDIA_URL }}{{object.picture10}}' width=200>
+{% endif %}
+<h2>ヒストリー</h2>
+{% if object2.history1 %}
+   <p>{{object2.historyday1}} {{object2.history1}}</p>
+{% endif %}
+{% if object2.history2 %}
+   <p>{{object2.historyday2}} {{object2.history2}}</p>
+{% endif %}
+{% if object2.history3 %}
+   <p>{{object2.historyday3}} {{object2.history3}}</p>
+{% endif %}
+{% if object2.history4 %}
+   <p>{{object2.historyday4}} {{object2.history4}}</p>
+{% endif %}
+{% if object2.history5 %}
+   <p>{{object2.historyday5}} {{object2.history5}}</p>
+{% endif %}
+{% if object2.history6 %}
+   <p>{{object2.historyday6}} {{object2.history6}}</p>
+{% endif %}
+{% if object2.history7 %}
+   <p>{{object2.historyday7}} {{object2.history7}}</p>
+{% endif %}
+{% if object2.history8 %}
+   <p>{{object2.historyday8}} {{object2.history8}}</p>
+{% endif %}
+{% if object2.history9 %}
+   <p>{{object2.historyday9}} {{object2.history9}}</p>
+{% endif %}
+{% if object2.history10 %}
+   <p>{{object2.historyday10}} {{object2.history10}}</p>
+{% endif %}
+{% if object2 %}
+   <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ストーリーを編集</a></p>
+{% else %}
+   <p><a href="{% url 'age:anivhistory' %}" >ストーリーを追加</a></p>
+{% endif %}
 {% endblock%}

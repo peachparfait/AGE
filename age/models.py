@@ -37,11 +37,123 @@ class CustomUser(AbstractUser):
 
 	reviewComment = models.TextField(null=True)
 
+class FurnHistory(models.Model):
+	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+	historyday1 = models.DateField(default=datetime.date.today())
+	historyday2 = models.DateField(default=datetime.date.today())
+	historyday3 = models.DateField(default=datetime.date.today())
+	historyday4 = models.DateField(default=datetime.date.today())
+	historyday5 = models.DateField(default=datetime.date.today())
+	historyday6 = models.DateField(default=datetime.date.today())
+	historyday7 = models.DateField(default=datetime.date.today())
+	historyday8 = models.DateField(default=datetime.date.today())
+	historyday9 = models.DateField(default=datetime.date.today())
+	historyday10 = models.DateField(default=datetime.date.today())
+	mdl = models.IntegerField(primary_key=True,default=0)
 
+class ElecHistory(models.Model):
+	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+	historyday1 = models.DateField(default=datetime.date.today())
+	historyday2 = models.DateField(default=datetime.date.today())
+	historyday3 = models.DateField(default=datetime.date.today())
+	historyday4 = models.DateField(default=datetime.date.today())
+	historyday5 = models.DateField(default=datetime.date.today())
+	historyday6 = models.DateField(default=datetime.date.today())
+	historyday7 = models.DateField(default=datetime.date.today())
+	historyday8 = models.DateField(default=datetime.date.today())
+	historyday9 = models.DateField(default=datetime.date.today())
+	historyday10 = models.DateField(default=datetime.date.today())
+	mdl = models.IntegerField(primary_key=True,default=0)
 
+class AnivHistory(models.Model):
+	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+	historyday1 = models.DateField(default=datetime.date.today())
+	historyday2 = models.DateField(default=datetime.date.today())
+	historyday3 = models.DateField(default=datetime.date.today())
+	historyday4 = models.DateField(default=datetime.date.today())
+	historyday5 = models.DateField(default=datetime.date.today())
+	historyday6 = models.DateField(default=datetime.date.today())
+	historyday7 = models.DateField(default=datetime.date.today())
+	historyday8 = models.DateField(default=datetime.date.today())
+	historyday9 = models.DateField(default=datetime.date.today())
+	historyday10 = models.DateField(default=datetime.date.today())
+	mdl = models.IntegerField(primary_key=True,default=0)
+
+class ClothHistory(models.Model):
+	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+	historyday1 = models.DateField(default=datetime.date.today())
+	historyday2 = models.DateField(default=datetime.date.today())
+	historyday3 = models.DateField(default=datetime.date.today())
+	historyday4 = models.DateField(default=datetime.date.today())
+	historyday5 = models.DateField(default=datetime.date.today())
+	historyday6 = models.DateField(default=datetime.date.today())
+	historyday7 = models.DateField(default=datetime.date.today())
+	historyday8 = models.DateField(default=datetime.date.today())
+	historyday9 = models.DateField(default=datetime.date.today())
+	historyday10 = models.DateField(default=datetime.date.today())
+	mdl = models.IntegerField(primary_key=True,default=0)
+
+class OtherHistory(models.Model):
+	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+	historyday1 = models.DateField(default=datetime.date.today())
+	historyday2 = models.DateField(default=datetime.date.today())
+	historyday3 = models.DateField(default=datetime.date.today())
+	historyday4 = models.DateField(default=datetime.date.today())
+	historyday5 = models.DateField(default=datetime.date.today())
+	historyday6 = models.DateField(default=datetime.date.today())
+	historyday7 = models.DateField(default=datetime.date.today())
+	historyday8 = models.DateField(default=datetime.date.today())
+	historyday9 = models.DateField(default=datetime.date.today())
+	historyday10 = models.DateField(default=datetime.date.today())
+	mdl = models.IntegerField(primary_key=True,default=0)
 #Furnモデルを作成
 class Furn(models.Model):
-	furnname = models.CharField('家具名',max_length=200)
+	name = models.CharField('家具名',max_length=200)
 	story = models.TextField('ストーリー',max_length=1000,default='')
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
@@ -58,7 +170,7 @@ class Furn(models.Model):
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
 	def __str__(self):
-		return self.furnname
+		return self.name
 
 
 
@@ -74,8 +186,8 @@ class HomeElecAppCategory(models.Model):
 
 # HomeElecAppモデルを作成
 class HomeElecApp(models.Model):
-	HomeElecApp = models.CharField('家電名',max_length=200)
-	ElecCategory = models.ForeignKey(HomeElecAppCategory,on_delete=models.PROTECT,verbose_name="家電の種類",default=1)
+	name = models.CharField('家電名',max_length=200)
+	category = models.ForeignKey(HomeElecAppCategory,on_delete=models.PROTECT,verbose_name="家電の種類",default=1)
 	story = models.TextField('ストーリー',max_length=1000,default='')
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
@@ -92,7 +204,7 @@ class HomeElecApp(models.Model):
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
 	def __str__(self):
-     	    return self.HomeElecApp
+     	    return self.name
 
 class Aniversary(models.Model):
 	annivapp = models.CharField('記念日名',max_length=200)
@@ -123,8 +235,8 @@ class OtherCategory(models.Model):
     def __str__(self):
             return self.othercategory
 class Other(models.Model):
-	otherapp = models.CharField('名前',max_length=200)
-	othercategory = models.ForeignKey(OtherCategory,on_delete=models.PROTECT,verbose_name="種類",default=1)
+	name = models.CharField('名前',max_length=200)
+	category = models.ForeignKey(OtherCategory,on_delete=models.PROTECT,verbose_name="種類",default=1)
 	story = models.TextField('ストーリー',max_length=1000,default='')
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
@@ -141,7 +253,7 @@ class Other(models.Model):
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
 	def __str__(self):
-     	    return self.otherapp
+     	    return self.name
 class ClothCategory(models.Model):
     fashioncategory = models.CharField('ファッションカテゴリ',max_length=30)
 
@@ -151,8 +263,8 @@ class ClothCategory(models.Model):
     def __str__(self):
             return self.fashioncategory
 class Clothes(models.Model):
-	fashionapp = models.CharField('名前',max_length=200)
-	fashioncategory = models.ForeignKey(ClothCategory,on_delete=models.PROTECT,verbose_name="ファッションの種類",default=1)
+	name = models.CharField('名前',max_length=200)
+	category = models.ForeignKey(ClothCategory,on_delete=models.PROTECT,verbose_name="ファッションの種類",default=1)
 	story = models.TextField('ストーリー',max_length=1000,default='')
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('ファッション 登録日時', auto_now_add = True)
@@ -169,4 +281,4 @@ class Clothes(models.Model):
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
 	def __str__(self):
-     	    return self.fashionapp
+     	    return self.name
