@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-toy">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="toy" clip-path="url(#clip-toy)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_70" data-name="グループ 70" transform="translate(-9 -7)">
+      <g id="多角形_4" data-name="多角形 4" transform="translate(40 26)" fill="#fff">
+        <path d="M 104.3606338500977 39.99999618530273 L 33.63936614990234 39.99999618530273 C 30.1784496307373 39.99999618530273 29.09596633911133 37.26344299316406 28.84664916992188 36.42472839355469 C 28.59731674194336 35.58600997924805 28.00911712646484 32.70254516601563 30.90803337097168 30.81194496154785 L 66.26864624023438 7.750661373138428 C 67.0831298828125 7.219494819641113 68.02761840820313 6.938727855682373 69 6.938727855682373 C 69.97238159179688 6.938727855682373 70.9168701171875 7.219494819641113 71.73135375976563 7.750678062438965 L 107.0919647216797 30.81194496154785 C 109.9908676147461 32.70254516601563 109.4026870727539 35.58600997924805 109.1533508300781 36.42472839355469 C 108.9040145874023 37.26344299316406 107.8215484619141 39.99999618530273 104.3606338500977 39.99999618530273 Z" stroke="none"/>
+        <path d="M 69 1.938713073730469 L 69 11.93873596191406 L 33.63936614990234 35.00000762939453 L 104.3606109619141 35.00000762939453 L 69 11.93873596191406 L 69 1.938713073730469 M 69 1.938716888427734 C 70.90134429931641 1.938716888427734 72.80269622802734 2.480018615722656 74.46267700195313 3.5626220703125 L 109.8232955932617 26.62389373779297 C 118.1544952392578 32.05728149414063 114.3070220947266 45.00000762939453 104.3606414794922 45.00000762939453 L 33.63936614990234 45.00000762939453 C 23.69297790527344 45.00000762939453 19.84547424316406 32.05728149414063 28.17668151855469 26.62389373779297 L 63.53731536865234 3.5626220703125 C 65.19730377197266 2.480018615722656 67.09865570068359 1.938716888427734 69 1.938716888427734 Z" stroke="none" fill="#7a9dff"/>
+      </g>
+      <g id="長方形_1158" data-name="長方形 1158" transform="translate(67 61)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="35" height="54" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="25" height="44" rx="5" fill="none"/>
+      </g>
+      <g id="長方形_1159" data-name="長方形 1159" transform="translate(117 61)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="35" height="54" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="25" height="44" rx="5" fill="none"/>
+      </g>
+      <g id="長方形_1160" data-name="長方形 1160" transform="translate(45 105)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="128" height="37" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="118" height="27" rx="5" fill="none"/>
+      </g>
+      <g id="長方形_1161" data-name="長方形 1161" transform="translate(138 134)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="30" height="54" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="20" height="44" rx="5" fill="none"/>
+      </g>
+      <g id="長方形_1162" data-name="長方形 1162" transform="translate(50 134)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="30" height="54" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="20" height="44" rx="5" fill="none"/>
+      </g>
+      <g id="長方形_1163" data-name="長方形 1163" transform="translate(94 134)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="30" height="54" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="20" height="44" rx="5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

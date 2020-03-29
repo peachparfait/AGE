@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-pc">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="pc" clip-path="url(#clip-pc)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_47" data-name="グループ 47" transform="translate(69 7)">
+      <g id="グループ_46" data-name="グループ 46" transform="translate(-69 -9)">
+        <g id="長方形_1153" data-name="長方形 1153" transform="translate(23 37)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+          <rect width="154" height="107" rx="10" stroke="none"/>
+          <rect x="5" y="5" width="144" height="97" rx="5" fill="none"/>
+        </g>
+        <line id="線_20" data-name="線 20" x2="141" transform="translate(29.5 116.5)" fill="none" stroke="#7a9dff" stroke-width="10"/>
+        <line id="線_21" data-name="線 21" y2="28" transform="translate(100.5 138.5)" fill="none" stroke="#7a9dff" stroke-width="15"/>
+        <line id="線_22" data-name="線 22" x2="68" transform="translate(66.5 166.5)" fill="none" stroke="#7a9dff" stroke-linecap="round" stroke-width="10"/>
+      </g>
+    </g>
+  </g>
+</svg>

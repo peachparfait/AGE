@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-stationary">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="stationary" clip-path="url(#clip-stationary)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_79" data-name="グループ 79" transform="translate(-43.945 100.907) rotate(-45)">
+      <rect id="長方形_1166" data-name="長方形 1166" width="49.833" height="132" rx="10" transform="translate(74.832 22.525)" fill="#aaff7a"/>
+      <g id="長方形_1167" data-name="長方形 1167" transform="translate(75 7)" fill="#fff" stroke="#aaff7a" stroke-width="10">
+        <rect width="49.832" height="31" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="39.832" height="21" rx="5" fill="none"/>
+      </g>
+      <path id="多角形_5" data-name="多角形 5" d="M17.181,7.753a3,3,0,0,1,5.639,0L38.536,50.975A3,3,0,0,1,35.717,55H4.283a3,3,0,0,1-2.819-4.025Z" transform="translate(119.832 200) rotate(180)" fill="#fff" stroke="#aaff7a" stroke-width="10"/>
+      <path id="多角形_6" data-name="多角形 6" d="M10.5,0,21,22H0Z" transform="translate(110.132 189) rotate(180)" fill="#aaff7a"/>
+    </g>
+  </g>
+</svg>

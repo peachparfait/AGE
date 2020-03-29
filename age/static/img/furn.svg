@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-furn">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="furn" clip-path="url(#clip-furn)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_41" data-name="グループ 41" transform="translate(-1 -6)">
+      <g id="グループ_40" data-name="グループ 40">
+        <g id="グループ_38" data-name="グループ 38" transform="translate(2.502 3)">
+          <g id="長方形_1144" data-name="長方形 1144" transform="translate(79.498 92)" fill="#fff" stroke="#ffe47a" stroke-width="10">
+            <rect width="38" height="95" rx="9" stroke="none"/>
+            <rect x="5" y="5" width="28" height="85" rx="4" fill="none"/>
+          </g>
+          <path id="合体_10" data-name="合体 10" d="M33.376,39.938v-19a5.566,5.566,0,0,1-7.493,5.218V32.73a6.769,6.769,0,1,1-13.539,0V27.293A8.092,8.092,0,0,1,0,20.409V10.59A8.072,8.072,0,0,1,.511,7.753,8,8,0,0,1,8.508,0H35.995a8,8,0,0,1,7.168,4.444A5.54,5.54,0,0,1,44.5,8.062V39.938a5.562,5.562,0,0,1-11.125,0Z" transform="translate(75.498 91)" fill="#ffe47a"/>
+        </g>
+        <g id="グループ_39" data-name="グループ 39" transform="translate(0 4.5)">
+          <path id="合体_8" data-name="合体 8" d="M20,0c5.87,0,20,30.4,20,42S31.045,63,20,63,0,53.6,0,42C0,33.728,14.13,0,20,0Z" transform="translate(80 21.5)" fill="#ffe47a"/>
+          <path id="パス_238" data-name="パス 238" d="M8,0c4.418,0,8.75,10.742,8.75,18.75S12.418,29,8,29s-9-2.242-9-10.25S3.582,0,8,0Z" transform="translate(93 50.5)" fill="#fff"/>
+          <path id="パス_237" data-name="パス 237" d="M0,0,2.1,14.642" transform="translate(100.233 75.191)" fill="none" stroke="#ffe47a" stroke-linecap="round" stroke-width="10"/>
+        </g>
+      </g>
+      <path id="パス_241" data-name="パス 241" d="M6,0A6,6,0,1,1,0,6,6,6,0,0,1,6,0Z" transform="translate(113 146)" fill="#ffe47a"/>
+    </g>
+  </g>
+</svg>

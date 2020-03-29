@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-av">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="av" clip-path="url(#clip-av)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_48" data-name="グループ 48">
+      <g id="長方形_1157" data-name="長方形 1157" transform="translate(46 22)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <rect width="109" height="156" rx="10" stroke="none"/>
+        <rect x="5" y="5" width="99" height="146" rx="5" fill="none"/>
+      </g>
+      <g id="楕円形_44" data-name="楕円形 44" transform="translate(66 91)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <circle cx="34.5" cy="34.5" r="34.5" stroke="none"/>
+        <circle cx="34.5" cy="34.5" r="29.5" fill="none"/>
+      </g>
+      <g id="楕円形_45" data-name="楕円形 45" transform="translate(88 114)" fill="#fff" stroke="#7a9dff" stroke-width="5">
+        <circle cx="12" cy="12" r="12" stroke="none"/>
+        <circle cx="12" cy="12" r="9.5" fill="none"/>
+      </g>
+      <g id="楕円形_46" data-name="楕円形 46" transform="translate(77 37)" fill="#fff" stroke="#7a9dff" stroke-width="10">
+        <circle cx="23.5" cy="23.5" r="23.5" stroke="none"/>
+        <circle cx="23.5" cy="23.5" r="18.5" fill="none"/>
+      </g>
+      <g id="楕円形_47" data-name="楕円形 47" transform="translate(93 53)" fill="#fff" stroke="#7a9dff" stroke-width="5">
+        <circle cx="7.5" cy="7.5" r="7.5" stroke="none"/>
+        <circle cx="7.5" cy="7.5" r="5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

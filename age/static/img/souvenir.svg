@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-souvenir">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="souvenir" clip-path="url(#clip-souvenir)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_88" data-name="グループ 88">
+      <g id="グループ_85" data-name="グループ 85" transform="translate(1 -5)">
+        <g id="パス_259" data-name="パス 259" transform="translate(32 43)" fill="none">
+          <path d="M29.5,0C45.792,0,59,11.193,59,25S45.792,50,29.5,50-1,30.807-1,17,13.208,0,29.5,0Z" stroke="none"/>
+          <path d="M 29.5 10 C 9 10 9 15.26867294311523 9 17 C 9 25.44718170166016 19.13000106811523 40 29.5 40 C 40.07009124755859 40 49 33.13083648681641 49 25 C 49 16.86916351318359 40.07009124755859 10 29.5 10 M 29.5 0 C 45.79240036010742 0 59 11.19289016723633 59 25 C 59 38.80710983276367 45.79240036010742 50 29.5 50 C 13.20759963989258 50 -1 30.80710983276367 -1 17 C -1 3.19287109375 13.20759963989258 0 29.5 0 Z" stroke="none" fill="#aaff7a"/>
+        </g>
+        <g id="パス_258" data-name="パス 258" transform="translate(109 43)" fill="none">
+          <path d="M29.5,0C45.792,0,58,3.193,58,17S45.792,50,29.5,50,0,38.807,0,25,13.208,0,29.5,0Z" stroke="none"/>
+          <path d="M 29.5 10 C 18.92990875244141 10 10 16.86916351318359 10 25 C 10 33.13083648681641 18.92990875244141 40 29.5 40 C 39.53349304199219 40 48 25.87267303466797 48 17 C 48 14.38190841674805 48 10 29.5 10 M 29.5 0 C 45.79240036010742 0 58 3.19287109375 58 17 C 58 30.80710983276367 45.79240036010742 50 29.5 50 C 13.20759963989258 50 0 38.80710983276367 0 25 C 0 11.19289016723633 13.20759963989258 0 29.5 0 Z" stroke="none" fill="#aaff7a"/>
+        </g>
+        <g id="長方形_1171" data-name="長方形 1171" transform="translate(61 32)" fill="#fff" stroke="#aaff7a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+          <path d="M0,0H77a0,0,0,0,1,0,0V52.5A38.5,38.5,0,0,1,38.5,91h0A38.5,38.5,0,0,1,0,52.5V0A0,0,0,0,1,0,0Z" stroke="none"/>
+          <path d="M6.763,5H70.237A1.763,1.763,0,0,1,72,6.763V52.5A33.5,33.5,0,0,1,38.5,86h0A33.5,33.5,0,0,1,5,52.5V6.763A1.763,1.763,0,0,1,6.763,5Z" fill="none"/>
+        </g>
+        <line id="線_25" data-name="線 25" y2="43" transform="translate(99.452 118.5)" fill="none" stroke="#aaff7a" stroke-width="20"/>
+        <rect id="長方形_1172" data-name="長方形 1172" width="78" height="28" rx="10" transform="translate(61 150)" fill="#aaff7a"/>
+      </g>
+    </g>
+  </g>
+</svg>
