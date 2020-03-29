@@ -1,0 +1,42 @@
+.header{
+    background-color: #ff2e00;
+    height: 50px;
+    width:100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    display: block !important;
+    margin: 0 auto 300px auto;
+}
+.header h1{
+    padding: auto 10px;
+    display: inline;
+    line-height: 25px;
+    margin: 0 100px 0 0;
+    float: left;
+}
+.header li{
+    padding: 0 10px;
+    margin-top:0;
+    list-style: none;
+    float: left;
+}
+.header a{
+    display: inline;
+    line-height: 25px;
+    margin-left: 7px;
+    padding: 16px 5px;
+    margin-top:0;
+    color: #fff;
+    text-decoration: none;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    margin:70px 0 100px 0; 
+    padding:0;
+    color: #2C2F33;
+    background-color: rgba(255, 255, 255, 0.781);
+    position: relative;
+    min-height: 100vh;
+}
