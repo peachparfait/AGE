@@ -24,7 +24,7 @@
 {% endif %}
 <p>{{ 0 | showage:object.birthday}}歳</p>
 <p>大事度：{{object.favorite}}</p>
-<p>ストーリー：{{ object.story }}</p>
+<p>ヒストリー：{{ object.story }}</p>
 {% if object.category %}
 <p>カテゴリ：{{ object.category }}</p>
 {% endif %}
@@ -93,23 +93,23 @@
 {% endfor %}
 {% if object2 %}
    {% if type == 'furn' %}
-      <p><a href="{% url 'age:furnhistoryupd' object.pk%}" >ストーリーを編集</a></p>
+      <p><a href="{% url 'age:furnhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
    {% elif type == 'elec' %}
-      <p><a href="{% url 'age:elechistoryupd' object.pk%}" >ストーリーを編集</a></p>
+      <p><a href="{% url 'age:elechistoryupd' object.pk%}" >ヒストリーを編集</a></p>
    {% elif type == 'cloth' %}
-      <p><a href="{% url 'age:fashionhistoryupd' object.pk%}" >ストーリーを編集</a></p>
+      <p><a href="{% url 'age:fashionhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
    {% elif type == 'other' %}
-      <p><a href="{% url 'age:otherhistoryupd' object.pk%}" >ストーリーを編集</a></p>
+      <p><a href="{% url 'age:otherhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
    {% endif %}
 {% else %}
    {% if type == 'furn' %}
-      <p><a href="{% url 'age:furnhistory' %}" >ストーリーを追加</a></p>
+      <p><a href="{% url 'age:furnhistory' %}" >ヒストリーを追加</a></p>
    {% elif type == 'elec' %}
-      <p><a href="{% url 'age:elechistory' %}" >ストーリーを追加</a></p>
+      <p><a href="{% url 'age:elechistory' %}" >ヒストリーを追加</a></p>
    {% elif type == 'cloth' %}
-      <p><a href="{% url 'age:fashionhistory'%}" >ストーリーを追加</a></p>
+      <p><a href="{% url 'age:fashionhistory'%}" >ヒストリーを追加</a></p>
    {% elif type == 'other' %}
-      <p><a href="{% url 'age:otherhistory'%}" >ストーリーを追加</a></p>
+      <p><a href="{% url 'age:otherhistory'%}" >ヒストリーを追加</a></p>
    {% endif %}
 {% endif %}
 {% endblock%}

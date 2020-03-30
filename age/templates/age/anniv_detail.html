@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% load age %}
 {% block header %}
-<h1>記念日　詳細画面</h1>
+<h1>{{ object.annivapp}}</h1>
 {% endblock %}
 {% block content %}
 <p><a href="{% url 'age:anivupdate' object.pk%}" >編集</a></p>
 <p><a href="{% url 'age:anivdelete' object.pk%}" >削除</a></p>
-<p>タイトル：{{ object.annivapp}}</p>
 <p>記念日が起こってから{{ 0 | showage:object.didday}}年</p>
 <p>大事度：{{object.favorite}}</p>
 <p>ストーリー：{{ object.story }}</p>
@@ -72,8 +71,8 @@
    <p>{{object2.historyday10}} {{object2.history10}}</p>
 {% endif %}
 {% if object2 %}
-   <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ストーリーを編集</a></p>
+   <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
 {% else %}
-   <p><a href="{% url 'age:anivhistory' %}" >ストーリーを追加</a></p>
+   <p><a href="{% url 'age:anivhistory' %}" >ヒストリーを追加</a></p>
 {% endif %}
 {% endblock%}
