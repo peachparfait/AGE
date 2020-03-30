@@ -9,24 +9,21 @@
     margin: 0 auto 300px auto;
     box-shadow: 10px 10px 20px 2px #ddd;
 }
-.header h1{
-    padding: auto 10px;
-    display: inline;
-    line-height: 25px;
-    margin: 0 100px 0 0;
-    float: left;
+.logo{
+    padding: 0  15px 0 0;
+    margin: 0;
 }
 .header li{
     padding: 0 10px;
     margin-top:0;
     list-style: none;
     float: left;
+    display: inline;
+    line-height: 20px;
 }
 .header a{
-    display: inline;
-    line-height: 25px;
     margin-left: 7px;
-    padding: 16px 5px;
+    padding:0 5px 16px 5px;
     margin-top:0;
     color: #fff;
     text-decoration: none;
@@ -42,12 +39,17 @@ body{
     min-height: 100vh;
 }
 .main{
-   width: 1200px;
+   width: 1250px;
    margin: 0 auto;
 }
 a{
     text-decoration: none;
+}
+.red-a{
     color: #ff2e00;
+}
+.red-a:hover{
+    text-decoration: underline;
 }
 .furn,.elec,.aniv,.fashion,.other{
     display: flex;
@@ -99,10 +101,26 @@ a{
 h2{
     font-weight: 500; 
     font-family: 'Noto Sans JP', sans-serif;
+    padding:0;
+    width: 150px;
+    text-align: center;
 }
+.furntitle{border-bottom: solid 3px #ffe47a;}
+.electitle{border-bottom: solid 3px #7a9dff;}
+.anivtitle{border-bottom: solid 3px #ff917a;}
+.fashiontitle{border-bottom: solid 3px #ff7ab4;}
+.othertitle{border-bottom: solid 3px #aaff7a;}
 h1{
     font-size:50px;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400; 
     color: #494331;
+}
+.addbtn{
+    position:absolute;
+    margin:20px;
+    top:10px;
+    left:1150px;
+    border-radius:80px;
+    box-shadow: 10px 10px 20px 2px #f0f0f0;
 }

@@ -5,7 +5,8 @@
     <h1>一覧</h1>
 {% endblock header %}
 {% block content %}
-    <h2>家電</h2>
+    <a href="{% url 'age:homeeleccreate' %}" ><img src="{% static 'img/add.svg' %}" width=80 alt="新規作成" class="addbtn"></a>
+    <h2 class="electitle">家電</h2>
     <ul class="elec">
         {% for elec in object_list2 %}
             <li>
@@ -25,7 +26,7 @@
             </li>
         {% endfor %}
     </ul>
-    <h2>家具</h2>
+    <h2 class="furntitle">家具</h2>
     <ul class="furn">
     {% for furn in object_list %}
         <li>
@@ -41,7 +42,7 @@
         </li>
     {% endfor %}
     </ul>
-    <h2>記念日</h2>
+    <h2 class="anivtitle">記念日</h2>
     <ul class="aniv">
     {% for ani in object_list3 %}
         <li>
@@ -57,7 +58,7 @@
         </li>
     {% endfor %}
     </ul>
-    <h2>ファッション</h2>
+    <h2 class="fashiontitle">ファッション</h2>
     <ul class="fashion">
     {% for fas in object_list5 %}
         <li>
@@ -77,7 +78,7 @@
         </li>
     {% endfor %}
     </ul>
-    <h2>その他</h2>
+    <h2 class="othertitle">その他</h2>
     <ul class= "other">
         {% for otr in object_list4 %}
             <li>
@@ -97,5 +98,4 @@
             </li>
         {% endfor %}
     </ul>
-    <p><a href="{% url 'age:homeeleccreate' %}" >新規作成画面へ</a></p>
 {%endblock content %}
