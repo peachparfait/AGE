@@ -6,39 +6,96 @@
 {% endblock header %}
 {% block content %}
     <h2>家電</h2>
-    {% for elec in object_list2 %}
-        <p>{{elec.name}}</p>
-        <p>{{ elec.name | showage:elec.birthday}}歳</p>
-        <img src='{{ MEDIA_URL }}{{elec.picture1}}' width=100>
-        <a href="{% url 'age:homeelecdetail' elec.pk%}">詳細画面へ</a>
-    {% endfor %}
+    <ul class="elec">
+        {% for elec in object_list2 %}
+            <li>
+            <a href="{% url 'age:homeelecdetail' elec.pk%}">
+                {% if elec.picture1%}
+                    <img src='{{ MEDIA_URL }}{{elec.picture1}}' width=100>
+                {% elif elec.category == 'その他'%}
+                    <img src="{% static 'img/elec.svg' %}" width=100>
+                {% else %}
+                    {% with img="img/"|addstr:elec.category|addstr:".svg" %}
+                        <img src="{% static img %}" width=100>
+                    {% endwith %}
+                {% endif %}
+                <p class="name">{{elec.name}}</p>
+                <p class="age">{{ elec.name | showage:elec.birthday}}歳</p>
+            </a>
+            </li>
+        {% endfor %}
+    </ul>
     <h2>家具</h2>
+    <ul class="furn">
     {% for furn in object_list %}
-        <p>{{furn.name}}</p>
-        <p>{{ furn.name | showage:furn.birthday}}歳</p>
-        <img src='{{ MEDIA_URL }}{{furn.picture1}}' width=100>
-        <a href="{% url 'age:furndetail' furn.pk%}">詳細画面へ</a>
+        <li>
+            <a href="{% url 'age:furndetail' furn.pk%}">
+                {% if furn.picture1%}
+                    <img src='{{ MEDIA_URL }}{{furn.picture1}}' width=100>
+                {% else %}
+                    <img src="{% static 'img/furn.svg' %}" width=100>
+                {% endif %}
+                <p class="name">{{furn.name}}</p>
+                <p class="age">{{ furn.name | showage:furn.birthday}}歳</p>
+            </a>
+        </li>
     {% endfor %}
+    </ul>
     <h2>記念日</h2>
+    <ul class="aniv">
     {% for ani in object_list3 %}
-        <p>{{ani.annivapp}}</p>
-        <p>{{ ani.annivapp | showage:ani.didday}}年</p>
-        <img src='{{ MEDIA_URL }}{{ani.picture1}}' width=100>
-        <a href="{% url 'age:anivdetail' ani.pk%}">詳細画面へ</a>
+        <li>
+            <a href="{% url 'age:anivdetail' ani.pk%}">
+                {% if ani.picture1%}
+                    <img src='{{ MEDIA_URL }}{{ani.picture1}}' width=100>
+                {% else %}
+                    <img src="{% static 'img/aniv.svg' %}" width=100>
+                {% endif %}
+                <p class="name">{{ani.annivapp}}</p>
+                <p class="age">{{ ani.annivapp | showage:ani.didday}}年</p>
+            </a>
+        </li>
     {% endfor %}
+    </ul>
     <h2>ファッション</h2>
+    <ul class="fashion">
     {% for fas in object_list5 %}
-        <p>{{fas.name}}</p>
-        <p>{{ fas.name | showage:fas.birthday}}歳</p>
-        <img src='{{ MEDIA_URL }}{{fas.picture1}}' width=100>
-        <a href="{% url 'age:clothesdetail' fas.pk%}">詳細画面へ</a>
+        <li>
+            <a href="{% url 'age:clothesdetail' fas.pk%}">
+                {% if fas.picture1%}
+                    <img src='{{ MEDIA_URL }}{{fas.picture1}}' width=100>
+                {% elif fas.category == 'その他'%}
+                    <img src="{% static 'img/fashion.svg' %}" width=100>
+                {% else %}
+                    {% with img="img/"|addstr:fas.category|addstr:".svg" %}
+                        <img src="{% static img %}" width=100>
+                    {% endwith %}
+                {% endif %}
+                <p class="name">{{fas.name}}</p>
+                <p class="age">{{ fas.name | showage:fas.birthday}}歳</p>
+            </a>
+        </li>
     {% endfor %}
+    </ul>
     <h2>その他</h2>
-    {% for otr in object_list4 %}
-        <p>{{otr.name}}</p>
-        <p>{{ otr.name | showage:otr.birthday}}歳</p>
-        <img src='{{ MEDIA_URL }}{{otr.picture1}}' width=100>
-        <a href="{% url 'age:otherdetail' ani.pk%}">詳細画面へ</a>
-    {% endfor %}
+    <ul class= "other">
+        {% for otr in object_list4 %}
+            <li>
+                <a href="{% url 'age:otherdetail' otr.pk%}">
+                    {% if otr.picture1%}
+                        <img src='{{ MEDIA_URL }}{{otr.picture1}}' width=100>
+                    {% elif otr.category == 'その他'%}
+                        <img src="{% static 'img/other.svg' %}" width=100>
+                    {% else %}
+                        {% with img="img/"|addstr:otr.category|addstr:".svg" %}
+                            <img src="{% static img %}" width=100>
+                        {% endwith %}
+                    {% endif %}
+                    <p class="name">{{otr.name}}</p>
+                    <p class="age">{{ otr.name | showage:otr.birthday}}歳</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
     <p><a href="{% url 'age:homeeleccreate' %}" >新規作成画面へ</a></p>
 {%endblock content %}

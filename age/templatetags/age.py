@@ -28,3 +28,6 @@ def showage(value, args):
         return 0
     else:
         return now.year - args.year - 1 #まだ誕生日を迎えていない
+@register.filter(name="addstr")
+def addstr(arg1, arg2):
+    return str(arg1) + str(arg2)

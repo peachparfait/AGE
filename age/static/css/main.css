@@ -7,6 +7,7 @@
     z-index: 9999;
     display: block !important;
     margin: 0 auto 300px auto;
+    box-shadow: 10px 10px 20px 2px #f0f0f0;
 }
 .header h1{
     padding: auto 10px;
@@ -39,4 +40,53 @@ body{
     background-color: rgba(255, 255, 255, 0.781);
     position: relative;
     min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: #ff2e00;
+}
+.furn,.elec,.aniv,.fashion,.other{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap:wrap;
+}
+.furn li,.elec li,.aniv li,.fashion li,.other li{
+    display:flex;
+    flex-direction:column;
+    flex:0 0 15%;
+    border-radius:10px;
+    margin:20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 20px 2px #f0f0f0;
+}
+.furn li{border: solid 3px #ffe47a;}
+.elec li{border: solid 3px #7a9dff;}
+.aniv li{border: solid 3px #ff917a;}
+.fashion li{border: solid 3px #ff7ab4;}
+.other li{border: solid 3px #aaff7a;}
+.furn p,.elec p,.aniv p,.fashion p,.other p{
+    display:block;
+    margin-top:auto;
+}
+.furn img ,.elec img,.aniv img,.fashion img,.other img{
+    object-fit: contain;
+    width: 200px;
+    height: 150px;
+}
+.name{
+    color: #2C2F33;
+    padding-top: 10px;
+}
+.furn .name{border-top: solid 2px #ffe47a;}
+.elec .name{border-top: solid 2px #7a9dff;}
+.aniv .name{border-top: solid 2px #ff917a;}
+.fashion .name{border-top: solid 2px #ff7ab4;}
+.other .name{border-top: solid 2px #aaff7a;}
+.age{
+    font-size:30px;
+    color: #2C2F33;
 }
