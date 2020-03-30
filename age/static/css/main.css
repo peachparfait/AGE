@@ -48,7 +48,7 @@ a{
 .red-a{
     color: #ff2e00;
 }
-.red-a:hover{
+.red-a:hover,.header a:hover{
     text-decoration: underline;
 }
 .furn,.elec,.aniv,.fashion,.other{
@@ -68,6 +68,9 @@ a{
     justify-content: center;
     align-items: center;
     box-shadow: 10px 10px 20px 2px #f0f0f0;
+}
+.furn li:hover,.elec li:hover,.aniv li:hover,.fashion li:hover,.other li:hover{
+    opacity: 0.6;
 }
 .furn li{border: solid 3px #ffe47a;}
 .elec li{border: solid 3px #7a9dff;}
@@ -123,4 +126,11 @@ h1{
     left:1150px;
     border-radius:80px;
     box-shadow: 10px 10px 20px 2px #f0f0f0;
+}
+.addbtn:hover{
+    opacity: 0.8;
+    width:78px;
+    height:78px;
+    top:11px;
+    left:1151px;
 }
