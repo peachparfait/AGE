@@ -178,7 +178,7 @@ def elecupdate(request,pk):
 
 class AnnivDetailView(DetailView):
     model = Aniversary
-    template_name = "age/anniv_detail.html"
+    template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
         context = super(AnnivDetailView, self).get_context_data(**kwargs)
         context.update({

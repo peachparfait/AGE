@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <clipPath id="clip-furn-background">
+      <rect width="400" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="furn-background" clip-path="url(#clip-furn-background)">
+    <rect width="400" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_112" data-name="グループ 112">
+      <rect id="長方形_1176" data-name="長方形 1176" width="400" height="200" fill="#dce682"/>
+      <path id="合体_23" data-name="合体 23" d="M-20178-51V-63h-12V-263h12v-12h400v12h12V-63h-12v12Zm388-24v-76h-76v76Zm-100,0v-76h-76v76Zm-100,0v-76H-20066v76Zm-100,0v-76h-76v76Zm300-100v-76h-76v76Zm-100,0v-76h-76v76Zm-100,0v-76H-20066v76Zm-100,0v-76h-76v76Z" transform="translate(20177.998 263)" fill="#e2eb98"/>
+      <g id="グループ_111" data-name="グループ 111">
+        <g id="グループ_103" data-name="グループ 103">
+          <line id="線_34" data-name="線 34" y2="200" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35" data-name="線 35" y2="200" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36" data-name="線 36" y2="200" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_104" data-name="グループ 104" transform="translate(100)">
+          <line id="線_34-2" data-name="線 34" y2="200" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-2" data-name="線 35" y2="200" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-2" data-name="線 36" y2="200" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_105" data-name="グループ 105" transform="translate(200)">
+          <line id="線_34-3" data-name="線 34" y2="200" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-3" data-name="線 35" y2="200" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-3" data-name="線 36" y2="200" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_106" data-name="グループ 106" transform="translate(300)">
+          <line id="線_34-4" data-name="線 34" y2="200" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-4" data-name="線 35" y2="200" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-4" data-name="線 36" y2="200" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_107" data-name="グループ 107" transform="translate(-100)">
+          <line id="線_34-5" data-name="線 34" y2="200" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-5" data-name="線 35" y2="200" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-5" data-name="線 36" y2="200" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_108" data-name="グループ 108" transform="translate(400.5) rotate(90)">
+          <line id="線_34-6" data-name="線 34" y2="400" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-6" data-name="線 35" y2="400" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-6" data-name="線 36" y2="400" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_109" data-name="グループ 109" transform="translate(400.5 100) rotate(90)">
+          <line id="線_34-7" data-name="線 34" y2="400" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-7" data-name="線 35" y2="400" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-7" data-name="線 36" y2="400" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+        <g id="グループ_110" data-name="グループ 110" transform="translate(400.5 -100) rotate(90)">
+          <line id="線_34-8" data-name="線 34" y2="400" transform="translate(90 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_35-8" data-name="線 35" y2="400" transform="translate(100 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+          <line id="線_36-8" data-name="線 36" y2="400" transform="translate(110 0.5)" fill="none" stroke="rgba(112,112,112,0.22)" stroke-width="4"/>
+        </g>
+      </g>
+      <g id="グループ_102" data-name="グループ 102">
+        <line id="線_28" data-name="線 28" y2="200" transform="translate(50 0.5)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+        <line id="線_29" data-name="線 29" y2="200" transform="translate(150 0.5)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+        <line id="線_30" data-name="線 30" y2="200" transform="translate(250 0.5)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+        <line id="線_31" data-name="線 31" y2="200" transform="translate(350 0.5)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+        <line id="線_32" data-name="線 32" x1="400" transform="translate(0 50)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+        <line id="線_33" data-name="線 33" x1="400" transform="translate(0 150)" fill="none" stroke="#eaf18b" stroke-width="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

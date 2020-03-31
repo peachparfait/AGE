@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <clipPath id="clip-other-background">
+      <rect width="400" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="other-background" clip-path="url(#clip-other-background)">
+    <rect width="400" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_127" data-name="グループ 127">
+      <rect id="長方形_1202" data-name="長方形 1202" width="400" height="200" fill="#b6ff7e"/>
+      <g id="グループ_121" data-name="グループ 121">
+        <circle id="楕円形_70" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_74" data-name="楕円形 74" cx="25" cy="25" r="25" transform="translate(375 75)" fill="#d5ffa5"/>
+      </g>
+      <g id="グループ_122" data-name="グループ 122" transform="translate(50 -50)">
+        <circle id="楕円形_70-2" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71-2" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72-2" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73-2" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+      </g>
+      <g id="グループ_123" data-name="グループ 123" transform="translate(50 50)">
+        <circle id="楕円形_70-3" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71-3" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72-3" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73-3" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+      </g>
+      <g id="グループ_124" data-name="グループ 124">
+        <circle id="楕円形_70-4" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71-4" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72-4" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73-4" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_74-2" data-name="楕円形 74" cx="25" cy="25" r="25" transform="translate(375 75)" fill="#d5ffa5"/>
+      </g>
+      <g id="グループ_125" data-name="グループ 125" transform="translate(0 100)">
+        <circle id="楕円形_70-5" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71-5" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72-5" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73-5" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_74-3" data-name="楕円形 74" cx="25" cy="25" r="25" transform="translate(375 75)" fill="#d5ffa5"/>
+      </g>
+      <g id="グループ_126" data-name="グループ 126" transform="translate(0 -100)">
+        <circle id="楕円形_70-6" data-name="楕円形 70" cx="25" cy="25" r="25" transform="translate(175 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_71-6" data-name="楕円形 71" cx="25" cy="25" r="25" transform="translate(75 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_72-6" data-name="楕円形 72" cx="25" cy="25" r="25" transform="translate(-25 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_73-6" data-name="楕円形 73" cx="25" cy="25" r="25" transform="translate(275 75)" fill="#d5ffa5"/>
+        <circle id="楕円形_74-4" data-name="楕円形 74" cx="25" cy="25" r="25" transform="translate(375 75)" fill="#d5ffa5"/>
+      </g>
+    </g>
+  </g>
+</svg>

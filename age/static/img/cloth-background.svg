@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <clipPath id="clip-fashion-background">
+      <rect width="400" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="fashion-background" clip-path="url(#clip-fashion-background)">
+    <rect width="400" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_120" data-name="グループ 120">
+      <g id="グループ_115" data-name="グループ 115" transform="translate(25 25)">
+        <rect id="長方形_1192" data-name="長方形 1192" width="50" height="50" fill="#ff8efb"/>
+        <rect id="長方形_1193" data-name="長方形 1193" width="50" height="50" transform="translate(50)" fill="#ffb4fc"/>
+        <rect id="長方形_1194" data-name="長方形 1194" width="50" height="50" transform="translate(100)" fill="#ff8efb"/>
+        <rect id="長方形_1195" data-name="長方形 1195" width="50" height="50" transform="translate(150)" fill="#ffb4fc"/>
+        <rect id="長方形_1196" data-name="長方形 1196" width="50" height="50" transform="translate(200)" fill="#ff8efb"/>
+        <rect id="長方形_1197" data-name="長方形 1197" width="50" height="50" transform="translate(250)" fill="#ffb4fc"/>
+        <rect id="長方形_1198" data-name="長方形 1198" width="50" height="50" transform="translate(300)" fill="#ff8efb"/>
+        <rect id="長方形_1199" data-name="長方形 1199" width="50" height="50" transform="translate(350)" fill="#ffb4fc"/>
+        <rect id="長方形_1200" data-name="長方形 1200" width="50" height="50" transform="translate(-50)" fill="#ffb4fc"/>
+      </g>
+      <g id="グループ_116" data-name="グループ 116" transform="translate(25 75)">
+        <rect id="長方形_1192-2" data-name="長方形 1192" width="50" height="50" fill="#ffb4fc"/>
+        <rect id="長方形_1193-2" data-name="長方形 1193" width="50" height="50" transform="translate(50)" fill="#ffc8fd"/>
+        <rect id="長方形_1194-2" data-name="長方形 1194" width="50" height="50" transform="translate(100)" fill="#ffb4fc"/>
+        <rect id="長方形_1195-2" data-name="長方形 1195" width="50" height="50" transform="translate(150)" fill="#ffc8fd"/>
+        <rect id="長方形_1196-2" data-name="長方形 1196" width="50" height="50" transform="translate(200)" fill="#ffb4fc"/>
+        <rect id="長方形_1197-2" data-name="長方形 1197" width="50" height="50" transform="translate(250)" fill="#ffc8fd"/>
+        <rect id="長方形_1198-2" data-name="長方形 1198" width="50" height="50" transform="translate(300)" fill="#ffb4fc"/>
+        <rect id="長方形_1199-2" data-name="長方形 1199" width="50" height="50" transform="translate(350)" fill="#ffc8fd"/>
+        <rect id="長方形_1201" data-name="長方形 1201" width="50" height="50" transform="translate(-50)" fill="#ffc8fd"/>
+      </g>
+      <g id="グループ_117" data-name="グループ 117" transform="translate(25 125)">
+        <rect id="長方形_1192-3" data-name="長方形 1192" width="50" height="50" fill="#ff8efb"/>
+        <rect id="長方形_1193-3" data-name="長方形 1193" width="50" height="50" transform="translate(50)" fill="#ffb4fc"/>
+        <rect id="長方形_1194-3" data-name="長方形 1194" width="50" height="50" transform="translate(100)" fill="#ff8efb"/>
+        <rect id="長方形_1195-3" data-name="長方形 1195" width="50" height="50" transform="translate(150)" fill="#ffb4fc"/>
+        <rect id="長方形_1196-3" data-name="長方形 1196" width="50" height="50" transform="translate(200)" fill="#ff8efb"/>
+        <rect id="長方形_1197-3" data-name="長方形 1197" width="50" height="50" transform="translate(250)" fill="#ffb4fc"/>
+        <rect id="長方形_1198-3" data-name="長方形 1198" width="50" height="50" transform="translate(300)" fill="#ff8efb"/>
+        <rect id="長方形_1199-3" data-name="長方形 1199" width="50" height="50" transform="translate(350)" fill="#ffb4fc"/>
+        <rect id="長方形_1200-2" data-name="長方形 1200" width="50" height="50" transform="translate(-50)" fill="#ffb4fc"/>
+      </g>
+      <g id="グループ_118" data-name="グループ 118" transform="translate(25 175)">
+        <rect id="長方形_1192-4" data-name="長方形 1192" width="50" height="50" fill="#ffb4fc"/>
+        <rect id="長方形_1193-4" data-name="長方形 1193" width="50" height="50" transform="translate(50)" fill="#ffc8fd"/>
+        <rect id="長方形_1194-4" data-name="長方形 1194" width="50" height="50" transform="translate(100)" fill="#ffb4fc"/>
+        <rect id="長方形_1195-4" data-name="長方形 1195" width="50" height="50" transform="translate(150)" fill="#ffc8fd"/>
+        <rect id="長方形_1196-4" data-name="長方形 1196" width="50" height="50" transform="translate(200)" fill="#ffb4fc"/>
+        <rect id="長方形_1197-4" data-name="長方形 1197" width="50" height="50" transform="translate(250)" fill="#ffc8fd"/>
+        <rect id="長方形_1198-4" data-name="長方形 1198" width="50" height="50" transform="translate(300)" fill="#ffb4fc"/>
+        <rect id="長方形_1199-4" data-name="長方形 1199" width="50" height="50" transform="translate(350)" fill="#ffc8fd"/>
+        <rect id="長方形_1201-2" data-name="長方形 1201" width="50" height="50" transform="translate(-50)" fill="#ffc8fd"/>
+      </g>
+      <g id="グループ_119" data-name="グループ 119" transform="translate(25 -25)">
+        <rect id="長方形_1192-5" data-name="長方形 1192" width="50" height="50" fill="#ffb4fc"/>
+        <rect id="長方形_1193-5" data-name="長方形 1193" width="50" height="50" transform="translate(50)" fill="#ffc8fd"/>
+        <rect id="長方形_1194-5" data-name="長方形 1194" width="50" height="50" transform="translate(100)" fill="#ffb4fc"/>
+        <rect id="長方形_1195-5" data-name="長方形 1195" width="50" height="50" transform="translate(150)" fill="#ffc8fd"/>
+        <rect id="長方形_1196-5" data-name="長方形 1196" width="50" height="50" transform="translate(200)" fill="#ffb4fc"/>
+        <rect id="長方形_1197-5" data-name="長方形 1197" width="50" height="50" transform="translate(250)" fill="#ffc8fd"/>
+        <rect id="長方形_1198-5" data-name="長方形 1198" width="50" height="50" transform="translate(300)" fill="#ffb4fc"/>
+        <rect id="長方形_1199-5" data-name="長方形 1199" width="50" height="50" transform="translate(350)" fill="#ffc8fd"/>
+        <rect id="長方形_1201-3" data-name="長方形 1201" width="50" height="50" transform="translate(-50)" fill="#ffc8fd"/>
+      </g>
+    </g>
+  </g>
+</svg>

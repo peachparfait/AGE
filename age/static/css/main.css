@@ -37,6 +37,7 @@ body{
     background-color: rgba(255, 255, 255, 0.781);
     position: relative;
     min-height: 100vh;
+    margin-top:0;
 }
 .main{
    width: 1250px;
@@ -118,6 +119,11 @@ h1{
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400; 
     color: #494331;
+    width: 1250px;
+    margin: 100px auto 0 auto;
+}
+.thingstitle{
+    margin: 10px auto 50px auto;
 }
 .addbtn{
     position:absolute;
@@ -133,4 +139,14 @@ h1{
     height:78px;
     top:11px;
     left:1151px;
+}
+.thumbnail{
+    width:100vw;
+    height: 350px;
+    margin:0;
+    object-fit: cover;
+}
+.detailage{
+    font-size:35px;
+    font-weight: 400; 
 }

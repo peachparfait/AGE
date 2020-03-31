@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <clipPath id="clip-elec-background">
+      <rect width="400" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="elec-background" clip-path="url(#clip-elec-background)">
+    <rect width="400" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_101" data-name="グループ 101">
+      <rect id="長方形_1203" data-name="長方形 1203" width="400" height="200" fill="#94f8ff"/>
+      <g id="グループ_42" data-name="グループ 42">
+        <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+      </g>
+      <g id="グループ_91" data-name="グループ 91" transform="translate(-24 -44)">
+        <path id="多角形_12" data-name="多角形 12" d="M25,0,50,43.75H0Z" transform="translate(0 156)" fill="#8fadff"/>
+        <path id="多角形_13" data-name="多角形 13" d="M25,0,50,43.75H0Z" transform="translate(50 156)" fill="#7ae8ff"/>
+        <path id="多角形_14" data-name="多角形 14" d="M25,0,50,43.75H0Z" transform="translate(100 156)" fill="#8fadff"/>
+        <path id="多角形_15" data-name="多角形 15" d="M25,0,50,43.75H0Z" transform="translate(150 156)" fill="#7ae8ff"/>
+        <path id="多角形_16" data-name="多角形 16" d="M25,0,50,43.75H0Z" transform="translate(200 156)" fill="#8fadff"/>
+        <path id="多角形_17" data-name="多角形 17" d="M25,0,50,43.75H0Z" transform="translate(250 156)" fill="#7ae8ff"/>
+        <path id="多角形_18" data-name="多角形 18" d="M25,0,50,43.75H0Z" transform="translate(300 156)" fill="#8fadff"/>
+        <path id="多角形_19" data-name="多角形 19" d="M25,0,50,43.75H0Z" transform="translate(350 156)" fill="#7ae8ff"/>
+        <path id="多角形_20" data-name="多角形 20" d="M25,0,50,43.75H0Z" transform="translate(399 156)" fill="#8fadff"/>
+      </g>
+      <g id="グループ_92" data-name="グループ 92" transform="translate(1)">
+        <path id="多角形_12-2" data-name="多角形 12" d="M25,0,50,43.75H0Z" transform="translate(0 156)" fill="#8fadff"/>
+        <path id="多角形_13-2" data-name="多角形 13" d="M25,0,50,43.75H0Z" transform="translate(50 156)" fill="#7ae8ff"/>
+        <path id="多角形_14-2" data-name="多角形 14" d="M25,0,50,43.75H0Z" transform="translate(100 156)" fill="#8fadff"/>
+        <path id="多角形_15-2" data-name="多角形 15" d="M25,0,50,43.75H0Z" transform="translate(150 156)" fill="#7ae8ff"/>
+        <path id="多角形_16-2" data-name="多角形 16" d="M25,0,50,43.75H0Z" transform="translate(200 156)" fill="#8fadff"/>
+        <path id="多角形_17-2" data-name="多角形 17" d="M25,0,50,43.75H0Z" transform="translate(250 156)" fill="#7ae8ff"/>
+        <path id="多角形_18-2" data-name="多角形 18" d="M25,0,50,43.75H0Z" transform="translate(300 156)" fill="#8fadff"/>
+        <path id="多角形_19-2" data-name="多角形 19" d="M25,0,50,43.75H0Z" transform="translate(350 156)" fill="#7ae8ff"/>
+      </g>
+      <g id="グループ_93" data-name="グループ 93" transform="translate(1 -88)">
+        <path id="多角形_12-3" data-name="多角形 12" d="M25,0,50,43.75H0Z" transform="translate(0 156)" fill="#8fadff"/>
+        <path id="多角形_13-3" data-name="多角形 13" d="M25,0,50,43.75H0Z" transform="translate(50 156)" fill="#7ae8ff"/>
+        <path id="多角形_14-3" data-name="多角形 14" d="M25,0,50,43.75H0Z" transform="translate(100 156)" fill="#8fadff"/>
+        <path id="多角形_15-3" data-name="多角形 15" d="M25,0,50,43.75H0Z" transform="translate(150 156)" fill="#7ae8ff"/>
+        <path id="多角形_16-3" data-name="多角形 16" d="M25,0,50,43.75H0Z" transform="translate(200 156)" fill="#8fadff"/>
+        <path id="多角形_17-3" data-name="多角形 17" d="M25,0,50,43.75H0Z" transform="translate(250 156)" fill="#7ae8ff"/>
+        <path id="多角形_18-3" data-name="多角形 18" d="M25,0,50,43.75H0Z" transform="translate(300 156)" fill="#8fadff"/>
+        <path id="多角形_19-3" data-name="多角形 19" d="M25,0,50,43.75H0Z" transform="translate(350 156)" fill="#7ae8ff"/>
+      </g>
+      <g id="グループ_94" data-name="グループ 94" transform="translate(-24 -132)">
+        <path id="多角形_12-4" data-name="多角形 12" d="M25,0,50,43.75H0Z" transform="translate(0 156)" fill="#8fadff"/>
+        <path id="多角形_13-4" data-name="多角形 13" d="M25,0,50,43.75H0Z" transform="translate(50 156)" fill="#7ae8ff"/>
+        <path id="多角形_14-4" data-name="多角形 14" d="M25,0,50,43.75H0Z" transform="translate(100 156)" fill="#8fadff"/>
+        <path id="多角形_15-4" data-name="多角形 15" d="M25,0,50,43.75H0Z" transform="translate(150 156)" fill="#7ae8ff"/>
+        <path id="多角形_16-4" data-name="多角形 16" d="M25,0,50,43.75H0Z" transform="translate(200 156)" fill="#8fadff"/>
+        <path id="多角形_17-4" data-name="多角形 17" d="M25,0,50,43.75H0Z" transform="translate(250 156)" fill="#7ae8ff"/>
+        <path id="多角形_18-4" data-name="多角形 18" d="M25,0,50,43.75H0Z" transform="translate(300 156)" fill="#8fadff"/>
+        <path id="多角形_19-4" data-name="多角形 19" d="M25,0,50,43.75H0Z" transform="translate(350 156)" fill="#7ae8ff"/>
+        <path id="多角形_20-2" data-name="多角形 20" d="M25,0,50,43.75H0Z" transform="translate(399 156)" fill="#8fadff"/>
+      </g>
+      <g id="グループ_95" data-name="グループ 95" transform="translate(1 -176)">
+        <path id="多角形_12-5" data-name="多角形 12" d="M25,0,50,43.75H0Z" transform="translate(0 156)" fill="#8fadff"/>
+        <path id="多角形_13-5" data-name="多角形 13" d="M25,0,50,43.75H0Z" transform="translate(50 156)" fill="#7ae8ff"/>
+        <path id="多角形_14-5" data-name="多角形 14" d="M25,0,50,43.75H0Z" transform="translate(100 156)" fill="#8fadff"/>
+        <path id="多角形_15-5" data-name="多角形 15" d="M25,0,50,43.75H0Z" transform="translate(150 156)" fill="#7ae8ff"/>
+        <path id="多角形_16-5" data-name="多角形 16" d="M25,0,50,43.75H0Z" transform="translate(200 156)" fill="#8fadff"/>
+        <path id="多角形_17-5" data-name="多角形 17" d="M25,0,50,43.75H0Z" transform="translate(250 156)" fill="#7ae8ff"/>
+        <path id="多角形_18-5" data-name="多角形 18" d="M25,0,50,43.75H0Z" transform="translate(300 156)" fill="#8fadff"/>
+        <path id="多角形_19-5" data-name="多角形 19" d="M25,0,50,43.75H0Z" transform="translate(350 156)" fill="#7ae8ff"/>
+      </g>
+    </g>
+  </g>
+</svg>

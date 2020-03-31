@@ -62,7 +62,7 @@
     <ul class="fashion">
     {% for fas in object_list5 %}
         <li>
-            <a href="{% url 'age:clothesdetail' fas.pk%}">
+            <a href="{% url 'age:fashiondetail' fas.pk%}">
                 {% if fas.picture1%}
                     <img src='{{ MEDIA_URL }}{{fas.picture1}}' width=100>
                 {% elif fas.category == 'その他'%}

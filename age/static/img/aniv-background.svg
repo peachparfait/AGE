@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <clipPath id="clip-aniv-background">
+      <rect width="400" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="aniv-background" clip-path="url(#clip-aniv-background)">
+    <rect width="400" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_114" data-name="グループ 114">
+      <rect id="長方形_1185" data-name="長方形 1185" width="400" height="200" fill="#ff9e80"/>
+      <g id="グループ_113" data-name="グループ 113" transform="translate(187.579 -188.421) rotate(45)">
+        <rect id="長方形_1186" data-name="長方形 1186" width="50" height="400.222" transform="translate(0)" fill="#ff8787"/>
+        <rect id="長方形_1187" data-name="長方形 1187" width="50" height="400.222" transform="translate(50)" fill="#ef8b76"/>
+        <rect id="長方形_1188" data-name="長方形 1188" width="50" height="400.222" transform="translate(150)" fill="#ff8787"/>
+        <rect id="長方形_1189" data-name="長方形 1189" width="50" height="400.222" transform="translate(200)" fill="#ef8b76"/>
+        <rect id="長方形_1190" data-name="長方形 1190" width="50" height="400.222" transform="translate(300)" fill="#ff8787"/>
+        <rect id="長方形_1191" data-name="長方形 1191" width="50" height="400.222" transform="translate(350)" fill="#ef8b76"/>
+      </g>
+    </g>
+  </g>
+</svg>
