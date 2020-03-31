@@ -6,7 +6,7 @@ register = template.Library()
 @register.filter(name="size")
 def size(value, args):
     if args != 0:
-        size = 100 * args
+        size = 50 * args + 50
         return size
     else:
         return 50

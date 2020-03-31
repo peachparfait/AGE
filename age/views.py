@@ -170,7 +170,6 @@ def elecupdate(request,pk):
             return redirect('age:list')
     else:
         form = ElecupdForm()
-
     context = {'form':form}
     return render(request, 'age/homeelec_update.html', context)
     #記念日

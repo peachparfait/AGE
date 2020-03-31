@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block header %}
-<h1>家電内容の変更</h1>
+<h1>編集</h1>
 {% endblock %}
 {% block content %}
-<form action="" method="post">{% csrf_token %}
+<form enctype="multipart/form-data"  method="post">{% csrf_token %}
     {{ form.as_p }}
     {{ imageform.as_p }}
-    <input type="submit" value="家電内容を変更する">
+    <input type="submit" value="更新する">
 </form>
 {% endblock %}
 

@@ -60,6 +60,39 @@ class FurnHistory(models.Model):
 	historyday10 = models.DateField(default=datetime.date.today())
 	mdl = models.IntegerField(primary_key=True,default=0)
 
+#class History(models.Model):
+#	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
+#	historyday1 = models.DateField(default=datetime.date.today())
+#	historyday2 = models.DateField(default=datetime.date.today())
+#	historyday3 = models.DateField(default=datetime.date.today())
+#	historyday4 = models.DateField(default=datetime.date.today())
+#	historyday5 = models.DateField(default=datetime.date.today())
+#	historyday6 = models.DateField(default=datetime.date.today())
+#	historyday7 = models.DateField(default=datetime.date.today())
+#	historyday8 = models.DateField(default=datetime.date.today())
+#	historyday9 = models.DateField(default=datetime.date.today())
+#	historyday10 = models.DateField(default=datetime.date.today())
+#
+#class Image(models.Model):
+#	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
+#	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+
 class ElecHistory(models.Model):
 	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
 	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
@@ -169,6 +202,8 @@ class Furn(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
+	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
 		return self.name
 
@@ -203,6 +238,8 @@ class HomeElecApp(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
+	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
 
@@ -223,6 +260,8 @@ class Aniversary(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
+	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.annivapp
 
@@ -252,6 +291,8 @@ class Other(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
+	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
 class ClothCategory(models.Model):
@@ -280,5 +321,7 @@ class Clothes(models.Model):
 	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
 	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
+	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
+	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
