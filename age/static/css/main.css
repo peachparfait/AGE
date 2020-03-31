@@ -170,3 +170,33 @@ h1{
     font-size:35px;
     font-weight: 400; 
 }
+.category{
+    position:relative;
+    bottom:0;
+    float:left;
+    padding:0 5px;
+}
+.float{
+    float:left;
+    position:relative;
+    bottom:10px;
+}
+.furntag{border: solid 2px #ffe47a;}
+.electag{border: solid 2px #7a9dff;}
+.anivtag{border: solid 2px #ff917a;}
+.clothtag{border: solid 2px #ff7ab4;}
+.othertag{border: solid 2px #aaff7a;}
+.furntag,.electag,.anivtag,.clothtag,.othertag{
+    float:left;
+    border-radius:30px;
+    height:30px;
+    padding:0 15px 0 5px;
+    background-color:#fff;
+}
+.furntag p,.electag p,.anivtag p,.clothtag p,.othertag p{
+    display: inline-block;
+    line-height: 0;
+}
+.float-clear{
+    clear:both;
+}

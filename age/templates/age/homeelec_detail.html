@@ -48,8 +48,25 @@
 <p>大事度：{{object.favorite}}</p>
 <p>ストーリー：{{ object.story }}</p>
 {% if object.category %}
-<p>カテゴリ：{{ object.category }}</p>
+   <p class="float">カテゴリ：</p>
+   {% if type == 'furn' %}
+   <div class="furntag">
+   {% elif type == 'elec' %}
+      <div class="electag">
+   {% elif type == 'aniv' %}
+      <div class="anivtag">
+   {% elif type == 'cloth' %}
+      <div class="clothtag">
+   {% elif type == 'other' %}
+      <div class="othertag">
+   {% endif %}
+      {% with img="img/"|addstr:object.category|addstr:".svg" %}
+          <img src="{% static img %}" width=30 class="category">
+      {% endwith %}
+      <p>{{ object.category }}
+   </p></div>
 {% endif %}
+<h3 class="float-clear">画像</h3>
 {% if object.picture1 %}
    <img src='{{ MEDIA_URL }}{{object.picture1}}' width=100>
 {% endif %}
