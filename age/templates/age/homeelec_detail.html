@@ -17,34 +17,36 @@
 {% endblock %}
 {% block content %}
 {% if type == 'furn' %}
-   <p><a href="{% url 'age:furnupdate' object.pk%}" >編集</a></p>
+   <p><a href="{% url 'age:furnupdate' object.pk%}" >
 {% elif type == 'elec' %}
-   <p><a href="{% url 'age:homeelecupdate' object.pk%}" >編集</a></p>
+   <p><a href="{% url 'age:homeelecupdate' object.pk%}" >
 {% elif type == 'aniv' %}
-   <p><a href="{% url 'age:anivupdate' object.pk%}" >編集</a></p>
+   <p><a href="{% url 'age:anivupdate' object.pk%}" >
 {% elif type == 'cloth' %}
-   <p><a href="{% url 'age:fashionupdate' object.pk%}" >編集</a></p>
+   <p><a href="{% url 'age:fashionupdate' object.pk%}" >
 {% elif type == 'other' %}
-   <p><a href="{% url 'age:otherupdate' object.pk%}" >編集</a></p>
+   <p><a href="{% url 'age:otherupdate' object.pk%}" >
 {% endif %}
+<img src="{% static 'img/edit.svg' %}" width=80 alt="編集" class="editbtn"></a></p>
 {% if type == 'furn' %}
-   <p><a href="{% url 'age:furndelete' object.pk%}" >削除</a></p>
+   <p><a href="{% url 'age:furndelete' object.pk%}" >
 {% elif type == 'elec' %}
-   <p><a href="{% url 'age:homeelecdelete' object.pk%}" >削除</a></p>
+   <p><a href="{% url 'age:homeelecdelete' object.pk%}" >
 {% elif type == 'aniv' %}
-   <p><a href="{% url 'age:anivdelete' object.pk%}" >削除</a></p>
+   <p><a href="{% url 'age:anivdelete' object.pk%}" >
 {% elif type == 'cloth' %}
-   <p><a href="{% url 'age:fashiondelete' object.pk%}" >削除</a></p>
+   <p><a href="{% url 'age:fashiondelete' object.pk%}" >
 {% elif type == 'other' %}
-   <p><a href="{% url 'age:otherdelete' object.pk%}" >削除</a></p>
+   <p><a href="{% url 'age:otherdelete' object.pk%}" >
 {% endif %}
+<img src="{% static 'img/delete.svg' %}" width=80 alt="削除" class="deletebtn"></a></p>
 {% if type == 'aniv' %}
-<p>記念日が起こってから{{ 0 | showage:object.didday}}年</p>
+<p>記念日が起こってから :  <span class="detailage">{{ 0 | showage:object.didday}}年</span></p>
 {% else %}
 <h3 class="detailage">{{ 0 | showage:object.birthday}}歳</h3>
 {% endif %}
 <p>大事度：{{object.favorite}}</p>
-<p>ヒストリー：{{ object.story }}</p>
+<p>ストーリー：{{ object.story }}</p>
 {% if object.category %}
 <p>カテゴリ：{{ object.category }}</p>
 {% endif %}
@@ -114,15 +116,15 @@
 {% endfor %}
 {% if object2 %}
    {% if type == 'furn' %}
-      <p><a href="{% url 'age:furnhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
+      <p><a href="{% url 'age:furnhistoryupd' object.pk%}" >ヒストリーを編集
    {% elif type == 'elec' %}
-      <p><a href="{% url 'age:elechistoryupd' object.pk%}" >ヒストリーを編集</a></p>
+      <p><a href="{% url 'age:elechistoryupd' object.pk%}" >ヒストリーを編集
    {% elif type == 'aniv' %}
-      <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
+      <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ヒストリーを編集
    {% elif type == 'cloth' %}
-      <p><a href="{% url 'age:fashionhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
+      <p><a href="{% url 'age:fashionhistoryupd' object.pk%}" >ヒストリーを編集
    {% elif type == 'other' %}
-      <p><a href="{% url 'age:otherhistoryupd' object.pk%}" >ヒストリーを編集</a></p>
+      <p><a href="{% url 'age:otherhistoryupd' object.pk%}" >ヒストリーを編集
    {% endif %}
 {% else %}
    {% if type == 'furn' %}

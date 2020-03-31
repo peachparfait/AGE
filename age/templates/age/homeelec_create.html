@@ -8,7 +8,7 @@
   <ul class="kind">
   <li><a href="{% url 'age:anivcreate' %}" >記念日</a></li>
   <li><a href="{% url 'age:furncreate' %}" >家具</a></li>
-  <li><a href="{% url 'age:clothescreate' %}" >ファッション</a></li>
+  <li><a href="{% url 'age:fashioncreate' %}" >ファッション</a></li>
   <li><a href="{% url 'age:othercreate' %}" >文房具、食器、雑貨、その他</a></li>
   </ul>
     <form enctype="multipart/form-data" action="{% url 'age:homeeleccreate' %}" method="post">{% csrf_token %}

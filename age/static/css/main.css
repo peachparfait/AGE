@@ -123,27 +123,47 @@ h1{
     margin: 100px auto 0 auto;
 }
 .thingstitle{
-    margin: 10px auto 50px auto;
+    margin: 10px auto 20px auto;
 }
 .addbtn{
-    position:absolute;
-    margin:20px;
     top:10px;
     left:1150px;
-    border-radius:80px;
-    box-shadow: 10px 10px 20px 2px #f0f0f0;
 }
 .addbtn:hover{
-    opacity: 0.8;
-    width:78px;
-    height:78px;
     top:11px;
     left:1151px;
 }
+.editbtn{
+    top:350px;
+    left:1000px;
+}
+.editbtn:hover{
+    top:351px;
+    left:1001px;
+}
+.deletebtn{
+    top:350px;
+    left:1100px;
+}
+.deletebtn:hover{
+    top:351px;
+    left:1101px;
+}
+.addbtn,.editbtn,.deletebtn{
+    position:absolute;
+    margin:20px;
+    border-radius:80px;
+    box-shadow: 10px 10px 20px 2px #f0f0f0;
+}
+.addbtn:hover,.editbtn:hover,.deletebtn:hover{
+    opacity: 0.8;
+    width:78px;
+    height:78px;
+}
 .thumbnail{
-    width:100vw;
+    width:100%;
     height: 350px;
-    margin:0;
+    margin:0 auto;
     object-fit: cover;
 }
 .detailage{
