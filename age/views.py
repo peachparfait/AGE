@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
-from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory
+from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory,History
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm
+from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,HistoryForm
 from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
@@ -101,6 +101,23 @@ class FurnDeleteView(DeleteView):
     template_name = "age/furn_delete.html"
     success_url = reverse_lazy('age:list')
 
+def history(request,num):
+    print(HomeElecApp.objects.get(pk=num))
+    if request.method == "POST":
+        form = HistoryForm(request.POST)
+        if form.is_valid():
+            historykey = History.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = History.objects.get(pk=historykey)
+            form2.mdl=HomeElecApp.objects.get(pk=num)
+            form2.save()
+            return redirect('age:homeelecdetail', kwargs={'pk': num})
+    else:
+        form = HistoryForm()
+
+    context = {'form':form}
+    return render(request, 'age/historycreate.html', context)
 def furnupdate(request,pk):
     if request.method == "POST":
         form = FurnupdForm(request.POST, request.FILES)
@@ -109,30 +126,29 @@ def furnupdate(request,pk):
             return redirect('age:list')
     else:
         form = FurnupdForm()
-
     context = {'form':form}
-    return render(request, 'age/furn_update.html', context)
+    return render(request, 'age/homeelec_update.html', context)
 
 #家電
 class ElecHistoryView(CreateView):
     model = ElecHistory
     template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10','mdl']
-    def get_success_url(self):
-        return reverse_lazy('age:homeelecdetail', kwargs={'pk': self.object.pk})
-class ElecHistoryupdView(UpdateView):
-    model = ElecHistory
-    template_name = "age/historycreate.html"
     fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
     def get_success_url(self):
         return reverse_lazy('age:homeelecdetail', kwargs={'pk': self.object.pk})
+class ElecHistoryupdView(UpdateView):
+    model = History
+    template_name = "age/historycreate.html"
+    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
+    def get_success_url(self):
+        return reverse_lazy('age:list')
 class HomeelecDetailView(DetailView):
     model = HomeElecApp
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
         context = super(HomeelecDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': ElecHistory.objects.filter(pk=self.kwargs['pk']),
+            'object2': History.objects.filter(mdl__pk=self.object.pk),
             'type':'elec',
         })
         return context

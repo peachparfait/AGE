@@ -15,10 +15,10 @@
 }
 .header li{
     padding: 0 10px;
+    display: inline;
     margin-top:0;
     list-style: none;
     float: left;
-    display: inline;
     line-height: 20px;
 }
 .header a{

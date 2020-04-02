@@ -102,58 +102,8 @@
 {% for object2 in object2 %}
 {% if object2.history1 %}
    <p>{{object2.historyday1}} {{object2.history1}}</p>
-{% endif %}
-{% if object2.history2 %}
-   <p>{{object2.historyday2}} {{object2.history2}}</p>
-{% endif %}
-{% if object2.history3 %}
-   <p>{{object2.historyday3}} {{object2.history3}}</p>
-{% endif %}
-{% if object2.history4 %}
-   <p>{{object2.historyday4}} {{object2.history4}}</p>
-{% endif %}
-{% if object2.history5 %}
-   <p>{{object2.historyday5}} {{object2.history5}}</p>
-{% endif %}
-{% if object2.history6 %}
-   <p>{{object2.historyday6}} {{object2.history6}}</p>
-{% endif %}
-{% if object2.history7 %}
-   <p>{{object2.historyday7}} {{object2.history7}}</p>
-{% endif %}
-{% if object2.history8 %}
-   <p>{{object2.historyday8}} {{object2.history8}}</p>
-{% endif %}
-{% if object2.history9 %}
-   <p>{{object2.historyday9}} {{object2.history9}}</p>
-{% endif %}
-{% if object2.history10 %}
-   <p>{{object2.historyday10}} {{object2.history10}}</p>
+   <p><a href="{% url 'age:elechistoryupd' object2.pk%}" >ヒストリーを編集</a></p>
 {% endif %}
 {% endfor %}
-{% if object2 %}
-   {% if type == 'furn' %}
-      <p><a href="{% url 'age:furnhistoryupd' object.pk%}" >ヒストリーを編集
-   {% elif type == 'elec' %}
-      <p><a href="{% url 'age:elechistoryupd' object.pk%}" >ヒストリーを編集
-   {% elif type == 'aniv' %}
-      <p><a href="{% url 'age:anivhistoryupd' object.pk%}" >ヒストリーを編集
-   {% elif type == 'cloth' %}
-      <p><a href="{% url 'age:fashionhistoryupd' object.pk%}" >ヒストリーを編集
-   {% elif type == 'other' %}
-      <p><a href="{% url 'age:otherhistoryupd' object.pk%}" >ヒストリーを編集
-   {% endif %}
-{% else %}
-   {% if type == 'furn' %}
-      <p><a href="{% url 'age:furnhistory' %}" >ヒストリーを追加</a></p>
-   {% elif type == 'elec' %}
-      <p><a href="{% url 'age:elechistory' %}" >ヒストリーを追加</a></p>
-   {% elif type == 'aniv' %}
-      <p><a href="{% url 'age:anivhistory' %}" >ヒストリーを追加</a></p>
-   {% elif type == 'cloth' %}
-      <p><a href="{% url 'age:fashionhistory'%}" >ヒストリーを追加</a></p>
-   {% elif type == 'other' %}
-      <p><a href="{% url 'age:otherhistory'%}" >ヒストリーを追加</a></p>
-   {% endif %}
-{% endif %}
+
 {% endblock%}

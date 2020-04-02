@@ -21,7 +21,7 @@ urlpatterns = [
     path('furnupdate/<int:pk>/', views.furnupdate,name="furnupdate"),
     #家電
     path('homeelecdetail/<int:pk>/', views.HomeelecDetailView.as_view(),name="homeelecdetail"),
-    path('elechistory/', views.ElecHistoryView.as_view(),name="elechistory"),
+    path('elechistory/<int:num>/', views.history,name="elechistory"),
     path('elechistoryupd/<int:pk>/', views.ElecHistoryupdView.as_view(),name="elechistoryupd"),
     path('homeeleccreate/', views.eleccreate,name="homeeleccreate"),
     path('homeelecdelete/<int:pk>/', views.HomeelecDeleteView.as_view(),name="homeelecdelete"),
