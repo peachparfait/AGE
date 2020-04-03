@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
   {% block header %}
     <h1>追加</h1>
   {% endblock %}
@@ -12,8 +13,25 @@
   <li><a href="{% url 'age:fashioncreate' %}" >ファッション</a></li>
   </ul>
     <form enctype="multipart/form-data" action="{% url 'age:othercreate' %}"  method ="post">{% csrf_token %}
-      {{ form.as_p }}
-      {{ imageform.as_p }}
-      <input type="submit" value="追加する">
+      <h3>名前</h3>
+      {{ form.name|add_class:"form-field"}}
+      <br>
+      <h3>カテゴリ</h3>
+      {{ form.category|add_class:"form-field"}}
+      <br>
+      <h3>ストーリー</h3>
+      {{ form.story|add_class:"form-field"}}
+      <br>
+      <h3>誕生日</h3>
+      {{ form.birthday|add_class:"form-field"}}
+      <br>
+      <h3>お気に入り度</h3>
+      {{ form.favorite|add_class:"form-field"}}
+      <br>
+      <h3>サムネイル画像</h3>
+      {{ form.picture1|add_class:"form-btn"}}
+      <br>
+      <br>
+      <input type="submit" value="追加する" class="txtbtn">
     </form>
   {% endblock %}
