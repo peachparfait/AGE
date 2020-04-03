@@ -15,9 +15,13 @@ import os
 from django.views import generic
 from . import models
 import requests
+import json
 
-webhook_url = 'https://discordapp.com/api/webhooks/693136691346669640/g7AluYkGKBzc1p_ri9GPEKtuesSVl7rE_edxKEiKnbFLxfG5oXu0AGg5i4JV0KtGcymi'
- 
+df=0
+with open('age/key.json') as f:
+    df = json.load(f)
+webhook_url = df["webhook_url"]
+print(df)
 main_content = {
   "content": "起動しました"
 }
@@ -506,10 +510,10 @@ def SignupComplete(request):
 
 
 line_bot_api = LineBotApi(
-    'BgIceHXEglDdSNcoKGWIxrTAxV3fjtGmutHrIRmECG+nQRyz4kia4yc0a5KsLR23jZ+Je5fQAvaMHoe2vJvL7tqNiUBqBJfZ91OES+2pzBlouySfC9ZMBSnNWyvPIzm7s2HqX53HcQ7ChMti95PgYwdB04t89/1O/w1cDnyilFU='
+    df["token"]
 )
 
-handler = WebhookHandler('7ff9f107074b10d0aa0168d546285585')
+handler = WebhookHandler(df["handler"])
 
 @csrf_exempt
 def webhook(request):
