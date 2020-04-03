@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, ListView,DetailView,CreateView,De
 from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm
+from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm
 from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
@@ -56,25 +56,36 @@ class FurnListView(ListView):
 
     def get_queryset(self):
         return Furn.objects.all()
-class FurnHistoryView(CreateView):
-    model = FurnHistory
-    template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10','mdl']
-    def get_success_url(self):
-        return reverse_lazy('age:furndetail', kwargs={'pk': self.object.pk})
+def furnhistory(request,num):
+    print(Furn.objects.get(pk=num))
+    if request.method == "POST":
+        form = FurnHistoryForm(request.POST)
+        if form.is_valid():
+            historykey = FurnHistory.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = FurnHistory.objects.get(pk=historykey)
+            form2.mdl=Furn.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = FurnHistoryForm()
+
+    context = {'form':form}
+    return render(request, 'age/historycreate.html', context)
 class FurnHistoryupdView(UpdateView):
     model = FurnHistory
     template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
+    fields = ['history1','historyday1']
     def get_success_url(self):
-        return reverse_lazy('age:furndetail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('age:list')
 class FurnDetailView(DetailView):
     model = Furn
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
         context = super(FurnDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': FurnHistory.objects.filter(pk=self.kwargs['pk']),
+            'object2': FurnHistory.objects.filter(mdl__pk=self.object.pk),
             'type':'furn',
         })
         return context
@@ -122,10 +133,10 @@ def elechistory(request,num):
             historykey = ElecHistory.objects.count() + 1
             form.save()
             print(historykey)
-            form2 = History.objects.get(pk=historykey)
+            form2 = ElecHistory.objects.get(pk=historykey)
             form2.mdl=HomeElecApp.objects.get(pk=num)
             form2.save()
-            return redirect('age:homeelecdetail', kwargs={'pk': num})
+            return redirect('age:list')
     else:
         form = ElecHistoryForm()
 
@@ -143,7 +154,7 @@ class HomeelecDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(HomeelecDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': History.objects.filter(mdl__pk=self.object.pk),
+            'object2': ElecHistory.objects.filter(mdl__pk=self.object.pk),
             'type':'elec',
         })
         return context
@@ -192,7 +203,7 @@ class AnnivDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(AnnivDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': AnivHistory.objects.filter(pk=self.kwargs['pk']),
+            'object2': AnivHistory.objects.filter(mdl__pk=self.object.pk),
             'type':'aniv',
         })
         return context
@@ -200,18 +211,29 @@ class AnnivDetailView(DetailView):
     def get_queryset(self):
         return Aniversary.objects.all()
     success_url = reverse_lazy('age:list')
-class AnivHistoryView(CreateView):
-    model = AnivHistory
-    template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10','mdl']
-    def get_success_url(self):
-        return reverse_lazy('age:anivdetail', kwargs={'pk': self.object.pk})
+def anivhistory(request,num):
+    print(Aniversary.objects.get(pk=num))
+    if request.method == "POST":
+        form = AnivHistoryForm(request.POST)
+        if form.is_valid():
+            historykey = AnivHistory.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = AnivHistory.objects.get(pk=historykey)
+            form2.mdl=Aniversary.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = AnivHistoryForm()
+
+    context = {'form':form}
+    return render(request, 'age/historycreate.html', context)
 class AnivHistoryupdView(UpdateView):
     model = AnivHistory
     template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
+    fields = ['history1','historyday1']
     def get_success_url(self):
-        return reverse_lazy('age:anivdetail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('age:list')
 
 def anivcreate(request):
     if request.method == "POST":
@@ -248,26 +270,37 @@ class ClothesDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ClothesDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': ClothHistory.objects.filter(pk=self.kwargs['pk']),
-            'type':'cloth',
+            'object2': ClothHistory.objects.filter(mdl__pk=self.object.pk),
+            'type':'fashion',
         })
         return context
 
     def get_queryset(self):
         return Clothes.objects.all()
     success_url = reverse_lazy('age:list')
-class ClothHistoryView(CreateView):
-    model = ClothHistory
-    template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10','mdl']
-    def get_success_url(self):
-        return reverse_lazy('age:fashiondetail', kwargs={'pk': self.object.pk})
+def clothhistory(request,num):
+    print(Clothes.objects.get(pk=num))
+    if request.method == "POST":
+        form = ClothHistoryForm(request.POST)
+        if form.is_valid():
+            historykey = ClothHistory.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = ClothHistory.objects.get(pk=historykey)
+            form2.mdl=Clothes.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = ClothHistoryForm()
+
+    context = {'form':form}
+    return render(request, 'age/historycreate.html', context)
 class ClothHistoryupdView(UpdateView):
     model = ClothHistory
     template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
+    fields = ['history1','historyday1']
     def get_success_url(self):
-        return reverse_lazy('age:fashiondetail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('age:list')
 def clothcreate(request):
     if request.method == "POST":
         form = ClothForm(request.POST, request.FILES)
@@ -303,7 +336,7 @@ class OtherDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(OtherDetailView, self).get_context_data(**kwargs)
         context.update({
-            'object2': OtherHistory.objects.filter(pk=self.kwargs['pk']),
+            'object2': OtherHistory.objects.filter(mdl__pk=self.object.pk),
             'type':'other',
         })
         return context
@@ -312,18 +345,29 @@ class OtherDetailView(DetailView):
         return Other.objects.all()
     success_url = reverse_lazy('age:list')
 
-class OtherHistoryView(CreateView):
-    model = OtherHistory
-    template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10','mdl']
-    def get_success_url(self):
-        return reverse_lazy('age:otherdetail', kwargs={'pk': self.object.pk})
+def otherhistory(request,num):
+    print(Other.objects.get(pk=num))
+    if request.method == "POST":
+        form = OtherHistoryForm(request.POST)
+        if form.is_valid():
+            historykey = OtherHistory.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = OtherHistory.objects.get(pk=historykey)
+            form2.mdl=Other.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = OtherHistoryForm()
+
+    context = {'form':form}
+    return render(request, 'age/historycreate.html', context)
 class OtherHistoryupdView(UpdateView):
     model = OtherHistory
     template_name = "age/historycreate.html"
-    fields = ['history1','historyday1','history2','historyday2','history3','historyday3','history4','historyday4','history5','historyday5','history6','historyday6','history7','historyday7','history8','historyday8','history9','historyday9','history10','historyday10']
+    fields = ['history1','historyday1']
     def get_success_url(self):
-        return reverse_lazy('age:otherdetail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('age:list')
 def othercreate(request):
     if request.method == "POST":
         form = OtherForm(request.POST, request.FILES)
@@ -361,10 +405,7 @@ class SignUpView(CreateView):
 def SignupComplete(request):
     return HttpResponse('<p>あなた宛てに認証用のメールを送信しました</p>')
 
-#def gallery(request):
-#    images = ElecImage.objects.all()
-#    context = {'images':images}
-#    return render(request, 'age/gallery.html', context)
+
 
 line_bot_api = LineBotApi(
     'BgIceHXEglDdSNcoKGWIxrTAxV3fjtGmutHrIRmECG+nQRyz4kia4yc0a5KsLR23jZ+Je5fQAvaMHoe2vJvL7tqNiUBqBJfZ91OES+2pzBlouySfC9ZMBSnNWyvPIzm7s2HqX53HcQ7ChMti95PgYwdB04t89/1O/w1cDnyilFU='

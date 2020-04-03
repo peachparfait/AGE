@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block header %}
-    <img src="" alt="">
-    <h1>AGE ものの年齢記録アプリ</h1>
+<center>
+<div class="titlesmn">
+    <img src="{% static 'img/logo-brown.svg' %}" alt = "AGE" height= "200">
+    <h1>-ものの年齢記録アプリ-</h1>
+</div>
+</center>
 {% endblock header %}
 {% block content %}
+<center>
     <p>大事な家電も、買ってきたご飯の材料も、忘れられない思い出も。なんでも年齢"を記録しよう</p>
     <a href="{% url 'age:signup' %}">アカウント新規作成</a>
+    <br>
     <a href="URL">ログイン</a>
+</center>
 {%endblock content %}

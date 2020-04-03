@@ -22,7 +22,7 @@
    <p><a href="{% url 'age:homeelecupdate' object.pk%}" >
 {% elif type == 'aniv' %}
    <p><a href="{% url 'age:anivupdate' object.pk%}" >
-{% elif type == 'cloth' %}
+{% elif type == 'fashion' %}
    <p><a href="{% url 'age:fashionupdate' object.pk%}" >
 {% elif type == 'other' %}
    <p><a href="{% url 'age:otherupdate' object.pk%}" >
@@ -34,7 +34,7 @@
    <p><a href="{% url 'age:homeelecdelete' object.pk%}" >
 {% elif type == 'aniv' %}
    <p><a href="{% url 'age:anivdelete' object.pk%}" >
-{% elif type == 'cloth' %}
+{% elif type == 'fashion' %}
    <p><a href="{% url 'age:fashiondelete' object.pk%}" >
 {% elif type == 'other' %}
    <p><a href="{% url 'age:otherdelete' object.pk%}" >
@@ -44,6 +44,11 @@
 <p>記念日が起こってから :  <span class="detailage">{{ 0 | showage:object.didday}}年</span></p>
 {% else %}
 <h3 class="detailage">{{ 0 | showage:object.birthday}}歳</h3>
+{% endif %}
+{% if type == 'aniv' %}
+<p>記念日が起こった日付：{{object.didday}}</p>
+{% else %}
+<p>誕生日：{{object.birthday}}</p>
 {% endif %}
 <p>大事度：{{object.favorite}}</p>
 <p>ストーリー：{{ object.story }}</p>
@@ -55,7 +60,7 @@
       <div class="electag">
    {% elif type == 'aniv' %}
       <div class="anivtag">
-   {% elif type == 'cloth' %}
+   {% elif type == 'fashion' %}
       <div class="clothtag">
    {% elif type == 'other' %}
       <div class="othertag">
@@ -100,7 +105,7 @@
 {% endif %}
 <h3>ヒストリー</h3>
 {% for object2 in object2 %}
-{% if object2.history1 %}
+{% if object2 %}
    <p>{{object2.historyday1}} {{object2.history1}}</p>
    {% with link="age:"|addstr:type|addstr:"historyupd" %}
       <p><a href="{% url link object2.pk%}" >編集</a></p>
@@ -108,6 +113,6 @@
 {% endif %}
 {% endfor %}
 {% with link="age:"|addstr:type|addstr:"history" %}
-   <p><a href="{% url link object2.pk%}" >ヒストリーを追加</a></p>
+   <p><a href="{% url link object.pk%}" >ヒストリーを追加</a></p>
 {% endwith %}
 {% endblock%}

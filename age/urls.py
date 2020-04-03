@@ -14,7 +14,7 @@ urlpatterns = [
     #家具
     path('list/', views.FurnListView.as_view(),name="list"),
     path('furndetail/<int:pk>/', views.FurnDetailView.as_view(),name="furndetail"),
-    path('furnhistory/', views.FurnHistoryView.as_view(),name="furnhistory"),
+    path('furnhistory/<int:num>/', views.furnhistory,name="furnhistory"),
     path('furnhistoryupd/<int:pk>/', views.FurnHistoryupdView.as_view(),name="furnhistoryupd"),
     path('furncreate/',views.furncreate,name="furncreate"),
     path('furndelete/<int:pk>/', views.FurnDeleteView.as_view(),name="furndelete"),
@@ -28,21 +28,21 @@ urlpatterns = [
     path('homeelecupdate/<int:pk>/', views.elecupdate,name="homeelecupdate"),
     #記念日
     path('anivdetail/<int:pk>/', views.AnnivDetailView.as_view(),name="anivdetail"),
-    path('anivhistory/', views.AnivHistoryView.as_view(),name="anivhistory"),
+    path('anivhistory/<int:num>/', views.anivhistory,name="anivhistory"),
     path('anivhistoryupd/<int:pk>/', views.AnivHistoryupdView.as_view(),name="anivhistoryupd"),
     path('anivcreate/', views.anivcreate,name="anivcreate"),
     path('anivdelete/<int:pk>/', views.AnnivDeleteView.as_view(),name="anivdelete"),
     path('anivupdate/<int:pk>/', views.anivupdate,name="anivupdate"),
     #ファッション
     path('fashiondetail/<int:pk>/', views.ClothesDetailView.as_view(),name="fashiondetail"),
-    path('fashionhistory/', views.ClothHistoryView.as_view(),name="fashionhistory"),
+    path('fashionhistory/<int:num>/', views.clothhistory,name="fashionhistory"),
     path('fashionhistoryupd/<int:pk>/', views.ClothHistoryupdView.as_view(),name="fashionhistoryupd"),
     path('fashioncreate/', views.clothcreate,name="fashioncreate"),
     path('fashiondelete/<int:pk>/', views.ClothesDeleteView.as_view(),name="fashiondelete"),
     path('fashionupdate/<int:pk>/', views.clothupdate,name="fashionupdate"),
     #その他
     path('otherdetail/<int:pk>/', views.OtherDetailView.as_view(),name="otherdetail"),
-    path('otherhistory/', views.OtherHistoryView.as_view(),name="otherhistory"),
+    path('otherhistory/<int:num>/', views.otherhistory,name="otherhistory"),
     path('otherhistoryupd/<int:pk>/', views.OtherHistoryupdView.as_view(),name="otherhistoryupd"),
     path('othercreate/', views.othercreate,name="othercreate"),
     path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),

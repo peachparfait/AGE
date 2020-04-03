@@ -14,10 +14,10 @@
     margin: 0 200px 0 0 ;
     float: left;
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 0;
     bottom: 0;
-    left: 5px;
+    left: 15px;
 }
 .header li{
     padding: auto 10px;
@@ -207,4 +207,15 @@ h1{
 }
 .float-clear{
     clear:both;
+}
+.titlesmn{
+    margin:50px 0;
+    padding:100px auto 5px auto;
+    height:500px;
+    background-color: #d6b474;
+    display: flex;
+    flex-flow: column;
+}
+.titlesmn img{
+    margin:50px 0 0 0;
 }
