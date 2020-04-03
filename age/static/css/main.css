@@ -235,7 +235,7 @@ h1{
 .txtbtn a{
     color: #fff;
 }
-.txtbtn:hover{
+.txtbtn:hover , .titlebtn a:hover{
     opacity: 0.8;
     padding:9px 19px;
     margin:11px;
@@ -263,4 +263,5 @@ h1{
     border-radius:10px;
     border: solid 2px #494331;
     font-family:sans-serif;
+    box-shadow:inset 5px 5px 10px 2px #f0f0f0;
 }

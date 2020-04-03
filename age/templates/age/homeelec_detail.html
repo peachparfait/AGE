@@ -112,7 +112,8 @@
    {% endwith %}
 {% endif %}
 {% endfor %}
+<br>
 {% with link="age:"|addstr:type|addstr:"history" %}
-   <p class="txtbtn"><a href="{% url link object.pk%}" >ヒストリーを追加</a></p>
+   <p><a href="{% url link object.pk%}" class="txtbtn">ヒストリーを追加</a></p>
 {% endwith %}
 {% endblock%}
