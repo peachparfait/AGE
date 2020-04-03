@@ -102,8 +102,12 @@
 {% for object2 in object2 %}
 {% if object2.history1 %}
    <p>{{object2.historyday1}} {{object2.history1}}</p>
-   <p><a href="{% url 'age:elechistoryupd' object2.pk%}" >ヒストリーを編集</a></p>
+   {% with link="age:"|addstr:type|addstr:"historyupd" %}
+      <p><a href="{% url link object2.pk%}" >編集</a></p>
+   {% endwith %}
 {% endif %}
 {% endfor %}
-
+{% with link="age:"|addstr:type|addstr:"history" %}
+   <p><a href="{% url link object2.pk%}" >ヒストリーを追加</a></p>
+{% endwith %}
 {% endblock%}
