@@ -41,17 +41,6 @@ class CustomUser(AbstractUser):
 
 
 
-class Image(models.Model):
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-
 #Furnモデルを作成
 class Furn(models.Model):
 	name = models.CharField('家具名',max_length=200)
@@ -216,4 +205,24 @@ class ClothHistory(models.Model):
 class OtherHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
+	mdl = models.ForeignKey(Other,on_delete=models.PROTECT,default=1)
+
+class ElecImage(models.Model):
+	picture = models.ImageField(upload_to='images/',null=True,blank=True)
+	mdl = models.ForeignKey(HomeElecApp,on_delete=models.PROTECT,default=1)
+
+class FurnImage(models.Model):
+	picture = models.ImageField(upload_to='images/',null=True,blank=True)
+	mdl = models.ForeignKey(Furn,on_delete=models.PROTECT,default=1)
+
+class AnivImage(models.Model):
+	picture = models.ImageField(upload_to='images/',null=True,blank=True)
+	mdl = models.ForeignKey(Aniversary,on_delete=models.PROTECT,default=1)
+
+class ClothImage(models.Model):
+	picture = models.ImageField(upload_to='images/',null=True,blank=True)
+	mdl = models.ForeignKey(Clothes,on_delete=models.PROTECT,default=1)
+
+class OtherImage(models.Model):
+	picture = models.ImageField(upload_to='images/',null=True,blank=True)
 	mdl = models.ForeignKey(Other,on_delete=models.PROTECT,default=1)
