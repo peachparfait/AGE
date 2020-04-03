@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
-from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory
+from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm
+from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm,ElecImageForm,FurnImageForm,AnivImageForm,ClothImageForm,OtherImageForm
 from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
@@ -34,6 +34,11 @@ class GalleryView(ListView):
             'object_list3': Aniversary.objects.all(),
             'object_list4': Other.objects.all(),
             'object_list5': Clothes.objects.all(),
+            'pictures': FurnImage.objects.all(),
+            'pictures2': ElecImage.objects.all(),
+            'pictures3': AnivImage.objects.all(),
+            'pictures4': OtherImage.objects.all(),
+            'pictures5': ClothImage.objects.all(),
 
         })
         return context
@@ -73,6 +78,24 @@ def furnhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+
+def furnimage(request,num):
+    print(Furn.objects.get(pk=num))
+    if request.method == "POST":
+        form = FurnImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            historykey = FurnImage.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = FurnImage.objects.get(pk=historykey)
+            form2.mdl=Furn.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = FurnImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/imagecreate.html', context)
 class FurnHistoryupdView(UpdateView):
     model = FurnHistory
     template_name = "age/historycreate.html"
@@ -86,6 +109,7 @@ class FurnDetailView(DetailView):
         context = super(FurnDetailView, self).get_context_data(**kwargs)
         context.update({
             'object2': FurnHistory.objects.filter(mdl__pk=self.object.pk),
+            'object3': FurnImage.objects.filter(mdl__pk=self.object.pk),
             'type':'furn',
         })
         return context
@@ -142,6 +166,23 @@ def elechistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+def elecimage(request,num):
+    print(HomeElecApp.objects.get(pk=num))
+    if request.method == "POST":
+        form = ElecImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            historykey = ElecImage.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = ElecImage.objects.get(pk=historykey)
+            form2.mdl=HomeElecApp.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = ElecImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/imagecreate.html', context)
 class ElecHistoryupdView(UpdateView):
     model = ElecHistory
     template_name = "age/historycreate.html"
@@ -155,6 +196,7 @@ class HomeelecDetailView(DetailView):
         context = super(HomeelecDetailView, self).get_context_data(**kwargs)
         context.update({
             'object2': ElecHistory.objects.filter(mdl__pk=self.object.pk),
+            'object3': ElecImage.objects.filter(mdl__pk=self.object.pk),
             'type':'elec',
         })
         return context
@@ -186,7 +228,8 @@ class HomeelecDeleteView(DeleteView):
 
 def elecupdate(request,pk):
     if request.method == "POST":
-        form = ElecupdForm(request.POST, request.FILES)
+        a = HomeElecApp.objects.get(pk=pk)
+        form = ElecupdForm(request.POST, request.FILES, instance=a)
         if form.is_valid():
             form.save()
             return redirect('age:list')
@@ -204,6 +247,7 @@ class AnnivDetailView(DetailView):
         context = super(AnnivDetailView, self).get_context_data(**kwargs)
         context.update({
             'object2': AnivHistory.objects.filter(mdl__pk=self.object.pk),
+            'object3': AnivImage.objects.filter(mdl__pk=self.object.pk),
             'type':'aniv',
         })
         return context
@@ -228,6 +272,24 @@ def anivhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+
+def anivimage(request,num):
+    print(Aniversary.objects.get(pk=num))
+    if request.method == "POST":
+        form = AnivImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            historykey = AnivImage.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = AnivImage.objects.get(pk=historykey)
+            form2.mdl=aniversary.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = AnivImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/imagecreate.html', context)
 class AnivHistoryupdView(UpdateView):
     model = AnivHistory
     template_name = "age/historycreate.html"
@@ -271,6 +333,7 @@ class ClothesDetailView(DetailView):
         context = super(ClothesDetailView, self).get_context_data(**kwargs)
         context.update({
             'object2': ClothHistory.objects.filter(mdl__pk=self.object.pk),
+            'object3': ClothImage.objects.filter(mdl__pk=self.object.pk),
             'type':'fashion',
         })
         return context
@@ -295,6 +358,23 @@ def clothhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+def clothimage(request,num):
+    print(Clothes.objects.get(pk=num))
+    if request.method == "POST":
+        form = ClothImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            historykey = ClothImage.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = ClothImage.objects.get(pk=historykey)
+            form2.mdl=Clothes.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = ClothImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/imagecreate.html', context)
 class ClothHistoryupdView(UpdateView):
     model = ClothHistory
     template_name = "age/historycreate.html"
@@ -337,6 +417,7 @@ class OtherDetailView(DetailView):
         context = super(OtherDetailView, self).get_context_data(**kwargs)
         context.update({
             'object2': OtherHistory.objects.filter(mdl__pk=self.object.pk),
+            'object3': OtherImage.objects.filter(mdl__pk=self.object.pk),
             'type':'other',
         })
         return context
@@ -362,6 +443,23 @@ def otherhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+def otherimage(request,num):
+    print(Other.objects.get(pk=num))
+    if request.method == "POST":
+        form = OtherImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            historykey = OtherImage.objects.count() + 1
+            form.save()
+            print(historykey)
+            form2 = OtherImage.objects.get(pk=historykey)
+            form2.mdl=Other.objects.get(pk=num)
+            form2.save()
+            return redirect('age:list')
+    else:
+        form = OtherImageForm()
+
+    context = {'form':form}
+    return render(request, 'age/imagecreate.html', context)
 class OtherHistoryupdView(UpdateView):
     model = OtherHistory
     template_name = "age/historycreate.html"

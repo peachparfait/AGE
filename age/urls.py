@@ -15,6 +15,7 @@ urlpatterns = [
     path('list/', views.FurnListView.as_view(),name="list"),
     path('furndetail/<int:pk>/', views.FurnDetailView.as_view(),name="furndetail"),
     path('furnhistory/<int:num>/', views.furnhistory,name="furnhistory"),
+    path('furnimage/<int:num>/', views.furnimage,name="furnimage"),
     path('furnhistoryupd/<int:pk>/', views.FurnHistoryupdView.as_view(),name="furnhistoryupd"),
     path('furncreate/',views.furncreate,name="furncreate"),
     path('furndelete/<int:pk>/', views.FurnDeleteView.as_view(),name="furndelete"),
@@ -22,6 +23,7 @@ urlpatterns = [
     #家電
     path('homeelecdetail/<int:pk>/', views.HomeelecDetailView.as_view(),name="homeelecdetail"),
     path('elechistory/<int:num>/', views.elechistory,name="elechistory"),
+    path('elecimage/<int:num>/', views.elecimage,name="elecimage"),
     path('elechistoryupd/<int:pk>/', views.ElecHistoryupdView.as_view(),name="elechistoryupd"),
     path('homeeleccreate/', views.eleccreate,name="homeeleccreate"),
     path('homeelecdelete/<int:pk>/', views.HomeelecDeleteView.as_view(),name="homeelecdelete"),
@@ -29,6 +31,7 @@ urlpatterns = [
     #記念日
     path('anivdetail/<int:pk>/', views.AnnivDetailView.as_view(),name="anivdetail"),
     path('anivhistory/<int:num>/', views.anivhistory,name="anivhistory"),
+    path('anivimage/<int:num>/', views.anivimage,name="anivimage"),
     path('anivhistoryupd/<int:pk>/', views.AnivHistoryupdView.as_view(),name="anivhistoryupd"),
     path('anivcreate/', views.anivcreate,name="anivcreate"),
     path('anivdelete/<int:pk>/', views.AnnivDeleteView.as_view(),name="anivdelete"),
@@ -36,6 +39,7 @@ urlpatterns = [
     #ファッション
     path('fashiondetail/<int:pk>/', views.ClothesDetailView.as_view(),name="fashiondetail"),
     path('fashionhistory/<int:num>/', views.clothhistory,name="fashionhistory"),
+    path('fashionimage/<int:num>/', views.clothimage,name="fashionimage"),
     path('fashionhistoryupd/<int:pk>/', views.ClothHistoryupdView.as_view(),name="fashionhistoryupd"),
     path('fashioncreate/', views.clothcreate,name="fashioncreate"),
     path('fashiondelete/<int:pk>/', views.ClothesDeleteView.as_view(),name="fashiondelete"),
@@ -43,6 +47,7 @@ urlpatterns = [
     #その他
     path('otherdetail/<int:pk>/', views.OtherDetailView.as_view(),name="otherdetail"),
     path('otherhistory/<int:num>/', views.otherhistory,name="otherhistory"),
+    path('otherimage/<int:num>/', views.otherimage,name="otherimage"),
     path('otherhistoryupd/<int:pk>/', views.OtherHistoryupdView.as_view(),name="otherhistoryupd"),
     path('othercreate/', views.othercreate,name="othercreate"),
     path('otherdelete/<int:pk>/', views.OtherDeleteView.as_view(),name="otherdelete"),

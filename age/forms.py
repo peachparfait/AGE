@@ -1,7 +1,7 @@
 import bootstrap_datepicker_plus as datetimepicker
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
-from .models import CustomUser,Furn, HomeElecApp,Aniversary,Clothes,Other,ElecHistory,FurnHistory,AnivHistory,ClothHistory,OtherHistory
+from .models import CustomUser,Furn, HomeElecApp,Aniversary,Clothes,Other,ElecHistory,FurnHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage
 
 class CustomUserCreationForm(UserCreationForm):
 
@@ -15,7 +15,7 @@ class ElecForm(forms.ModelForm):
 class ElecupdForm(forms.ModelForm):
     class Meta:
         model = HomeElecApp
-        fields = ['name','category','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
+        fields = ['name','category','story','favorite','picture1']
 class FurnForm(forms.ModelForm):
     class Meta:
         model = Furn
@@ -23,7 +23,7 @@ class FurnForm(forms.ModelForm):
 class FurnupdForm(forms.ModelForm):
     class Meta:
         model = Furn
-        fields = ['name','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
+        fields = ['name','story','favorite','picture1']
 class AnivForm(forms.ModelForm):
     class Meta:
         model = Aniversary
@@ -31,7 +31,7 @@ class AnivForm(forms.ModelForm):
 class AnivupdForm(forms.ModelForm):
     class Meta:
         model = Aniversary
-        fields = ['annivapp','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
+        fields = ['annivapp','story','favorite','picture1']
 class OtherForm(forms.ModelForm):
     class Meta:
         model = Other
@@ -39,7 +39,7 @@ class OtherForm(forms.ModelForm):
 class OtherupdForm(forms.ModelForm):
     class Meta:
         model = Other
-        fields = ['name','category','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
+        fields = ['name','category','story','favorite','picture1']
 class ClothForm(forms.ModelForm):
     class Meta:
         model = Clothes
@@ -47,7 +47,7 @@ class ClothForm(forms.ModelForm):
 class ClothupdForm(forms.ModelForm):
     class Meta:
         model = Clothes
-        fields = ['name','category','story','favorite','picture1','picture2','picture3','picture4','picture5','picture6','picture7','picture8','picture9','picture10']
+        fields = ['name','category','story','favorite','picture1']
 class ElecHistoryForm(forms.ModelForm):
     class Meta:
         model = ElecHistory
@@ -68,3 +68,23 @@ class OtherHistoryForm(forms.ModelForm):
     class Meta:
         model = OtherHistory
         fields = ['history1','historyday1']
+class ElecImageForm(forms.ModelForm):
+    class Meta:
+        model = ElecImage
+        fields = ['picture']
+class FurnImageForm(forms.ModelForm):
+    class Meta:
+        model = FurnImage
+        fields = ['picture']
+class AnivImageForm(forms.ModelForm):
+    class Meta:
+        model = AnivImage
+        fields = ['picture']
+class ClothImageForm(forms.ModelForm):
+    class Meta:
+        model = ClothImage
+        fields = ['picture']
+class OtherImageForm(forms.ModelForm):
+    class Meta:
+        model = OtherImage
+        fields = ['picture']

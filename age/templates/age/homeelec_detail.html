@@ -73,43 +73,27 @@
 {% endif %}
 <h3 class="float-clear">画像</h3>
 {% if object.picture1 %}
-   <img src='{{ MEDIA_URL }}{{object.picture1}}' width=100>
+   <img src='{{ MEDIA_URL }}{{object.picture1}}' width=100 class="imgradius">
 {% endif %}
-{% if object.picture2 %}
-   <img src='{{ MEDIA_URL }}{{object.picture2}}' width=100>
+{% for object3 in object3 %}
+{% if object3.picture %}
+{% with link="age:"|addstr:type|addstr:"image" %}
+   <a href="{% url link object.pk%}" ><img src='{{ MEDIA_URL }}{{object3.picture}}' width=100 class="imgradius"></a>
+{% endwith %}
 {% endif %}
-{% if object.picture3 %}
-   <img src='{{ MEDIA_URL }}{{object.picture3}}' width=100>
-{% endif %}
-{% if object.picture4 %}
-   <img src='{{ MEDIA_URL }}{{object.picture4}}' width=100>
-{% endif %}
-{% if object.picture5 %}
-   <img src='{{ MEDIA_URL }}{{object.picture5}}' width=100>
-{% endif %}
-<br>
-{% if object.picture6 %}
-   <img src='{{ MEDIA_URL }}{{object.picture6}}' width=100>
-{% endif %}
-{% if object.picture7 %}
-   <img src='{{ MEDIA_URL }}{{object.picture7}}' width=100>
-{% endif %}
-{% if object.picture8 %}
-   <img src='{{ MEDIA_URL }}{{object.picture8}}' width=100>
-{% endif %}
-{% if object.picture9 %}
-   <img src='{{ MEDIA_URL }}{{object.picture9}}' width=100>
-{% endif %}
-{% if object.picture10 %}
-   <img src='{{ MEDIA_URL }}{{object.picture10}}' width=100>
-{% endif %}
+{% endfor %}
+{% with link="age:"|addstr:type|addstr:"image" %}
+   <a href="{% url link object.pk%}"><img src="{% static 'img/add-square.svg' %}" width=100 alt="画像を追加" class="imgradius"></a>
+{% endwith %}
 <h3>ヒストリー</h3>
 {% for object2 in object2 %}
 {% if object2 %}
+   <div class="history">
    <p>{{object2.historyday1}} {{object2.history1}}</p>
    {% with link="age:"|addstr:type|addstr:"historyupd" %}
-      <p><a href="{% url link object2.pk%}" >編集</a></p>
+      <a href="{% url link object2.pk%}" ><img src="{% static 'img/historyedit.svg' %}" width=40 alt="ヒストリーを編集"></a>
    {% endwith %}
+   </div>
 {% endif %}
 {% endfor %}
 <br>

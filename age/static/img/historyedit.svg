@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-historyedit">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="historyedit" clip-path="url(#clip-historyedit)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_42" data-name="グループ 42">
+      <path id="パス_233" data-name="パス 233" d="M108,0" transform="translate(0.5 0.5)" fill="none" stroke="#9a855d" stroke-width="20"/>
+    </g>
+    <g id="グループ_128" data-name="グループ 128" transform="translate(7 5)">
+      <path id="合体_24" data-name="合体 24" d="M10.78,107.033,1.675,84.573A2.973,2.973,0,0,1,1.5,82.938,9.953,9.953,0,0,1,0,77.677V0H27.119V77.677a9.953,9.953,0,0,1-1.494,5.261,2.971,2.971,0,0,1-.179,1.635L16.34,107.033a3,3,0,0,1-5.56,0Z" transform="translate(112.993 56.574) rotate(45)" fill="#d4d4d4"/>
+      <path id="長方形_1205" data-name="長方形 1205" d="M10,0h7.117a10,10,0,0,1,10,10v8.982a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V10A10,10,0,0,1,10,0Z" transform="translate(131.825 37.737) rotate(45)" fill="#d4d4d4"/>
+    </g>
+  </g>
+</svg>

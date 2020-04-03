@@ -265,3 +265,24 @@ h1{
     font-family:sans-serif;
     box-shadow:inset 5px 5px 10px 2px #f0f0f0;
 }
+.imgradius{
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(226, 226, 226);
+    border-radius:10px;
+    margin:5px;
+}
+.imgradius:hover{
+    opacity: 0.8;
+    width: 98px;
+    height: 98px;
+    margin:6px;
+}
+.history{
+    display: flex;
+    align-items: center;
+}
+.history img{
+    padding:10px 10px 0 10px;
+}
