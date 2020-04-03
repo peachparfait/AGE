@@ -37,28 +37,7 @@ class CustomUser(AbstractUser):
 
 	reviewComment = models.TextField(null=True)
 
-class FurnHistory(models.Model):
-	history1 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history2 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history3 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history4 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history5 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history6 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history7 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history8 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history9 = models.TextField(max_length=100,default='',null=True,blank=True)
-	history10 = models.TextField(max_length=100,default='',null=True,blank=True)
-	historyday1 = models.DateField(default=datetime.date.today())
-	historyday2 = models.DateField(default=datetime.date.today())
-	historyday3 = models.DateField(default=datetime.date.today())
-	historyday4 = models.DateField(default=datetime.date.today())
-	historyday5 = models.DateField(default=datetime.date.today())
-	historyday6 = models.DateField(default=datetime.date.today())
-	historyday7 = models.DateField(default=datetime.date.today())
-	historyday8 = models.DateField(default=datetime.date.today())
-	historyday9 = models.DateField(default=datetime.date.today())
-	historyday10 = models.DateField(default=datetime.date.today())
-	mdl = models.IntegerField(primary_key=True,default=0)
+
 
 
 
