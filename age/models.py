@@ -50,17 +50,6 @@ class Furn(models.Model):
 	createDate = models.DateTimeField('家具 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家具 更新日時', auto_now = True, blank=True, null=True)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
-	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
 		return self.name
 
@@ -86,17 +75,6 @@ class HomeElecApp(models.Model):
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
-	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
 
@@ -108,17 +86,6 @@ class Aniversary(models.Model):
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
-	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.annivapp
 
@@ -139,17 +106,6 @@ class Other(models.Model):
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
-	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
 class ClothCategory(models.Model):
@@ -169,17 +125,6 @@ class Clothes(models.Model):
 	updateDate = models.DateTimeField('ファッション 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
-	picture2 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture3 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture4 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture5 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture6 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture7 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture8 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture9 = models.ImageField(upload_to='images/',null=True,blank=True)
-	picture10 = models.ImageField(upload_to='images/',null=True,blank=True)
-	#picture=models.ForeignKey(Image,on_delete=models.PROTECT,verbose_name="画像",default=1)
-	#history=models.ForeignKey(History,on_delete=models.PROTECT,verbose_name="ヒストリー",default=1)
 	def __str__(self):
      	    return self.name
 class ElecHistory(models.Model):
