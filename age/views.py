@@ -311,7 +311,7 @@ def anivcreate(request):
         form = AnivForm()
 
     context = {'form':form}
-    return render(request, 'age/anniv_create.html', context)
+    return render(request, 'age/homeelec_create.html', context)
 
 class AnnivDeleteView(DeleteView):
     model = Aniversary
@@ -328,7 +328,7 @@ def anivupdate(request,pk):
         form = AnivupdForm()
 
     context = {'form':form}
-    return render(request, 'age/anniv_update.html', context)
+    return render(request, 'age/homeelec_update.html', context)
 #ファッション
 class ClothesDetailView(DetailView):
     model = Clothes
@@ -412,7 +412,7 @@ def clothupdate(request,pk):
         form = ClothupdForm()
 
     context = {'form':form}
-    return render(request, 'age/clothes_update.html', context)
+    return render(request, 'age/homeelec_update.html', context)
 #他
 class OtherDetailView(DetailView):
     model = Other
@@ -497,7 +497,7 @@ def otherupdate(request,pk):
         form = OtherupdForm()
 
     context = {'form':form}
-    return render(request, 'age/other_update.html', context)
+    return render(request, 'age/homeelec_update.html', context)
 #新規登録
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
