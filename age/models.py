@@ -185,44 +185,44 @@ class Clothes(models.Model):
 class ElecHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
-	mdl = models.ForeignKey(HomeElecApp,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(HomeElecApp,on_delete=models.CASCADE,default=1)
 
 class FurnHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
-	mdl = models.ForeignKey(Furn,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Furn,on_delete=models.CASCADE,default=1)
 
 class AnivHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
-	mdl = models.ForeignKey(Aniversary,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Aniversary,on_delete=models.CASCADE,default=1)
 
 class ClothHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
-	mdl = models.ForeignKey(Clothes,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Clothes,on_delete=models.CASCADE,default=1)
 
 class OtherHistory(models.Model):
 	history1 = models.TextField("ヒストリー（出来事）",max_length=100,default='',null=True,blank=True)
 	historyday1 = models.DateField("出来事の日付",default=datetime.date.today())
-	mdl = models.ForeignKey(Other,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Other,on_delete=models.CASCADE,default=1)
 
 class ElecImage(models.Model):
 	picture = models.ImageField(upload_to='images/',null=True,blank=True)
-	mdl = models.ForeignKey(HomeElecApp,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(HomeElecApp,on_delete=models.CASCADE,default=1)
 
 class FurnImage(models.Model):
 	picture = models.ImageField(upload_to='images/',null=True,blank=True)
-	mdl = models.ForeignKey(Furn,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Furn,on_delete=models.CASCADE,default=1)
 
 class AnivImage(models.Model):
 	picture = models.ImageField(upload_to='images/',null=True,blank=True)
-	mdl = models.ForeignKey(Aniversary,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Aniversary,on_delete=models.CASCADE,default=1)
 
 class ClothImage(models.Model):
 	picture = models.ImageField(upload_to='images/',null=True,blank=True)
-	mdl = models.ForeignKey(Clothes,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Clothes,on_delete=models.CASCADE,default=1)
 
 class OtherImage(models.Model):
 	picture = models.ImageField(upload_to='images/',null=True,blank=True)
-	mdl = models.ForeignKey(Other,on_delete=models.PROTECT,default=1)
+	mdl = models.ForeignKey(Other,on_delete=models.CASCADE,default=1)
