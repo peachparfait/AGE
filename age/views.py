@@ -137,7 +137,7 @@ def furncreate(request):
 
 class FurnDeleteView(DeleteView):
     model = Furn
-    template_name = "age/furn_delete.html"
+    template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
 
@@ -315,7 +315,7 @@ def anivcreate(request):
 
 class AnnivDeleteView(DeleteView):
     model = Aniversary
-    template_name = "age/anniv_delete.html"
+    template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
 def anivupdate(request,pk):
@@ -399,7 +399,7 @@ def clothcreate(request):
 
 class ClothesDeleteView(DeleteView):
     model = Clothes
-    template_name = "age/clothes_delete.html"
+    template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
 def clothupdate(request,pk):
@@ -484,7 +484,7 @@ def othercreate(request):
 
 class OtherDeleteView(DeleteView):
     model = Other
-    template_name = "age/other_delete.html"
+    template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
 def otherupdate(request,pk):
