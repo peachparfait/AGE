@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
   {% block header %}
     <h1>画像の編集</h1>
   {% endblock %}
   {% block content %}
 
     <form enctype="multipart/form-data"  method="post">{% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="追加する">
+    <h3>画像</h3>
+      {{ form.picture}}
+      <br>
+      <input type="submit" value="更新" class="txtbtn">
     </form>
   {% endblock %}

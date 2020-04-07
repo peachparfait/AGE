@@ -9,11 +9,9 @@
       {% if image.picture1 %}
          <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
       {% endif %}
-      {% for im2 in pictures %}
          {% if im2.picture %}
             <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
          {% endif %}
-      {% endfor %}
    {% endwith %}
 {% endfor %}
 {% for image in object_list2%}

@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
   {% block header %}
     <h1>ヒストリーの編集</h1>
   {% endblock %}
   {% block content %}
 
     <form action="" method="post">{% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="追加する">
+      <h3>出来事</h3>
+      {{ form.history1|add_class:"form-field"}}
+      <br>
+      <h3>出来事が起こった日付</h3>
+      {{ form.historyday1|add_class:"form-field"}}
+      <br>
+      <input type="submit" value="更新" class="txtbtn">
     </form>
   {% endblock %}
