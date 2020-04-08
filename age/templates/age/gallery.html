@@ -4,24 +4,26 @@
     <h1>ギャラリー</h1>
   {% endblock %}
   {% block content %}
-{% for image in object_list%}
-   {% with img=image.favorite %}
-      {% if image.picture1 %}
-         <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
-      {% endif %}
-         {% if im2.picture %}
-            <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
-         {% endif %}
-   {% endwith %}
-{% endfor %}
 {% for image in object_list2%}
    {% with img=image.favorite %}
       {% if image.picture1 %}
-         <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
+         <a href="{% url 'age:homeelecdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}} class="galleryimg"></a>
       {% endif %}
       {% for im2 in pictures2 %}
-         {% if im2.picture %}
-            <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
+         {% if im2.mdl == image and im2.picture%}
+            <a href="{% url 'age:homeelecdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}} class="galleryimg"></a>
+         {% endif %}
+      {% endfor %}
+   {% endwith %}
+{% endfor %}
+{% for image in object_list%}
+   {% with img=image.favorite %}
+      {% if image.picture1 %}
+         <a href="{% url 'age:furndetail' image.pk%}"><img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}} class="galleryimg"></a>
+      {% endif %}
+      {% for im2 in pictures %}
+         {% if im2.mdl == image and im2.picture%}
+            <a href="{% url 'age:furndetail' image.pk%}"><img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}} class="galleryimg"></a>
          {% endif %}
       {% endfor %}
    {% endwith %}
@@ -29,11 +31,11 @@
 {% for image in object_list3%}
    {% with img=image.favorite %}
       {% if image.picture1 %}
-         <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
+         <a href="{% url 'age:anivdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}} class="galleryimg"></a>
       {% endif %}
       {% for im2 in pictures3 %}
-         {% if im2.picture %}
-            <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
+         {% if im2.mdl == image and im2.picture%}
+            <a href="{% url 'age:anivdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}} class="galleryimg"></a>
          {% endif %}
       {% endfor %}
    {% endwith %}
@@ -41,11 +43,11 @@
 {% for image in object_list4%}
    {% with img=image.favorite %}
       {% if image.picture1 %}
-         <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
+         <a href="{% url 'age:fashiondetail' image.pk%}"><img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}} class="galleryimg"></a>
       {% endif %}
       {% for im2 in pictures4 %}
-         {% if im2.picture %}
-            <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
+         {% if im2.mdl == image and im2.picture%}
+            <a href="{% url 'age:fashiondetail' image.pk%}"><img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}} class="galleryimg"></a>
          {% endif %}
       {% endfor %}
    {% endwith %}
@@ -53,11 +55,11 @@
 {% for image in object_list5%}
    {% with img=image.favorite %}
       {% if image.picture1 %}
-         <img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}}>
+         <a href="{% url 'age:otherdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{image.picture1}}' width={{ 0 | size:img}} class="galleryimg"></a>
       {% endif %}
       {% for im2 in pictures5 %}
-         {% if im2.picture %}
-            <img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}}>
+         {% if im2.mdl == image and im2.picture%}
+            <a href="{% url 'age:otherdetail' image.pk%}"><img src='{{ MEDIA_URL }}{{im2.picture}}' width={{ 0 | size:img}} class="galleryimg"></a>
          {% endif %}
       {% endfor %}
    {% endwith %}

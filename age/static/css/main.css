@@ -286,3 +286,11 @@ h1{
 .history img{
     padding:10px 10px 0 10px;
 }
+
+.galleryimg{
+    margin:5px;
+    border-radius: 5px;
+}
+.galleryimg:hover{
+    opacity: 0.8;
+}

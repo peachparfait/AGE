@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'blog',
     'age',
     'bootstrap_datepicker_plus',
-    'widget_tweaks',   
+    'widget_tweaks',
+    'django_boost',
 ]
 
 MIDDLEWARE = [
