@@ -151,11 +151,11 @@ h1{
 }
 .deletebtn{
     top:350px;
-    left:1100px;
+    left:1070px;
 }
 .deletebtn:hover{
     top:351px;
-    left:1101px;
+    left:1071px;
 }
 .addbtn,.editbtn,.deletebtn{
     position:absolute;
@@ -165,8 +165,8 @@ h1{
 }
 .addbtn:hover,.editbtn:hover,.deletebtn:hover{
     opacity: 0.8;
-    width:78px;
-    height:78px;
+    width:48px;
+    height:48px;
 }
 .thumbnail{
     width:100%;
@@ -289,7 +289,7 @@ h1{
 
 .galleryimg{
     margin:5px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .galleryimg:hover{
     opacity: 0.8;

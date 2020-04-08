@@ -27,7 +27,7 @@
 {% elif type == 'other' %}
    <p><a href="{% url 'age:otherupdate' object.pk%}" >
 {% endif %}
-<img src="{% static 'img/edit.svg' %}" width=80 alt="編集" class="editbtn"></a></p>
+<img src="{% static 'img/edit.svg' %}" width=50 alt="編集" class="editbtn"></a></p>
 {% if type == 'furn' %}
    <p><a href="{% url 'age:furndelete' object.pk%}" >
 {% elif type == 'elec' %}
@@ -39,7 +39,7 @@
 {% elif type == 'other' %}
    <p><a href="{% url 'age:otherdelete' object.pk%}" >
 {% endif %}
-<img src="{% static 'img/delete.svg' %}" width=80 alt="削除" class="deletebtn"></a></p>
+<img src="{% static 'img/delete.svg' %}" width=50 alt="削除" class="deletebtn"></a></p>
 {% if type == 'aniv' %}
 <p>記念日が起こってから :  <span class="detailage">{{ 0 | showage:object.didday}}年</span></p>
 {% else %}
