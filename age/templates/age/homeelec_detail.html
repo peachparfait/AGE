@@ -88,8 +88,12 @@
 <h3>ヒストリー</h3>
 {% for object2 in object2 %}
 {% if object2 %}
+   {% if forloop.counter != 1%}
+   <img src="{% static 'img/history.svg' %}" width=20 class="dot">
+   <br>
+   {% endif %}
    <div class="history">
-   <p>{{object2.historyday1}} {{object2.history1}}</p>
+   <p>{{object2.historyday1}}&nbsp &nbsp{{object2.history1}}</p>
    {% with link="age:"|addstr:type|addstr:"historyupd" %}
       <a href="{% url link object2.pk%}" ><img src="{% static 'img/historyedit.svg' %}" width=40 alt="ヒストリーを編集"></a>
    {% endwith %}

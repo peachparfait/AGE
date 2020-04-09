@@ -286,11 +286,17 @@ h1{
 .history img{
     padding:10px 10px 0 10px;
 }
-
+.history img:hover{
+    opacity: 0.8;
+}
 .galleryimg{
     margin:5px;
     border-radius: 10px;
 }
 .galleryimg:hover{
     opacity: 0.8;
+}
+.dot{
+    margin:0;
+    padding:0 50px;
 }

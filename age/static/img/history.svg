@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-history">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="history" clip-path="url(#clip-history)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_136" data-name="グループ 136">
+      <circle id="楕円形_75" data-name="楕円形 75" cx="15" cy="15" r="15" transform="translate(85 25)" fill="#d4d4d4"/>
+      <circle id="楕円形_76" data-name="楕円形 76" cx="15" cy="15" r="15" transform="translate(85 85)" fill="#d4d4d4"/>
+      <circle id="楕円形_77" data-name="楕円形 77" cx="15" cy="15" r="15" transform="translate(85 145)" fill="#d4d4d4"/>
+    </g>
+  </g>
+</svg>
