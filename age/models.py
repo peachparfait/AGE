@@ -35,7 +35,9 @@ class CustomUser(AbstractUser):
 		null=True
 	)
 
-	reviewComment = models.TextField(null=True)
+	reviewComment = models.TextField(null=True,blank=True)
+	noticetime = models.TimeField(null=True,blank=True)
+	noticedate = models.DateField(null=True,blank=True)
 
 
 
@@ -44,7 +46,7 @@ class CustomUser(AbstractUser):
 #Furnモデルを作成
 class Furn(models.Model):
 	name = models.CharField('家具名',max_length=200)
-	story = models.TextField('ストーリー',max_length=1000,default='')
+	story = models.TextField('ストーリー',max_length=1000,default='',help_text="そのものへの思い出やエピソードなどを入力してください")
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	createDate = models.DateTimeField('家具 登録日時', auto_now_add = True)
@@ -69,7 +71,7 @@ class HomeElecAppCategory(models.Model):
 class HomeElecApp(models.Model):
 	name = models.CharField('家電名',max_length=200)
 	category = models.ForeignKey(HomeElecAppCategory,on_delete=models.PROTECT,verbose_name="家電の種類",default=1)
-	story = models.TextField('ストーリー',max_length=1000,default='')
+	story = models.TextField('ストーリー',max_length=1000,default='',help_text="そのものへの思い出やエピソードなどを入力してください")
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('家電 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
@@ -80,7 +82,7 @@ class HomeElecApp(models.Model):
 
 class Aniversary(models.Model):
 	annivapp = models.CharField('記念日名',max_length=200)
-	story = models.TextField('ストーリー',max_length=1000,default='')
+	story = models.TextField('ストーリー',max_length=1000,default='',help_text="そのものへの思い出やエピソードなどを入力してください")
 	didday = models.DateField('記念日が起こった日付',default=datetime.date.today())
 	createDate = models.DateTimeField('記念日 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
@@ -100,7 +102,7 @@ class OtherCategory(models.Model):
 class Other(models.Model):
 	name = models.CharField('名前',max_length=200)
 	category = models.ForeignKey(OtherCategory,on_delete=models.PROTECT,verbose_name="種類",default=1)
-	story = models.TextField('ストーリー',max_length=1000,default='')
+	story = models.TextField('ストーリー',max_length=1000,default='',help_text="そのものへの思い出やエピソードなどを入力してください")
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('その他 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
@@ -119,7 +121,7 @@ class ClothCategory(models.Model):
 class Clothes(models.Model):
 	name = models.CharField('名前',max_length=200)
 	category = models.ForeignKey(ClothCategory,on_delete=models.PROTECT,verbose_name="ファッションの種類",default=1)
-	story = models.TextField('ストーリー',max_length=1000,default='')
+	story = models.TextField('ストーリー',max_length=1000,default='',help_text="そのものへの思い出やエピソードなどを入力してください")
 	birthday = models.DateField('誕生日（購入日など）',default=datetime.date.today())
 	createDate = models.DateTimeField('ファッション 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('ファッション 更新日時', auto_now = True, blank=True, null=True)
