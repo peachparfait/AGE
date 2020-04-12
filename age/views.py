@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
-from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage
+from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage,CustomUser
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm,ElecImageForm,FurnImageForm,AnivImageForm,ClothImageForm,OtherImageForm
@@ -8,6 +8,8 @@ from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
+import schedule
+import time
 from linebot.models import (
     FollowEvent, TextSendMessage,MessageEvent,TextMessage ,ImageMessage, AudioMessage
 )
@@ -26,6 +28,13 @@ main_content = {
   "content": "起動しました"
 }
 requests.post(webhook_url,main_content)
+def job():
+    main_content = {
+        "content": "ts"
+    }
+    requests.post(webhook_url,main_content)
+    print("test")
+schedule.every().day.at("22:56").do(job)
 class index(TemplateView):
     template_name = "age/index.html"
 class GalleryView(ListView):
@@ -531,3 +540,4 @@ def text_message_handler(event):
 
 if __name__ == '__main__':
     pass
+

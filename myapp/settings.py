@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'widget_tweaks',
     'django_boost',
+    'schedule',
 ]
 
 MIDDLEWARE = [
