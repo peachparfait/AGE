@@ -10,6 +10,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 import schedule
 import time
+import datetime
 from linebot.models import (
     FollowEvent, TextSendMessage,MessageEvent,TextMessage ,ImageMessage, AudioMessage
 )
@@ -18,6 +19,7 @@ from django.views import generic
 from . import models
 import requests
 import json
+from itertools import chain
 
 df=0
 with open('age/key.json') as f:
@@ -29,12 +31,24 @@ main_content = {
 }
 requests.post(webhook_url,main_content)
 def job():
-    main_content = {
-        "content": "ts"
-    }
-    requests.post(webhook_url,main_content)
-    print("test")
-schedule.every().day.at("22:56").do(job)
+    now = datetime.date.today()
+    for i in chain(HomeElecApp.objects.all(),Other.objects.all(),Clothes.objects.all(),Furn.objects.all()):
+        elecage = i.birthday
+        print(elecage)
+        if now.day == elecage.day: #今日が誕生日！！！！！！
+            main_content = {
+                "content": "今日は" + str(i.name) + "の誕生日です！"
+            }
+            requests.post(webhook_url,main_content)
+    for i in Aniversary.objects.all():
+        anivage = i.didday
+        print(anivage)
+        if now.day == anivage.day: #今日が誕生日！！！！！！
+            main_content = {
+                "content": "今日は" + str(i.annivapp) + "です！"
+            }
+            requests.post(webhook_url,main_content)
+schedule.every().day.at("16:11").do(job)
 class index(TemplateView):
     template_name = "age/index.html"
 class GalleryView(ListView):
@@ -320,7 +334,7 @@ def anivcreate(request):
         form = AnivForm()
 
     context = {'form':form}
-    return render(request, 'age/homeelec_create.html', context)
+    return render(request, 'age/anniv_create.html', context)
 
 class AnnivDeleteView(DeleteView):
     model = Aniversary
