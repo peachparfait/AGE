@@ -57,37 +57,37 @@ class GalleryView(ListView):
     def get_context_data(self, **kwargs):
         context = super(GalleryView, self).get_context_data(**kwargs)
         context.update({
-            'object_list2': HomeElecApp.objects.all(),
-            'object_list3': Aniversary.objects.all(),
-            'object_list4': Other.objects.all(),
-            'object_list5': Clothes.objects.all(),
-            'pictures': FurnImage.objects.all(),
-            'pictures2': ElecImage.objects.all(),
-            'pictures3': AnivImage.objects.all(),
-            'pictures4': OtherImage.objects.all(),
-            'pictures5': ClothImage.objects.all(),
+            'object_list2': HomeElecApp.objects.filter(user=self.request.user),
+            'object_list3': Aniversary.objects.filter(user=self.request.user),
+            'object_list4': Other.objects.filter(user=self.request.user),
+            'object_list5': Clothes.objects.filter(user=self.request.user),
+            'pictures': FurnImage.objects.filter(user=self.request.user),
+            'pictures2': ElecImage.objects.filter(user=self.request.user),
+            'pictures3': AnivImage.objects.filter(user=self.request.user),
+            'pictures4': OtherImage.objects.filter(user=self.request.user),
+            'pictures5': ClothImage.objects.filter(user=self.request.user),
 
         })
         return context
 
     def get_queryset(self):
-        return Furn.objects.all()
+        return Furn.objects.filter(user=self.request.user)
 class FurnListView(ListView):
     model = Furn
     template_name = "age/list.html"
     def get_context_data(self, **kwargs):
         context = super(FurnListView, self).get_context_data(**kwargs)
         context.update({
-            'object_list2': HomeElecApp.objects.all(),
-            'object_list3': Aniversary.objects.all(),
-            'object_list4': Other.objects.all(),
-            'object_list5': Clothes.objects.all(),
+            'object_list2': HomeElecApp.objects.filter(user=self.request.user),
+            'object_list3': Aniversary.objects.filter(user=self.request.user),
+            'object_list4': Other.objects.filter(user=self.request.user),
+            'object_list5': Clothes.objects.filter(user=self.request.user),
 
         })
         return context
 
     def get_queryset(self):
-        return Furn.objects.all()
+        return Furn.objects.filter(user=self.request.user)
 def furnhistory(request,num):
     print(Furn.objects.get(pk=num))
     if request.method == "POST":
@@ -151,6 +151,9 @@ def furncreate(request):
         form = FurnForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            form2 = Furn.objects.get(pk=Furn.objects.all().count())
+            form2.user=request.user
+            form2.save()
             return redirect('age:list')
     else:
         form = FurnForm()
@@ -240,6 +243,9 @@ def eleccreate(request):
         form = ElecForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            form2 = HomeElecApp.objects.get(pk=HomeElecApp.objects.all().count())
+            form2.user=request.user
+            form2.save()
             return redirect('age:list')
     else:
         form = ElecForm()
@@ -329,6 +335,9 @@ def anivcreate(request):
         form = AnivForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            form2 = Aniversary.objects.get(pk=Aniversary.objects.all().count())
+            form2.user=request.user
+            form2.save()
             return redirect('age:list')
     else:
         form = AnivForm()
@@ -413,6 +422,9 @@ def clothcreate(request):
         form = ClothForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            form2 = Clothes.objects.get(pk=Clothes.objects.all().count())
+            form2.user=request.user
+            form2.save()
             return redirect('age:list')
     else:
         form = ClothForm()
@@ -498,6 +510,9 @@ def othercreate(request):
         form = OtherForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            form2 = Other.objects.get(pk=Other.objects.all().count())
+            form2.user=request.user
+            form2.save()
             return redirect('age:list')
     else:
         form = OtherForm()

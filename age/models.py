@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 from django.utils import timezone
 import datetime
 from django.db.models import Count
@@ -52,6 +53,7 @@ class Furn(models.Model):
 	createDate = models.DateTimeField('家具 登録日時', auto_now_add = True)
 	updateDate = models.DateTimeField('家具 更新日時', auto_now = True, blank=True, null=True)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=1)
 	def __str__(self):
 		return self.name
 
@@ -77,6 +79,7 @@ class HomeElecApp(models.Model):
 	updateDate = models.DateTimeField('家電 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=1)
 	def __str__(self):
      	    return self.name
 
@@ -88,6 +91,7 @@ class Aniversary(models.Model):
 	updateDate = models.DateTimeField('記念日 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=1)
 	def __str__(self):
      	    return self.annivapp
 
@@ -108,6 +112,7 @@ class Other(models.Model):
 	updateDate = models.DateTimeField('その他 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=1)
 	def __str__(self):
      	    return self.name
 class ClothCategory(models.Model):
@@ -127,6 +132,7 @@ class Clothes(models.Model):
 	updateDate = models.DateTimeField('ファッション 更新日時', auto_now = True, blank=True, null=True)
 	favorite = models.IntegerField('お気に入り度',validators=[MinValueValidator(0),MaxValueValidator(10)],default=0)
 	picture1 = models.ImageField('写真',upload_to='images/',null=True,blank=True)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=1)
 	def __str__(self):
      	    return self.name
 class ElecHistory(models.Model):
