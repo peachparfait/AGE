@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views.generic import TemplateView, ListView,DetailView,CreateView,DeleteView,UpdateView
 from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage,CustomUser
+from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm,ElecImageForm,FurnImageForm,AnivImageForm,ClothImageForm,OtherImageForm
@@ -20,7 +21,9 @@ from . import models
 import requests
 import json
 from itertools import chain
-
+import sys
+sys.path.append('../')
+from myapp import wsgi
 df=0
 with open('age/key.json') as f:
     df = json.load(f)
@@ -48,7 +51,10 @@ def job():
                 "content": "今日は" + str(i.annivapp) + "です！"
             }
             requests.post(webhook_url,main_content)
-schedule.every().day.at("16:11").do(job)
+noticetime=wsgi.ntctime
+test = "16:17"
+print(noticetime)
+schedule.every().day.at(noticetime).do(job)
 class index(TemplateView):
     template_name = "age/index.html"
 class GalleryView(ListView):
@@ -61,11 +67,11 @@ class GalleryView(ListView):
             'object_list3': Aniversary.objects.filter(user=self.request.user),
             'object_list4': Other.objects.filter(user=self.request.user),
             'object_list5': Clothes.objects.filter(user=self.request.user),
-            'pictures': FurnImage.objects.filter(user=self.request.user),
-            'pictures2': ElecImage.objects.filter(user=self.request.user),
-            'pictures3': AnivImage.objects.filter(user=self.request.user),
-            'pictures4': OtherImage.objects.filter(user=self.request.user),
-            'pictures5': ClothImage.objects.filter(user=self.request.user),
+            'pictures': FurnImage.objects.all(),
+            'pictures2': ElecImage.objects.all(),
+            'pictures3': AnivImage.objects.all(),
+            'pictures4': OtherImage.objects.all(),
+            'pictures5': ClothImage.objects.all(),
 
         })
         return context
