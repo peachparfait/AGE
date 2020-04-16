@@ -35,6 +35,12 @@
     text-decoration: none;
     float: left;
 }
+.right{
+    position: relative;
+    left:800px;
+    top:-3px;
+    color: rgba(255, 255, 255, 0.5);
+}
 body{
     font-family: 'Open Sans', sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
