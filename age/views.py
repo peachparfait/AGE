@@ -21,9 +21,6 @@ from . import models
 import requests
 import json
 from itertools import chain
-import sys
-sys.path.append('../')
-from myapp import wsgi
 df=0
 with open('age/key.json') as f:
     df = json.load(f)
@@ -51,33 +48,36 @@ def job():
                 "content": "今日は" + str(i.annivapp) + "です！"
             }
             requests.post(webhook_url,main_content)
-noticetime=wsgi.ntctime
-test = "16:17"
-print(noticetime)
-schedule.every().day.at(noticetime).do(job)
+User=get_user_model()
+noticeuser = User.objects.get(pk=1)
+ntctime = str(noticeuser.noticetime)
+print(ntctime)
+schedule.every().day.at(ntctime).do(job)
 class index(TemplateView):
     template_name = "age/index.html"
 class GalleryView(ListView):
     model = Furn
     template_name = "age/gallery.html"
-    def get_context_data(self, **kwargs):
-        context = super(GalleryView, self).get_context_data(**kwargs)
-        context.update({
-            'object_list2': HomeElecApp.objects.filter(user=self.request.user),
-            'object_list3': Aniversary.objects.filter(user=self.request.user),
-            'object_list4': Other.objects.filter(user=self.request.user),
-            'object_list5': Clothes.objects.filter(user=self.request.user),
-            'pictures': FurnImage.objects.all(),
-            'pictures2': ElecImage.objects.all(),
-            'pictures3': AnivImage.objects.all(),
-            'pictures4': OtherImage.objects.all(),
-            'pictures5': ClothImage.objects.all(),
+    def post(self, request, *args, **kwargs):
+        if self.request.user:
+            def get_context_data(self, **kwargs):
+                context = super(GalleryView, self).get_context_data(**kwargs)
+                context.update({
+                    'object_list2': HomeElecApp.objects.filter(user=self.request.user),
+                    'object_list3': Aniversary.objects.filter(user=self.request.user),
+                    'object_list4': Other.objects.filter(user=self.request.user),
+                    'object_list5': Clothes.objects.filter(user=self.request.user),
+                    'pictures': FurnImage.objects.all(),
+                    'pictures2': ElecImage.objects.all(),
+                    'pictures3': AnivImage.objects.all(),
+                    'pictures4': OtherImage.objects.all(),
+                    'pictures5': ClothImage.objects.all(),
 
-        })
-        return context
+                })
+                return context
 
-    def get_queryset(self):
-        return Furn.objects.filter(user=self.request.user)
+            def get_queryset(self):
+                return Furn.objects.filter(user=self.request.user)
 class FurnListView(ListView):
     model = Furn
     template_name = "age/list.html"

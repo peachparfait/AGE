@@ -13,21 +13,14 @@ import requests
 import time
 from django.core.wsgi import get_wsgi_application
 import schedule
-from django.contrib.auth import get_user_model
-from age import views
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myapp.settings')
 
 application = get_wsgi_application()
-ntctime = ""
 def awake():
     while True:
-        global ntctime
-        User=get_user_model()
-        noticeuser = User.objects.get(pk=1)
-        ntctime = str(noticeuser.noticetime)
         schedule.run_pending()
-        time.sleep(1)
+        #time.sleep(1)
 
 t = threading.Thread(target=awake)
 t.start()

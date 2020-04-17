@@ -13,19 +13,7 @@
 </head>
 <body>
     <header>
-        <div class="header">
-          <nav>
-            <a href="/."><img src="{% static 'img/logo.svg' %}" alt = "AGE" height= "30" class="logo"></a>
-            <ul>
-              <li><a href="/homeeleccreate">追加</a></li>
-              <li><a href="/list">一覧</a></li>
-              <li><a href="/gallery">ギャラリー</a></li>
-              <li><a href="/.">設定</a></li>
-              <li><a href="/.">ヘルプ</a></li>
-            </ul>
-            <p class="right">{{user.get_username}}</p>
-          </nav>
-        </div>
+        {% include 'include/header.html' %}
       </header>
         <div class="pagetitle">
         {% block header %}

@@ -1,0 +1,20 @@
+{% load static %}
+{% load widget_tweaks %} 
+<div class="header">
+  <nav>
+    <a href="/."><img src="{% static 'img/logo.svg' %}" alt = "AGE" height= "30" class="logo"></a>
+    <ul>
+      <li><a href="/homeeleccreate">追加</a></li>
+      <li><a href="/list">一覧</a></li>
+      <li><a href="/gallery">ギャラリー</a></li>
+      <li><a href="/.">設定</a></li>
+      <li><a href="/.">ヘルプ</a></li>
+    </ul>
+    {% if user.is_authenticated %}
+      <p class="right">{{user.get_username}}</p>
+    {% else %}
+        <a href="{% url 'age:signup' %}" class="right">アカウント新規作成</a>
+        <a href="URL" class="right">ログイン</a>
+    {% endif %}
+  </nav>
+</div>
