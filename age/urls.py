@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from .views import SignUpView,SignupComplete
 from django.conf import settings
@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 app_name = 'age'
 
 urlpatterns = [
+    path('login/', views.MyLoginView.as_view(), name="login"),
     path('', views.index.as_view(),name="index"),
     #新規登録
     path('signup',views.SignUpView.as_view(),name='signup'),

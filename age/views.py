@@ -4,7 +4,7 @@ from .models import Furn,HomeElecApp,Aniversary,Other,Clothes,FurnHistory,ElecHi
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy,reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm,ElecImageForm,FurnImageForm,AnivImageForm,ClothImageForm,OtherImageForm
+from .forms import CustomUserCreationForm,ElecForm,ElecupdForm,FurnForm,FurnupdForm,AnivForm,AnivupdForm,OtherForm,OtherupdForm,ClothForm,ClothupdForm,ElecHistoryForm,FurnHistoryForm,AnivHistoryForm,ClothHistoryForm,OtherHistoryForm,ElecImageForm,FurnImageForm,AnivImageForm,ClothImageForm,OtherImageForm,LoginForm
 from django.http import HttpResponse,HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookHandler
@@ -12,6 +12,8 @@ from linebot.exceptions import InvalidSignatureError
 import schedule
 import time
 import datetime
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from linebot.models import (
     FollowEvent, TextSendMessage,MessageEvent,TextMessage ,ImageMessage, AudioMessage
 )
@@ -21,6 +23,7 @@ from . import models
 import requests
 import json
 from itertools import chain
+from django.contrib.auth.views import LoginView, LogoutView
 df=0
 with open('age/key.json') as f:
     df = json.load(f)
@@ -55,30 +58,29 @@ print(ntctime)
 schedule.every().day.at(ntctime).do(job)
 class index(TemplateView):
     template_name = "age/index.html"
-class GalleryView(ListView):
+class MyLoginView(LoginView):
+    form_class = LoginForm
+    template_name = "accounts/login.html"
+class GalleryView(LoginRequiredMixin, ListView):
     model = Furn
     template_name = "age/gallery.html"
-    def post(self, request, *args, **kwargs):
-        if self.request.user:
-            def get_context_data(self, **kwargs):
-                context = super(GalleryView, self).get_context_data(**kwargs)
-                context.update({
-                    'object_list2': HomeElecApp.objects.filter(user=self.request.user),
-                    'object_list3': Aniversary.objects.filter(user=self.request.user),
-                    'object_list4': Other.objects.filter(user=self.request.user),
-                    'object_list5': Clothes.objects.filter(user=self.request.user),
-                    'pictures': FurnImage.objects.all(),
-                    'pictures2': ElecImage.objects.all(),
-                    'pictures3': AnivImage.objects.all(),
-                    'pictures4': OtherImage.objects.all(),
-                    'pictures5': ClothImage.objects.all(),
-
-                })
-                return context
-
-            def get_queryset(self):
-                return Furn.objects.filter(user=self.request.user)
-class FurnListView(ListView):
+    def get_context_data(self, **kwargs):
+        context = super(GalleryView, self).get_context_data(**kwargs)
+        context.update({
+            'object_list2': HomeElecApp.objects.filter(user=self.request.user),
+            'object_list3': Aniversary.objects.filter(user=self.request.user),
+            'object_list4': Other.objects.filter(user=self.request.user),
+            'object_list5': Clothes.objects.filter(user=self.request.user),
+            'pictures': FurnImage.objects.all(),
+            'pictures2': ElecImage.objects.all(),
+            'pictures3': AnivImage.objects.all(),
+            'pictures4': OtherImage.objects.all(),
+            'pictures5': ClothImage.objects.all()
+        })
+        return context
+    def get_queryset(self):
+        return Furn.objects.filter(user=self.request.user)
+class FurnListView(LoginRequiredMixin,ListView):
     model = Furn
     template_name = "age/list.html"
     def get_context_data(self, **kwargs):
@@ -94,6 +96,7 @@ class FurnListView(ListView):
 
     def get_queryset(self):
         return Furn.objects.filter(user=self.request.user)
+@login_required
 def furnhistory(request,num):
     print(Furn.objects.get(pk=num))
     if request.method == "POST":
@@ -111,7 +114,7 @@ def furnhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
-
+@login_required
 def furnimage(request,num):
     print(Furn.objects.get(pk=num))
     if request.method == "POST":
@@ -129,13 +132,13 @@ def furnimage(request,num):
 
     context = {'form':form}
     return render(request, 'age/imagecreate.html', context)
-class FurnHistoryupdView(UpdateView):
+class FurnHistoryupdView(LoginRequiredMixin,UpdateView):
     model = FurnHistory
     template_name = "age/historycreate.html"
     fields = ['history1','historyday1']
     def get_success_url(self):
         return reverse_lazy('age:list')
-class FurnDetailView(DetailView):
+class FurnDetailView(LoginRequiredMixin,DetailView):
     model = Furn
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
@@ -151,7 +154,7 @@ class FurnDetailView(DetailView):
         return Furn.objects.all()
     success_url = reverse_lazy('age:list')
 
-
+@login_required
 def furncreate(request):
     if request.method == "POST":
         form = FurnForm(request.POST, request.FILES)
@@ -167,12 +170,12 @@ def furncreate(request):
     context = {'form':form}
     return render(request, 'age/furn_create.html', context)
 
-class FurnDeleteView(DeleteView):
+class FurnDeleteView(LoginRequiredMixin,DeleteView):
     model = Furn
     template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
-
+@login_required
 def furnupdate(request,pk):
     if request.method == "POST":
         form = FurnupdForm(request.POST, request.FILES)
@@ -185,6 +188,7 @@ def furnupdate(request,pk):
     return render(request, 'age/homeelec_update.html', context)
 
 #家電
+@login_required
 def elechistory(request,num):
     print(HomeElecApp.objects.get(pk=num))
     if request.method == "POST":
@@ -202,6 +206,7 @@ def elechistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+@login_required
 def elecimage(request,num):
     print(HomeElecApp.objects.get(pk=num))
     if request.method == "POST":
@@ -219,13 +224,13 @@ def elecimage(request,num):
 
     context = {'form':form}
     return render(request, 'age/imagecreate.html', context)
-class ElecHistoryupdView(UpdateView):
+class ElecHistoryupdView(LoginRequiredMixin,UpdateView):
     model = ElecHistory
     template_name = "age/historycreate.html"
     fields = ['history1','historyday1']
     def get_success_url(self):
         return reverse_lazy('age:list')
-class HomeelecDetailView(DetailView):
+class HomeelecDetailView(LoginRequiredMixin,DetailView):
     model = HomeElecApp
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
@@ -243,7 +248,7 @@ class HomeelecDetailView(DetailView):
 
 
 
-
+@login_required
 def eleccreate(request):
     if request.method == "POST":
         form = ElecForm(request.POST, request.FILES)
@@ -259,12 +264,12 @@ def eleccreate(request):
     context = {'form':form}
     return render(request, 'age/homeelec_create.html', context)
 
-class HomeelecDeleteView(DeleteView):
+class HomeelecDeleteView(LoginRequiredMixin,DeleteView):
     model = HomeElecApp
     template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
 
-
+@login_required
 def elecupdate(request,pk):
     if request.method == "POST":
         a = HomeElecApp.objects.get(pk=pk)
@@ -279,7 +284,7 @@ def elecupdate(request,pk):
     #記念日
 
 
-class AnnivDetailView(DetailView):
+class AnnivDetailView(LoginRequiredMixin,DetailView):
     model = Aniversary
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
@@ -294,6 +299,7 @@ class AnnivDetailView(DetailView):
     def get_queryset(self):
         return Aniversary.objects.all()
     success_url = reverse_lazy('age:list')
+@login_required
 def anivhistory(request,num):
     print(Aniversary.objects.get(pk=num))
     if request.method == "POST":
@@ -311,7 +317,7 @@ def anivhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
-
+@login_required
 def anivimage(request,num):
     print(Aniversary.objects.get(pk=num))
     if request.method == "POST":
@@ -329,13 +335,13 @@ def anivimage(request,num):
 
     context = {'form':form}
     return render(request, 'age/imagecreate.html', context)
-class AnivHistoryupdView(UpdateView):
+class AnivHistoryupdView(LoginRequiredMixin,UpdateView):
     model = AnivHistory
     template_name = "age/historycreate.html"
     fields = ['history1','historyday1']
     def get_success_url(self):
         return reverse_lazy('age:list')
-
+@login_required
 def anivcreate(request):
     if request.method == "POST":
         form = AnivForm(request.POST, request.FILES)
@@ -351,11 +357,11 @@ def anivcreate(request):
     context = {'form':form}
     return render(request, 'age/anniv_create.html', context)
 
-class AnnivDeleteView(DeleteView):
+class AnnivDeleteView(LoginRequiredMixin,DeleteView):
     model = Aniversary
     template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
-
+@login_required
 def anivupdate(request,pk):
     if request.method == "POST":
         form = AnivupdForm(request.POST, request.FILES)
@@ -368,7 +374,7 @@ def anivupdate(request,pk):
     context = {'form':form}
     return render(request, 'age/homeelec_update.html', context)
 #ファッション
-class ClothesDetailView(DetailView):
+class ClothesDetailView(LoginRequiredMixin,DetailView):
     model = Clothes
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
@@ -383,6 +389,7 @@ class ClothesDetailView(DetailView):
     def get_queryset(self):
         return Clothes.objects.all()
     success_url = reverse_lazy('age:list')
+@login_required
 def clothhistory(request,num):
     print(Clothes.objects.get(pk=num))
     if request.method == "POST":
@@ -400,6 +407,7 @@ def clothhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+@login_required
 def clothimage(request,num):
     print(Clothes.objects.get(pk=num))
     if request.method == "POST":
@@ -417,12 +425,13 @@ def clothimage(request,num):
 
     context = {'form':form}
     return render(request, 'age/imagecreate.html', context)
-class ClothHistoryupdView(UpdateView):
+class ClothHistoryupdView(LoginRequiredMixin,UpdateView):
     model = ClothHistory
     template_name = "age/historycreate.html"
     fields = ['history1','historyday1']
     def get_success_url(self):
         return reverse_lazy('age:list')
+@login_required
 def clothcreate(request):
     if request.method == "POST":
         form = ClothForm(request.POST, request.FILES)
@@ -438,11 +447,11 @@ def clothcreate(request):
     context = {'form':form}
     return render(request, 'age/clothes_create.html', context)
 
-class ClothesDeleteView(DeleteView):
+class ClothesDeleteView(LoginRequiredMixin,DeleteView):
     model = Clothes
     template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
-
+@login_required
 def clothupdate(request,pk):
     if request.method == "POST":
         form = ClothupdForm(request.POST, request.FILES)
@@ -455,7 +464,7 @@ def clothupdate(request,pk):
     context = {'form':form}
     return render(request, 'age/homeelec_update.html', context)
 #他
-class OtherDetailView(DetailView):
+class OtherDetailView(LoginRequiredMixin,DetailView):
     model = Other
     template_name = "age/homeelec_detail.html"
     def get_context_data(self, **kwargs):
@@ -470,7 +479,7 @@ class OtherDetailView(DetailView):
     def get_queryset(self):
         return Other.objects.all()
     success_url = reverse_lazy('age:list')
-
+@login_required
 def otherhistory(request,num):
     print(Other.objects.get(pk=num))
     if request.method == "POST":
@@ -488,6 +497,7 @@ def otherhistory(request,num):
 
     context = {'form':form}
     return render(request, 'age/historycreate.html', context)
+@login_required
 def otherimage(request,num):
     print(Other.objects.get(pk=num))
     if request.method == "POST":
@@ -505,12 +515,13 @@ def otherimage(request,num):
 
     context = {'form':form}
     return render(request, 'age/imagecreate.html', context)
-class OtherHistoryupdView(UpdateView):
+class OtherHistoryupdView(LoginRequiredMixin,UpdateView):
     model = OtherHistory
     template_name = "age/historycreate.html"
     fields = ['history1','historyday1']
     def get_success_url(self):
         return reverse_lazy('age:list')
+@login_required
 def othercreate(request):
     if request.method == "POST":
         form = OtherForm(request.POST, request.FILES)
@@ -526,11 +537,11 @@ def othercreate(request):
     context = {'form':form}
     return render(request, 'age/other_create.html', context)
 
-class OtherDeleteView(DeleteView):
+class OtherDeleteView(LoginRequiredMixin,DeleteView):
     model = Other
     template_name = "age/homeelec_delete.html"
     success_url = reverse_lazy('age:list')
-
+@login_required
 def otherupdate(request,pk):
     if request.method == "POST":
         form = OtherupdForm(request.POST, request.FILES)
@@ -543,7 +554,7 @@ def otherupdate(request,pk):
     context = {'form':form}
     return render(request, 'age/homeelec_update.html', context)
 #新規登録
-class SignUpView(CreateView):
+class SignUpView(LoginRequiredMixin,CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('age:complete')
     template_name = 'age/signup.html'

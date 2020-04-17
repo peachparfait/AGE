@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block header %}
+    <br>
+{% endblock header %}
+{% block content %}
+    <center>
+    <h1>ログイン</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit" class="txtbtn">ログイン</button>
+    </form>
+    </center>
+{%endblock content %}

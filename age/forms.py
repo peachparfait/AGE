@@ -1,5 +1,6 @@
 import bootstrap_datepicker_plus as datetimepicker
 from django import forms
+from django.contrib.auth import forms as auth_forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from .models import CustomUser,Furn, HomeElecApp,Aniversary,Clothes,Other,ElecHistory,FurnHistory,AnivHistory,ClothHistory,OtherHistory,FurnImage,ElecImage,AnivImage,ClothImage,OtherImage
 
@@ -88,3 +89,8 @@ class OtherImageForm(forms.ModelForm):
     class Meta:
         model = OtherImage
         fields = ['picture']
+class LoginForm(auth_forms.AuthenticationForm):
+    def __init__(self, *args, **kw):
+        super().__init__(*args, **kw)
+        for field in self.fields.values():
+            field.widget.attrs['placeholder'] = field.label
