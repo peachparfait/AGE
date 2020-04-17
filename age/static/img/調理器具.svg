@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-調理器具">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="調理器具" clip-path="url(#clip-調理器具)">
+    <rect width="200" height="200" fill="rgba(255,255,255,0)"/>
+    <g id="グループ_140" data-name="グループ 140" transform="translate(5 -4)">
+      <circle id="楕円形_81" data-name="楕円形 81" cx="61.5" cy="61.5" r="61.5" transform="translate(46 21)" fill="#aaff7a"/>
+      <g id="楕円形_82" data-name="楕円形 82" transform="translate(65 40)" fill="#aaff7a" stroke="#fff" stroke-width="5">
+        <circle cx="42.5" cy="42.5" r="42.5" stroke="none"/>
+        <circle cx="42.5" cy="42.5" r="40" fill="none"/>
+      </g>
+      <g id="長方形_1208" data-name="長方形 1208" transform="translate(63.464 108.494) rotate(45)" fill="#fff" stroke="#aaff7a" stroke-width="5">
+        <rect width="22" height="37" rx="10" stroke="none"/>
+        <rect x="2.5" y="2.5" width="17" height="32" rx="7.5" fill="none"/>
+      </g>
+      <g id="グループ_139" data-name="グループ 139" transform="translate(112.284 24.034) rotate(45)">
+        <rect id="長方形_1209" data-name="長方形 1209" width="28" height="60" rx="10" transform="translate(21.666 121.092)" fill="#aaff7a"/>
+        <circle id="楕円形_83" data-name="楕円形 83" cx="5.5" cy="5.5" r="5.5" transform="translate(30 162)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
